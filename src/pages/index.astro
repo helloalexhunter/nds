@@ -1,16 +1,44 @@
 ---
-
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout title="Home">
+  <div class="p-8 space-y-8">
+
+    <h1 class="text-4xl font-bold text-blue-600">
+      Tailwind is working if this is big and blue
+    </h1>
+
+    <button class="px-6 py-3 bg-emerald-600 text-white rounded hover:bg-emerald-700 transition">
+      Test button (hover should darken)
+    </button>
+
+    <div class="max-w-md p-6 bg-white rounded shadow">
+      <h2 class="text-xl font-semibold mb-2">Card component</h2>
+      <p class="text-gray-700">
+        This card should have a white background, rounded corners and a shadow.
+      </p>
+    </div>
+
+    <div class="flex gap-4 bg-white p-4 rounded">
+      <div class="flex-1 bg-red-500 text-white p-4 rounded">Flex 1</div>
+      <div class="flex-1 bg-green-500 text-white p-4 rounded">Flex 2</div>
+      <div class="flex-1 bg-blue-500 text-white p-4 rounded">Flex 3</div>
+    </div>
+
+    <div class="grid grid-cols-2 gap-4 bg-white p-4 rounded">
+      <div class="bg-purple-500 text-white p-4 rounded">Grid item 1</div>
+      <div class="bg-pink-500 text-white p-4 rounded">Grid item 2</div>
+      <div class="bg-orange-500 text-white p-4 rounded">Grid item 3</div>
+      <div class="bg-indigo-500 text-white p-4 rounded">Grid item 4</div>
+    </div>
+
+    <div class="space-y-2">
+      <p class="text-sm text-gray-700">Small text</p>
+      <p class="text-base text-gray-700">Base text</p>
+      <p class="text-lg text-gray-700">Large text</p>
+      <p class="text-xl text-gray-700">Extra large text</p>
+    </div>
+
+  </div>
+</BaseLayout>
