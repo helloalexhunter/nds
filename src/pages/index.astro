@@ -1,44 +1,40 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { Clock } from "lucide-astro";
+
+const title = "National Debt Service";
 ---
 
-<BaseLayout title="Home">
-  <div class="p-8 space-y-8">
+<BaseLayout title={title}>
+  <Header />
 
-    <h1 class="text-4xl font-bold text-blue-600">
-      Tailwind is working if this is big and blue
-    </h1>
+  <main class="flex flex-1 items-center justify-center px-4 py-20">
+    <div class="text-center max-w-2xl mx-auto">
+      <h1
+        class="text-4xl sm:text-5xl font-bold mb-4 text-slate-900"
+        style="font-family: 'Noto Sans Display';"
+      >
+        National Debt Service
+      </h1>
 
-    <button class="px-6 py-3 bg-emerald-600 text-white rounded hover:bg-emerald-700 transition">
-      Test button (hover should darken)
-    </button>
-
-    <div class="max-w-md p-6 bg-white rounded shadow">
-      <h2 class="text-xl font-semibold mb-2">Card component</h2>
-      <p class="text-gray-700">
-        This card should have a white background, rounded corners and a shadow.
+      <p
+        class="text-base sm:text-lg text-slate-600 mb-8 leading-relaxed"
+        style="font-family: 'Noto Sans';"
+      >
+        We’re building a clear and calm information service to help people in the UK understand
+        their debt options and, where appropriate, find FCA-authorised support.
       </p>
-    </div>
 
-    <div class="flex gap-4 bg-white p-4 rounded">
-      <div class="flex-1 bg-red-500 text-white p-4 rounded">Flex 1</div>
-      <div class="flex-1 bg-green-500 text-white p-4 rounded">Flex 2</div>
-      <div class="flex-1 bg-blue-500 text-white p-4 rounded">Flex 3</div>
+      <div class="inline-flex items-center gap-2 text-slate-700 bg-white px-4 py-2 rounded-full shadow-sm ring-1 ring-slate-200">
+        <Clock class="h-4 w-4 text-slate-500" />
+        <span class="text-sm font-medium" style="font-family: 'Noto Sans';">
+          Full website coming soon
+        </span>
+      </div>
     </div>
+  </main>
 
-    <div class="grid grid-cols-2 gap-4 bg-white p-4 rounded">
-      <div class="bg-purple-500 text-white p-4 rounded">Grid item 1</div>
-      <div class="bg-pink-500 text-white p-4 rounded">Grid item 2</div>
-      <div class="bg-orange-500 text-white p-4 rounded">Grid item 3</div>
-      <div class="bg-indigo-500 text-white p-4 rounded">Grid item 4</div>
-    </div>
-
-    <div class="space-y-2">
-      <p class="text-sm text-gray-700">Small text</p>
-      <p class="text-base text-gray-700">Base text</p>
-      <p class="text-lg text-gray-700">Large text</p>
-      <p class="text-xl text-gray-700">Extra large text</p>
-    </div>
-
-  </div>
+  <Footer slot="footer" />
 </BaseLayout>
