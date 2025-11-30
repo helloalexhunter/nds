@@ -1,0 +1,58 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const title = "Cookies";
+const description =
+  "Cookie information for National Debt Service. The site is designed to work without non-essential cookies or tracking.";
+---
+
+<BaseLayout {title} {description}>
+  <main id="main-content" class="bg-neutral-soft min-h-screen">
+    <section class="mx-auto max-w-4xl px-4 py-10 sm:py-14 space-y-7">
+      <header class="space-y-3">
+        <p class="text-sm font-semibold text-trust-blue uppercase tracking-wide">
+          Cookies
+        </p>
+        <h1>Cookie information</h1>
+        <p class="text-base text-slate-800 leading-relaxed">
+          This page explains how cookies are (or are not) used on the National Debt Service
+          website.
+        </p>
+      </header>
+
+      <section class="space-y-3">
+        <h2>No non-essential cookies</h2>
+        <p class="text-sm text-slate-800 leading-relaxed">
+          The site is built as a simple, static website. It’s designed to work without using
+          non-essential cookies. We don’t use advertising cookies or third-party tracking pixels.
+        </p>
+      </section>
+
+      <section class="space-y-3">
+        <h2>Essential technical cookies (if any)</h2>
+        <p class="text-sm text-slate-800 leading-relaxed">
+          Our hosting provider may use strictly necessary cookies or similar technical tools to keep
+          the site secure and running reliably. These are not used to track your activity for
+          marketing purposes.
+        </p>
+      </section>
+
+      <section class="space-y-3">
+        <h2>Links to other sites</h2>
+        <p class="text-sm text-slate-800 leading-relaxed">
+          When you click a link to another website, such as a debt advice charity or mental health
+          service, that site may use its own cookies. Their cookie policy will explain what they
+          use and how you can manage your preferences.
+        </p>
+      </section>
+
+      <section class="space-y-3">
+        <h2>Changes to this page</h2>
+        <p class="text-sm text-slate-800 leading-relaxed">
+          If we ever add analytics or other tools that use cookies, this page will be updated to
+          explain what’s used and why, and to make sure your choices are respected.
+        </p>
+      </section>
+    </section>
+  </main>
+</BaseLayout>

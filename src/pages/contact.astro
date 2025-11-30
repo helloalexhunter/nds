@@ -1,0 +1,171 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const title = "Contact National Debt Service";
+const description =
+  "Contact National Debt Service about the website itself. We can’t give debt advice, but you can share feedback or flag problems with the site.";
+
+const { searchParams } = Astro.url;
+const status = searchParams.get("status");
+---
+
+<BaseLayout {title} {description}>
+  <main id="main-content" class="bg-primary-50 min-h-screen">
+    <section class="mx-auto max-w-3xl px-4 py-10 sm:py-14 space-y-6">
+      <header class="space-y-3">
+        <p class="text-xs font-semibold uppercase tracking-wide text-primary-700">
+          Contact
+        </p>
+        <h1>Contact National Debt Service</h1>
+        <p class="text-base text-slate-800 leading-relaxed">
+          You can contact us about the website itself – for example, to report a broken link,
+          suggest an accessibility improvement, or raise a concern about any of the content.
+        </p>
+      </header>
+
+      <section class="space-y-3">
+        <h2 class="text-xl font-semibold text-slate-900">Before you get in touch</h2>
+        <p class="text-sm text-slate-800 leading-relaxed">
+          We can’t give you debt advice or tell you what to do about your situation. We also
+          can’t contact creditors or advice charities on your behalf.
+        </p>
+        <p class="text-sm text-slate-800 leading-relaxed">
+          If you need personal help with money or mental health, the quickest route is to
+          contact a free, regulated organisation directly. You’ll find a list on the{" "}
+          <a href="/get-help">Where to get help</a> page.
+        </p>
+      </section>
+
+      <!-- Status messages -->
+      {status === "success" && (
+        <div
+          class="rounded-md border border-green-200 bg-green-50 px-4 py-3 text-sm text-green-900"
+          role="status"
+        >
+          <p class="font-semibold">Message sent.</p>
+          <p>Thanks for getting in touch. If a reply is needed, we’ll respond by email.</p>
+        </div>
+      )}
+
+      {status === "error" && (
+        <div
+          class="rounded-md border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-900"
+          role="status"
+        >
+          <p class="font-semibold">Something went wrong.</p>
+          <p>
+            Your message couldn’t be sent just now. Please check the form and try again later.
+          </p>
+        </div>
+      )}
+
+      <!-- Contact form -->
+      <section aria-label="Contact form">
+        <form
+          action="/api/contact"
+          method="post"
+          class="space-y-6 rounded-xl border border-slate-200 bg-white px-4 py-5 shadow-sm sm:px-6 sm:py-6"
+          novalidate
+        >
+          <div class="space-y-1">
+            <label for="name" class="text-sm font-medium text-slate-900">
+              Your name
+            </label>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              autocomplete="name"
+              required
+              class="block w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-700"
+            />
+          </div>
+
+          <div class="space-y-1">
+            <label for="email" class="text-sm font-medium text-slate-900">
+              Email address
+            </label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              autocomplete="email"
+              required
+              class="block w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-700"
+            />
+            <p class="mt-1 text-xs text-slate-600">
+              We’ll only use this email address to reply to your message about the website.
+            </p>
+          </div>
+
+          <div class="space-y-1">
+            <label for="subject" class="text-sm font-medium text-slate-900">
+              What is your message about?
+            </label>
+            <select
+              id="subject"
+              name="subject"
+              required
+              class="block w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-700"
+            >
+              <option value="">Please choose an option</option>
+              <option value="website-feedback">General website feedback</option>
+              <option value="accessibility-issue">Accessibility issue</option>
+              <option value="broken-link">Broken link or out-of-date information</option>
+              <option value="content-concern">Concern about content</option>
+              <option value="other">Something else</option>
+            </select>
+          </div>
+
+          <div class="space-y-1">
+            <label for="message" class="text-sm font-medium text-slate-900">
+              Your message
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              rows="6"
+              required
+              class="block w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-700"
+            ></textarea>
+            <p class="mt-1 text-xs text-slate-600">
+              Please don’t include full account numbers, National Insurance numbers, passwords,
+              or other highly sensitive details. A short description is enough.
+            </p>
+          </div>
+
+          <div class="space-y-2 rounded-md bg-slate-50 px-3 py-3">
+            <div class="flex items-start gap-2">
+              <input
+                id="consent"
+                name="consent"
+                type="checkbox"
+                required
+                class="mt-1 h-4 w-4 rounded border-slate-300 text-primary-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-700"
+              />
+              <label for="consent" class="text-xs text-slate-800 leading-relaxed">
+                I understand this site can’t give me personal debt advice and is for general
+                information only. I’ve read and agree to the{" "}
+                <a href="/privacy">Privacy notice</a> and{" "}
+                <a href="/terms">Terms of use</a>.
+              </label>
+            </div>
+            <p class="text-[11px] text-slate-600">
+              We’ll use the information you send only to handle your message about the website.
+            </p>
+          </div>
+
+          <div class="pt-2">
+            <button
+              type="submit"
+              class="btn-primary w-full sm:w-auto justify-center"
+              aria-label="Send your message about the National Debt Service website"
+            >
+              Send message
+            </button>
+          </div>
+        </form>
+      </section>
+    </section>
+  </main>
+</BaseLayout>

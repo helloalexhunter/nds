@@ -2,3 +2,169 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* ---------- CUSTOM PRIMARY PALETTE UTILITIES ---------- */
+/* These are plain CSS classes, not Tailwind utilities. */
+:root {
+  --color-primary-50: #eff2f5;
+  --color-primary-100: #c1d8f6;
+  --color-primary-200: #98bff0;
+  --color-primary-300: #70a6eb;
+  --color-primary-400: #488de5;
+  --color-primary-500: #2074df;
+  --color-primary-600: #1a5fb7;
+  --color-primary-700: #144a8f;
+  --color-primary-800: #0f3567;
+  --color-primary-900: #09213e;
+  --color-primary-950: #030c16;
+}
+
+/* Utility-style helpers for the primary palette */
+.bg-primary-50 { background-color: var(--color-primary-50); }
+.text-primary-50 { color: var(--color-primary-50); }
+.border-primary-50 { border-color: var(--color-primary-50); }
+.bg-primary-100 { background-color: var(--color-primary-100); }
+.text-primary-100 { color: var(--color-primary-100); }
+.border-primary-100 { border-color: var(--color-primary-100); }
+.bg-primary-200 { background-color: var(--color-primary-200); }
+.text-primary-200 { color: var(--color-primary-200); }
+.border-primary-200 { border-color: var(--color-primary-200); }
+.bg-primary-300 { background-color: var(--color-primary-300); }
+.text-primary-300 { color: var(--color-primary-300); }
+.border-primary-300 { border-color: var(--color-primary-300); }
+.bg-primary-400 { background-color: var(--color-primary-400); }
+.text-primary-400 { color: var(--color-primary-400); }
+.border-primary-400 { border-color: var(--color-primary-400); }
+.bg-primary-500 { background-color: var(--color-primary-500); }
+.text-primary-500 { color: var(--color-primary-500); }
+.border-primary-500 { border-color: var(--color-primary-500); }
+.bg-primary-600 { background-color: var(--color-primary-600); }
+.text-primary-600 { color: var(--color-primary-600); }
+.border-primary-600 { border-color: var(--color-primary-600); }
+.bg-primary-700 { background-color: var(--color-primary-700); }
+.text-primary-700 { color: var(--color-primary-700); }
+.border-primary-700 { border-color: var(--color-primary-700); }
+.bg-primary-800 { background-color: var(--color-primary-800); }
+.text-primary-800 { color: var(--color-primary-800); }
+.border-primary-800 { border-color: var(--color-primary-800); }
+.bg-primary-900 { background-color: var(--color-primary-900); }
+.text-primary-900 { color: var(--color-primary-900); }
+.border-primary-900 { border-color: var(--color-primary-900); }
+.bg-primary-950 { background-color: var(--color-primary-950); }
+.text-primary-950 { color: var(--color-primary-950); }
+.border-primary-950 { border-color: var(--color-primary-950); }
+
+/* ---------- BASE TYPOGRAPHY & ACCESSIBILITY ---------- */
+@layer base {
+  :root {
+    /* Readable default size */
+    font-size: 18px;
+  }
+
+  body {
+    background-color: var(--color-primary-50);
+    color: #111827;
+    font-family: "Noto Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 18px;
+  }
+
+  /* Headings use Noto Sans Display */
+  h1 {
+    @apply font-bold leading-tight;
+    font-size: 2.75rem; /* ~44px */
+    font-family: "Noto Sans Display", system-ui, sans-serif;
+    color: var(--color-primary-900);
+  }
+
+  h2 {
+    @apply font-semibold leading-snug;
+    font-size: 2rem; /* ~32px */
+    font-family: "Noto Sans Display", system-ui, sans-serif;
+    color: var(--color-primary-900);
+  }
+
+  h3 {
+    @apply font-semibold leading-snug;
+    font-size: 1.5rem; /* ~24px */
+    font-family: "Noto Sans Display", system-ui, sans-serif;
+    color: var(--color-primary-900);
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #111827;
+  }
+
+  li,
+  label,
+  input,
+  textarea,
+  select,
+  button,
+  a,
+  span {
+    font-family: "Noto Sans", system-ui, sans-serif;
+    font-size: 1rem;
+    color: #111827;
+  }
+
+  footer,
+  footer p,
+  footer a,
+  footer li,
+  footer span {
+    font-size: 0.95rem;
+  }
+
+  /* Global focus style – WCAG-visible */
+  :focus-visible {
+    @apply outline-none ring-2 ring-offset-2;
+    --tw-ring-color: var(--color-primary-700);
+    --tw-ring-offset-color: var(--color-primary-50);
+  }
+
+  /* Global link style – WCAG 1.4.1 compliant */
+  a {
+    @apply underline;
+    color: var(--color-primary-800);
+  }
+
+  a:hover,
+  a:focus-visible {
+    @apply no-underline;
+    color: var(--color-primary-600);
+  }
+}
+
+/* ---------- COMPONENTS: BUTTONS ---------- */
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold text-white transition;
+    background-color: var(--color-primary-600);
+  }
+
+  .btn-primary:hover {
+    background-color: var(--color-primary-700);
+  }
+
+  .btn-primary:focus-visible {
+    @apply outline-none ring-4;
+    --tw-ring-color: rgba(20, 74, 143, 0.5); /* primary-700/50 */
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold border bg-transparent transition;
+    border-color: var(--color-primary-700);
+    color: var(--color-primary-800);
+  }
+
+  .btn-secondary:hover {
+    background-color: var(--color-primary-50);
+  }
+
+  .btn-secondary:focus-visible {
+    @apply outline-none ring-4;
+    --tw-ring-color: rgba(20, 74, 143, 0.5); /* primary-700/50 */
+  }
+}

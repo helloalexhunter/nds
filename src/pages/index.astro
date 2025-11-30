@@ -1,40 +1,294 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import { Clock } from "lucide-astro";
+import { ArrowRight, HeartHandshake, Info } from "lucide-astro";
 
-const title = "National Debt Service";
+const title = "National Debt Service – simple signposting to free help";
+const description =
+  "If you’re worried about debt or money in the UK, this site points you to free, regulated debt advice and mental health support. We don’t give advice or collect your details.";
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "National Debt Service",
+  url: "https://www.nationaldebtservice.co.uk/",
+  description:
+    "Independent UK signposting site for free, regulated debt advice and mental health support. No forms, no lead selling.",
+  potentialAction: {
+    "@type": "SearchAction",
+    target: "https://www.nationaldebtservice.co.uk/get-help",
+    "query-input": "required name=search_term_string",
+  },
+};
 ---
 
-<BaseLayout title={title}>
-  <Header />
-
-  <main class="flex flex-1 items-center justify-center px-4 py-20">
-    <div class="text-center max-w-2xl mx-auto">
-      <h1
-        class="text-4xl sm:text-5xl font-bold mb-4 text-slate-900"
-        style="font-family: 'Noto Sans Display';"
+<BaseLayout {title} {description}>
+  <main id="main-content" class="bg-neutral-soft">
+    <!-- HERO -->
+    <section class="border-b border-neutral-border bg-white">
+      <div
+        class="mx-auto max-w-6xl px-4 py-10 sm:py-14 grid gap-8 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] items-center"
       >
-        National Debt Service
-      </h1>
+        <div class="space-y-4">
+          <p class="text-sm font-semibold text-trust-blue uppercase tracking-wide">
+            Worrying about money is exhausting
+          </p>
+          <h1>
+            Clear signposting to free, trusted help in the UK
+          </h1>
+          <p class="text-base text-slate-800 leading-relaxed">
+            If you’re stressed about debts or bills, it can be hard to think straight. This site
+            doesn’t try to sell you anything. It simply points you to free, regulated debt advice
+            services and mental health support in your country.
+          </p>
+          <p class="text-sm text-slate-700">
+            We don’t give debt advice, handle your case or collect your personal information.
+          </p>
 
-      <p
-        class="text-base sm:text-lg text-slate-600 mb-8 leading-relaxed"
-        style="font-family: 'Noto Sans';"
-      >
-        We’re building a clear and calm information service to help people in the UK understand
-        their debt options and, where appropriate, find FCA-authorised support.
-      </p>
+          <div class="flex flex-col gap-3 sm:flex-row sm:items-center">
+            <a href="/get-help" class="btn-primary inline-flex items-center gap-2">
+              See where to get help
+              <ArrowRight class="w-4 h-4" aria-hidden="true" />
+            </a>
+            <a href="#mental-health" class="btn-secondary inline-flex items-center gap-2">
+              Mental health support
+            </a>
+          </div>
+        </div>
 
-      <div class="inline-flex items-center gap-2 text-slate-700 bg-white px-4 py-2 rounded-full shadow-sm ring-1 ring-slate-200">
-        <Clock class="h-4 w-4 text-slate-500" />
-        <span class="text-sm font-medium" style="font-family: 'Noto Sans';">
-          Full website coming soon
-        </span>
+        <!-- Reassurance card -->
+        <aside
+          class="rounded-2xl border border-neutral-border bg-neutral-soft p-5 space-y-3 shadow-sm"
+          aria-label="Reassurance about debt and money worries"
+        >
+          <div class="flex items-center gap-2">
+            <HeartHandshake class="w-5 h-5 text-trust-blue" aria-hidden="true" />
+            <h2 class="text-base font-semibold mb-0">
+              You’re not the only one
+            </h2>
+          </div>
+          <p class="text-sm text-slate-800 leading-relaxed">
+            Money problems are common and rarely just about numbers. People often feel ashamed,
+            stuck or alone. You deserve clear information and support without pressure.
+          </p>
+          <p class="text-xs text-slate-600">
+            If you feel overwhelmed or unsafe, it’s important to talk to someone. The support
+            services we link to are there for you.
+          </p>
+        </aside>
       </div>
-    </div>
-  </main>
+    </section>
 
-  <Footer slot="footer" />
+    <!-- DEBT HELP SIGNPOSTING (LIGHT) -->
+    <section id="debt-help" class="mx-auto max-w-6xl px-4 py-10 sm:py-14 space-y-6">
+      <header class="space-y-2 max-w-3xl">
+        <h2>
+          Free debt advice in the UK
+        </h2>
+        <p class="text-sm text-slate-800 leading-relaxed">
+          Debt advice is organised differently across the UK. The services below are well-known,
+          free and regulated. They can talk through your full situation and explain your options
+          in more detail.
+        </p>
+      </header>
+
+      <div class="grid gap-6 md:grid-cols-3">
+        <!-- England & Wales -->
+        <article
+          class="rounded-xl bg-white border border-neutral-border p-4 space-y-2 shadow-sm"
+          aria-label="Free debt advice in England and Wales"
+        >
+          <h3 class="text-lg font-semibold text-dark-text">
+            England &amp; Wales
+          </h3>
+          <ul class="text-sm text-slate-800 space-y-1">
+            <li>
+              <a href="https://www.stepchange.org" target="_blank" rel="noopener noreferrer">
+                StepChange Debt Charity
+              </a>
+            </li>
+            <li>
+              <a href="https://www.nationaldebtline.org" target="_blank" rel="noopener noreferrer">
+                National Debtline
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.citizensadvice.org.uk"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Citizens Advice (England &amp; Wales)
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.moneyhelper.org.uk/en/money-troubles/dealing-with-debt"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                MoneyHelper (Government-backed)
+              </a>
+            </li>
+          </ul>
+        </article>
+
+        <!-- Scotland -->
+        <article
+          class="rounded-xl bg-white border border-neutral-border p-4 space-y-2 shadow-sm"
+          aria-label="Free debt advice in Scotland"
+        >
+          <h3 class="text-lg font-semibold text-dark-text">
+            Scotland
+          </h3>
+          <ul class="text-sm text-slate-800 space-y-1">
+            <li>
+              <a
+                href="https://www.nationaldebtline.org/scotland"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                National Debtline Scotland
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.citizensadvice.org.uk/scotland"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Citizens Advice Scotland
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.moneyhelper.org.uk/en/money-troubles/dealing-with-debt"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                MoneyHelper
+              </a>
+            </li>
+          </ul>
+        </article>
+
+        <!-- Northern Ireland -->
+        <article
+          class="rounded-xl bg-white border border-neutral-border p-4 space-y-2 shadow-sm"
+          aria-label="Free debt advice in Northern Ireland"
+        >
+          <h3 class="text-lg font-semibold text-dark-text">
+            Northern Ireland
+          </h3>
+          <ul class="text-sm text-slate-800 space-y-1">
+            <li>
+              <a href="https://www.adviceni.net" target="_blank" rel="noopener noreferrer">
+                Advice NI
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.citizensadvice.org.uk/about-us/our-work/advice/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Citizens Advice (NI)
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.moneyhelper.org.uk/en/money-troubles/dealing-with-debt"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                MoneyHelper
+              </a>
+            </li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="mt-4">
+        <a href="/get-help"
+            class="btn-secondary inline-flex items-center gap-2"
+            aria-label="See full list of free debt and mental health support services">
+          See full list of support
+          <ArrowRight class="w-4 h-4" aria-hidden="true" />
+        </a>
+      </div>
+    </section>
+
+    <!-- MENTAL HEALTH SUPPORT -->
+    <section id="mental-health" class="border-t border-neutral-border bg-white">
+      <div class="mx-auto max-w-6xl px-4 py-10 sm:py-14 space-y-6">
+        <header class="space-y-2 max-w-3xl">
+          <h2>
+            Money and mental health
+          </h2>
+          <p class="text-sm text-slate-800 leading-relaxed">
+            Worrying about money can affect sleep, mood, relationships and your sense of control.
+            You don’t have to wait until things feel “bad enough” to reach out for support.
+          </p>
+        </header>
+
+        <div class="grid gap-6 md:grid-cols-2">
+          <article
+            class="rounded-xl border border-neutral-border bg-neutral-soft p-5 space-y-2"
+            aria-label="Free mental health support"
+          >
+            <div class="flex items-center gap-2">
+              <Info class="w-5 h-5 text-trust-blue" aria-hidden="true" />
+              <h3 class="text-base font-semibold mb-0">
+                Free mental health support
+              </h3>
+            </div>
+            <ul class="mt-2 text-sm text-slate-800 space-y-1">
+              <li>
+                <a href="https://www.samaritans.org" target="_blank" rel="noopener noreferrer">
+                  Samaritans
+                </a> – 24/7 listening support.
+              </li>
+              <li>
+                <a href="https://www.mind.org.uk" target="_blank" rel="noopener noreferrer">
+                  Mind
+                </a> – information and support for mental health.
+              </li>
+              <li>
+                <a href="https://www.thecalmzone.net" target="_blank" rel="noopener noreferrer">
+                  CALM (Campaign Against Living Miserably)
+                </a> – support for people feeling low or struggling.
+              </li>
+              <li>
+                <a href="https://andysmanclub.co.uk" target="_blank" rel="noopener noreferrer">
+                  Andy’s Man Club
+                </a> – free peer support groups for men.
+              </li>
+            </ul>
+          </article>
+
+          <article
+            class="rounded-xl border border-neutral-border bg-neutral-soft p-5 space-y-2"
+            aria-label="NHS and GP mental health support"
+          >
+            <h3 class="text-base font-semibold">
+              Your GP and NHS services
+            </h3>
+            <p class="text-sm text-slate-800 leading-relaxed">
+              If you’re worried about your mental health, you can speak to your GP or, in an
+              emergency, use NHS services in your area. They can talk through options like talking
+              therapies, crisis lines or local support.
+            </p>
+            <p class="text-xs text-slate-700">
+              If you feel at immediate risk of harm, treat it as an emergency and use local
+              emergency services.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Structured data for SEO -->
+    <script type="application/ld+json" is:inline>
+      {JSON.stringify(websiteSchema)}
+    </script>
+  </main>
 </BaseLayout>

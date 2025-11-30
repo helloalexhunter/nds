@@ -2,18 +2,50 @@
 const year = new Date().getFullYear();
 ---
 
-<footer class="border-t border-slate-200 bg-white/80">
-  <div class="mx-auto flex max-w-5xl flex-col gap-2 px-4 py-4 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
-    <p style="font-family: 'Noto Sans';">
-      © {year} National Debt Service. All rights reserved.
-    </p>
+<footer class="border-t border-neutral-border bg-white">
+  <div class="mx-auto max-w-6xl px-4 py-8 space-y-6 sm:space-y-8">
+    <div class="flex flex-col gap-6 sm:flex-row sm:justify-between">
+      <!-- Brand + description -->
+      <div class="max-w-md space-y-2">
+        <p class="font-semibold text-dark-text">
+          National Debt Service
+        </p>
+        <p class="text-sm text-dark-text/80 leading-relaxed">
+          A small, independent site that signposts people in the UK to free, regulated debt advice
+          and mental health support. We don’t give debt advice, sell products or collect your details.
+        </p>
+      </div>
 
-    <p
-      class="max-w-xl sm:text-right"
-      style="font-family: 'Noto Sans';"
-    >
-      National Debt Service provides information and introductions to FCA-authorised firms.
-      <br />It is not a debt counselling or debt management service.
-    </p>
+      <!-- Links -->
+      <nav class="flex flex-wrap gap-8 text-sm" aria-label="Footer navigation">
+        <div>
+          <p class="font-semibold text-dark-text mb-2">Site</p>
+          <ul class="space-y-1">
+            <li><a href="/">Home</a></li>
+            <li><a href="/get-help">Where to get help</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="font-semibold text-dark-text mb-2">Legal &amp; privacy</p>
+          <ul class="space-y-1">
+            <li><a href="/privacy">Privacy</a></li>
+            <li><a href="/cookies">Cookies</a></li>
+            <li><a href="/terms">Terms of use</a></li>
+            <li><a href="/faq">FAQs</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Bottom line -->
+    <div class="border-t border-neutral-border pt-3 text-xs text-dark-text/75">
+      <p>
+        © {year} National Debt Service. This site provides general signposting only and is not
+        authorised by the Financial Conduct Authority. For personal debt advice, always use a
+        free, regulated service in your country.
+      </p>
+    </div>
   </div>
 </footer>

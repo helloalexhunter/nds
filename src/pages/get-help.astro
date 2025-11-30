@@ -1,0 +1,244 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const title = "Where to get help with money and debt";
+const description =
+  "Signposting to free, regulated debt advice and mental health support in the UK. We don’t give debt advice or collect your details.";
+---
+
+<BaseLayout {title} {description}>
+  <main id="main-content" class="bg-neutral-soft min-h-screen">
+    <section class="mx-auto max-w-6xl px-4 py-10 sm:py-14 space-y-8">
+      <header class="space-y-3 max-w-3xl">
+        <p class="text-sm font-semibold text-trust-blue uppercase tracking-wide">
+          Get help
+        </p>
+        <h1>
+          Where to get help with money and debt
+        </h1>
+        <p class="text-base text-slate-800 leading-relaxed">
+          National Debt Service is a signposting site. We don’t give debt advice, manage your case
+          or share your details. This page lists free, well-known organisations that can help with
+          debt and mental health across the UK.
+        </p>
+      </header>
+
+      <!-- Debt advice by country -->
+      <section aria-labelledby="debt-advice-heading" class="space-y-4">
+        <h2 id="debt-advice-heading">
+          Free debt advice by country
+        </h2>
+        <p class="text-sm text-slate-800 max-w-3xl">
+          Debt advice rules and processes vary across the UK. The organisations below can explain
+          how things work where you live and talk through your situation in more detail.
+        </p>
+
+        <div class="grid gap-6 md:grid-cols-3">
+          <!-- England & Wales -->
+          <article class="rounded-xl bg-white border border-neutral-border p-4 space-y-2 shadow-sm">
+            <h3 class="text-lg font-semibold text-dark-text">
+              England &amp; Wales
+            </h3>
+            <ul class="text-sm text-slate-800 space-y-1">
+              <li>
+                <a href="https://www.stepchange.org" target="_blank" rel="noopener noreferrer">
+                  StepChange Debt Charity
+                  <span class="sr-only">(opens in a new tab)</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.nationaldebtline.org" target="_blank" rel="noopener noreferrer">
+                  National Debtline
+                  <span class="sr-only">(opens in a new tab)</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.citizensadvice.org.uk" target="_blank" rel="noopener noreferrer">
+                  Citizens Advice
+                  <span class="sr-only">(opens in a new tab)</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.moneyhelper.org.uk/en/money-troubles/dealing-with-debt"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  MoneyHelper (Government-backed)
+                  <span class="sr-only">(opens in a new tab)</span>
+                </a>
+              </li>
+            </ul>
+          </article>
+
+          <!-- Scotland -->
+          <article class="rounded-xl bg-white border border-neutral-border p-4 space-y-2 shadow-sm">
+            <h3 class="text-lg font-semibold text-dark-text">
+              Scotland
+            </h3>
+            <ul class="text-sm text-slate-800 space-y-1">
+              <li>
+                <a
+                  href="https://www.nationaldebtline.org/scotland"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  National Debtline Scotland
+                  <span class="sr-only">(opens in a new tab)</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.citizensadvice.org.uk/scotland"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Citizens Advice Scotland
+                  <span class="sr-only">(opens in a new tab)</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.moneyhelper.org.uk/en/money-troubles/dealing-with-debt"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  MoneyHelper
+                  <span class="sr-only">(opens in a new tab)</span>
+                </a>
+              </li>
+            </ul>
+          </article>
+
+          <!-- Northern Ireland -->
+          <article class="rounded-xl bg-white border border-neutral-border p-4 space-y-2 shadow-sm">
+            <h3 class="text-lg font-semibold text-dark-text">
+              Northern Ireland
+            </h3>
+            <ul class="text-sm text-slate-800 space-y-1">
+              <li>
+                <a href="https://www.adviceni.net" target="_blank" rel="noopener noreferrer">
+                  Advice NI
+                  <span class="sr-only">(opens in a new tab)</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.citizensadvice.org.uk/about-us/our-work/advice/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Citizens Advice
+                  <span class="sr-only">(opens in a new tab)</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.moneyhelper.org.uk/en/money-troubles/dealing-with-debt"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  MoneyHelper
+                  <span class="sr-only">(opens in a new tab)</span>
+                </a>
+              </li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <!-- Official guidance -->
+      <section aria-labelledby="official-guidance-heading" class="space-y-3">
+        <h2 id="official-guidance-heading">
+          Official money guidance
+        </h2>
+        <p class="text-sm text-slate-800 max-w-3xl">
+          These sites offer trusted information about money and debt. They don’t replace personal
+          advice, but they can help you understand the basics.
+        </p>
+        <ul class="text-sm text-slate-800 space-y-1">
+          <li>
+            <a
+              href="https://www.moneyhelper.org.uk"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              MoneyHelper
+              <span class="sr-only">(opens in a new tab)</span>
+            </a> – Government-backed information on money and debt.
+          </li>
+          <li>
+            <a
+              href="https://www.gov.uk/browse/benefits"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GOV.UK
+              <span class="sr-only">(opens in a new tab)</span>
+            </a> – official information on benefits and more.
+          </li>
+        </ul>
+      </section>
+
+      <!-- Mental health -->
+      <section aria-labelledby="mental-health-heading" class="space-y-4">
+        <h2 id="mental-health-heading">
+          Mental health support
+        </h2>
+        <p class="text-sm text-slate-800 max-w-3xl">
+          Debt and money worries can seriously affect your mental health. It’s completely valid to
+          seek help for how you feel, not just for the numbers on a statement.
+        </p>
+
+        <div class="grid gap-6 md:grid-cols-2">
+          <article class="rounded-xl bg-white border border-neutral-border p-4 space-y-2 shadow-sm">
+            <h3 class="text-base font-semibold text-dark-text">
+              National and UK-wide support
+            </h3>
+            <ul class="text-sm text-slate-800 space-y-1">
+              <li>
+                <a href="https://www.samaritans.org" target="_blank" rel="noopener noreferrer">
+                  Samaritans
+                  <span class="sr-only">(opens in a new tab)</span>
+                </a> – 24/7 listening support.
+              </li>
+              <li>
+                <a href="https://www.mind.org.uk" target="_blank" rel="noopener noreferrer">
+                  Mind
+                  <span class="sr-only">(opens in a new tab)</span>
+                </a> – information and support for mental health.
+              </li>
+              <li>
+                <a href="https://www.thecalmzone.net" target="_blank" rel="noopener noreferrer">
+                  CALM (Campaign Against Living Miserably)
+                  <span class="sr-only">(opens in a new tab)</span>
+                </a> – support for people feeling low or struggling.
+              </li>
+              <li>
+                <a href="https://andysmanclub.co.uk" target="_blank" rel="noopener noreferrer">
+                  Andy’s Man Club
+                  <span class="sr-only">(opens in a new tab)</span>
+                </a> – free peer support groups for men.
+              </li>
+            </ul>
+          </article>
+
+          <article class="rounded-xl bg-white border border-neutral-border p-4 space-y-2 shadow-sm">
+            <h3 class="text-base font-semibold text-dark-text">
+              NHS and local services
+            </h3>
+            <p class="text-sm text-slate-800 leading-relaxed">
+              You can speak to your GP or, in an emergency, use NHS urgent mental health services
+              in your area. They can talk about options like talking therapies, crisis lines or
+              other local support.
+            </p>
+            <p class="text-xs text-slate-700">
+              If you feel at immediate risk of harm, treat it as an emergency and use local
+              emergency services.
+            </p>
+          </article>
+        </div>
+      </section>
+    </section>
+  </main>
+</BaseLayout>
