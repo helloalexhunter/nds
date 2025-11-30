@@ -23,19 +23,20 @@ const description =
         </p>
       </header>
 
-      <!-- Debt advice by country -->
       <section aria-labelledby="debt-advice-heading" class="space-y-4">
         <h2 id="debt-advice-heading">
           Free debt advice by country
         </h2>
         <p class="text-sm text-slate-800 max-w-3xl">
           Debt advice rules and processes vary across the UK. The organisations below can explain
-          how things work where you live and talk through your situation in more detail.
+          how things work where you live and talk through your full situation and options.
         </p>
 
         <div class="grid gap-6 md:grid-cols-3">
-          <!-- England & Wales -->
-          <article class="rounded-xl bg-white border border-neutral-border p-4 space-y-2 shadow-sm">
+          <article
+            class="rounded-xl bg-white border border-neutral-border p-4 space-y-2 shadow-sm"
+            aria-label="Free debt advice in England and Wales"
+          >
             <h3 class="text-lg font-semibold text-dark-text">
               England &amp; Wales
             </h3>
@@ -43,19 +44,23 @@ const description =
               <li>
                 <a href="https://www.stepchange.org" target="_blank" rel="noopener noreferrer">
                   StepChange Debt Charity
-                  <span class="sr-only">(opens in a new tab)</span>
+                  <span class="sr-only">(opens in new tab)</span>
                 </a>
               </li>
               <li>
                 <a href="https://www.nationaldebtline.org" target="_blank" rel="noopener noreferrer">
                   National Debtline
-                  <span class="sr-only">(opens in a new tab)</span>
+                  <span class="sr-only">(opens in new tab)</span>
                 </a>
               </li>
               <li>
-                <a href="https://www.citizensadvice.org.uk" target="_blank" rel="noopener noreferrer">
-                  Citizens Advice
-                  <span class="sr-only">(opens in a new tab)</span>
+                <a
+                  href="https://www.citizensadvice.org.uk"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Citizens Advice (England &amp; Wales)
+                  <span class="sr-only">(opens in new tab)</span>
                 </a>
               </li>
               <li>
@@ -65,14 +70,16 @@ const description =
                   rel="noopener noreferrer"
                 >
                   MoneyHelper (Government-backed)
-                  <span class="sr-only">(opens in a new tab)</span>
+                  <span class="sr-only">(opens in new tab)</span>
                 </a>
               </li>
             </ul>
           </article>
 
-          <!-- Scotland -->
-          <article class="rounded-xl bg-white border border-neutral-border p-4 space-y-2 shadow-sm">
+          <article
+            class="rounded-xl bg-white border border-neutral-border p-4 space-y-2 shadow-sm"
+            aria-label="Free debt advice in Scotland"
+          >
             <h3 class="text-lg font-semibold text-dark-text">
               Scotland
             </h3>
@@ -84,7 +91,7 @@ const description =
                   rel="noopener noreferrer"
                 >
                   National Debtline Scotland
-                  <span class="sr-only">(opens in a new tab)</span>
+                  <span class="sr-only">(opens in new tab)</span>
                 </a>
               </li>
               <li>
@@ -94,7 +101,7 @@ const description =
                   rel="noopener noreferrer"
                 >
                   Citizens Advice Scotland
-                  <span class="sr-only">(opens in a new tab)</span>
+                  <span class="sr-only">(opens in new tab)</span>
                 </a>
               </li>
               <li>
@@ -104,14 +111,16 @@ const description =
                   rel="noopener noreferrer"
                 >
                   MoneyHelper
-                  <span class="sr-only">(opens in a new tab)</span>
+                  <span class="sr-only">(opens in new tab)</span>
                 </a>
               </li>
             </ul>
           </article>
 
-          <!-- Northern Ireland -->
-          <article class="rounded-xl bg-white border border-neutral-border p-4 space-y-2 shadow-sm">
+          <article
+            class="rounded-xl bg-white border border-neutral-border p-4 space-y-2 shadow-sm"
+            aria-label="Free debt advice in Northern Ireland"
+          >
             <h3 class="text-lg font-semibold text-dark-text">
               Northern Ireland
             </h3>
@@ -119,7 +128,7 @@ const description =
               <li>
                 <a href="https://www.adviceni.net" target="_blank" rel="noopener noreferrer">
                   Advice NI
-                  <span class="sr-only">(opens in a new tab)</span>
+                  <span class="sr-only">(opens in new tab)</span>
                 </a>
               </li>
               <li>
@@ -128,8 +137,8 @@ const description =
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Citizens Advice
-                  <span class="sr-only">(opens in a new tab)</span>
+                  Citizens Advice (NI)
+                  <span class="sr-only">(opens in new tab)</span>
                 </a>
               </li>
               <li>
@@ -139,7 +148,7 @@ const description =
                   rel="noopener noreferrer"
                 >
                   MoneyHelper
-                  <span class="sr-only">(opens in a new tab)</span>
+                  <span class="sr-only">(opens in new tab)</span>
                 </a>
               </li>
             </ul>
@@ -147,78 +156,47 @@ const description =
         </div>
       </section>
 
-      <!-- Official guidance -->
-      <section aria-labelledby="official-guidance-heading" class="space-y-3">
-        <h2 id="official-guidance-heading">
-          Official money guidance
-        </h2>
-        <p class="text-sm text-slate-800 max-w-3xl">
-          These sites offer trusted information about money and debt. They don’t replace personal
-          advice, but they can help you understand the basics.
-        </p>
-        <ul class="text-sm text-slate-800 space-y-1">
-          <li>
-            <a
-              href="https://www.moneyhelper.org.uk"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              MoneyHelper
-              <span class="sr-only">(opens in a new tab)</span>
-            </a> – Government-backed information on money and debt.
-          </li>
-          <li>
-            <a
-              href="https://www.gov.uk/browse/benefits"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              GOV.UK
-              <span class="sr-only">(opens in a new tab)</span>
-            </a> – official information on benefits and more.
-          </li>
-        </ul>
-      </section>
-
-      <!-- Mental health -->
       <section aria-labelledby="mental-health-heading" class="space-y-4">
         <h2 id="mental-health-heading">
           Mental health support
         </h2>
         <p class="text-sm text-slate-800 max-w-3xl">
-          Debt and money worries can seriously affect your mental health. It’s completely valid to
-          seek help for how you feel, not just for the numbers on a statement.
+          Worrying about money can severely impact mental health. The organisations below offer free,
+          confidential mental health support, no matter what your financial situation is.
         </p>
 
         <div class="grid gap-6 md:grid-cols-2">
-          <article class="rounded-xl bg-white border border-neutral-border p-4 space-y-2 shadow-sm">
+          <article
+            class="rounded-xl bg-white border border-neutral-border p-4 space-y-2 shadow-sm"
+            aria-label="Free mental health support services"
+          >
             <h3 class="text-base font-semibold text-dark-text">
-              National and UK-wide support
+              Immediate support
             </h3>
             <ul class="text-sm text-slate-800 space-y-1">
               <li>
                 <a href="https://www.samaritans.org" target="_blank" rel="noopener noreferrer">
-                  Samaritans
-                  <span class="sr-only">(opens in a new tab)</span>
-                </a> – 24/7 listening support.
+                  Samaritans – 24/7 listening support.
+                  <span class="sr-only">(opens in new tab)</span>
+                </a>
               </li>
               <li>
                 <a href="https://www.mind.org.uk" target="_blank" rel="noopener noreferrer">
-                  Mind
-                  <span class="sr-only">(opens in a new tab)</span>
-                </a> – information and support for mental health.
+                  Mind – information and support for mental health.
+                  <span class="sr-only">(opens in new tab)</span>
+                </a>
               </li>
               <li>
                 <a href="https://www.thecalmzone.net" target="_blank" rel="noopener noreferrer">
-                  CALM (Campaign Against Living Miserably)
-                  <span class="sr-only">(opens in a new tab)</span>
-                </a> – support for people feeling low or struggling.
+                  CALM (Campaign Against Living Miserably) – support for people feeling low or struggling.
+                  <span class="sr-only">(opens in new tab)</span>
+                </a>
               </li>
               <li>
                 <a href="https://andysmanclub.co.uk" target="_blank" rel="noopener noreferrer">
-                  Andy’s Man Club
-                  <span class="sr-only">(opens in a new tab)</span>
-                </a> – free peer support groups for men.
+                  Andy’s Man Club – free peer support groups for men.
+                  <span class="sr-only">(opens in new tab)</span>
+                </a>
               </li>
             </ul>
           </article>

@@ -20,21 +20,24 @@
 }
 
 /* Utility-style helpers for the primary palette */
+
+/* NOTE: .text-primary-50 through .text-primary-300 have been removed 
+   because they fail WCAG contrast checks on light backgrounds. 
+   These colors should only be used for backgrounds or borders. */
+
 .bg-primary-50 { background-color: var(--color-primary-50); }
-.text-primary-50 { color: var(--color-primary-50); }
 .border-primary-50 { border-color: var(--color-primary-50); }
 .bg-primary-100 { background-color: var(--color-primary-100); }
-.text-primary-100 { color: var(--color-primary-100); }
 .border-primary-100 { border-color: var(--color-primary-100); }
 .bg-primary-200 { background-color: var(--color-primary-200); }
-.text-primary-200 { color: var(--color-primary-200); }
 .border-primary-200 { border-color: var(--color-primary-200); }
 .bg-primary-300 { background-color: var(--color-primary-300); }
-.text-primary-300 { color: var(--color-primary-300); }
 .border-primary-300 { border-color: var(--color-primary-300); }
+
 .bg-primary-400 { background-color: var(--color-primary-400); }
-.text-primary-400 { color: var(--color-primary-400); }
+.text-primary-400 { color: var(--color-primary-400); } /* Compliant on light backgrounds */
 .border-primary-400 { border-color: var(--color-primary-400); }
+
 .bg-primary-500 { background-color: var(--color-primary-500); }
 .text-primary-500 { color: var(--color-primary-500); }
 .border-primary-500 { border-color: var(--color-primary-500); }
@@ -135,6 +138,19 @@
     @apply no-underline;
     color: var(--color-primary-600);
   }
+
+  /* MUST HAVE: Utility for hiding content visually, but keeping it for screen readers */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
 }
 
 /* ---------- COMPONENTS: BUTTONS ---------- */
@@ -149,8 +165,9 @@
   }
 
   .btn-primary:focus-visible {
+    /* SHOULD HAVE: Changed to use opaque color for better contrast compliance */
     @apply outline-none ring-4;
-    --tw-ring-color: rgba(20, 74, 143, 0.5); /* primary-700/50 */
+    --tw-ring-color: var(--color-primary-700); 
   }
 
   .btn-secondary {
@@ -164,7 +181,8 @@
   }
 
   .btn-secondary:focus-visible {
+    /* SHOULD HAVE: Changed to use opaque color for better contrast compliance */
     @apply outline-none ring-4;
-    --tw-ring-color: rgba(20, 74, 143, 0.5); /* primary-700/50 */
+    --tw-ring-color: var(--color-primary-700);
   }
 }
