@@ -3,7 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 const title = "Organisations and resources we signpost to";
 const description =
-  "A curated list of trusted organisations for debt advice, money guidance, mental health and safety support across the UK.";
+  "A curated list of trusted organisations for debt advice, money guidance, mental health, housing, energy and safety support across the UK.";
 const canonicalUrl = "https://www.nationaldebtservice.co.uk/resources";
 
 const lastReviewed = "1 December 2025";
@@ -44,18 +44,18 @@ const sections = [
           "Free, face-to-face and phone-based debt help and money coaching delivered through local community groups and churches.",
       },
       {
-        name: "Citizens Advice",
-        url: "https://www.citizensadvice.org.uk",
-        covers: "England, Wales, Scotland, Northern Ireland (via local bureaux)",
+        name: "Citizens Advice – Debt and money",
+        url: "https://www.citizensadvice.org.uk/debt-and-money",
+        covers: "England, Wales, Scotland, Northern Ireland (online content and local offices)",
         notes:
           "Independent advice on debts, benefits, work, housing and more. Many branches offer in-person, phone and online support.",
       },
       {
-        name: "MoneyHelper – debt and money troubles",
+        name: "MoneyHelper – dealing with debt",
         url: "https://www.moneyhelper.org.uk/en/money-troubles/dealing-with-debt",
         covers: "United Kingdom",
         notes:
-          "Government-backed guidance on dealing with debt, including tools and signposting to free debt advice services in your country.",
+          "Government-backed guidance on dealing with debt, including tools and signposting to free debt advice services in your country of the UK.",
       },
       {
         name: "Advice NI",
@@ -78,6 +78,20 @@ const sections = [
         notes:
           "Free debt advice provider offering phone and online support and a range of debt solutions. Check their site for full details.",
       },
+      {
+        name: "Money Advice Scotland",
+        url: "https://www.moneyadvicescotland.org.uk",
+        covers: "Scotland",
+        notes:
+          "National charity for debt and money advice in Scotland, providing tools, training and signposting to local support.",
+      },
+      {
+        name: "Debt Advice Foundation",
+        url: "https://www.debtadvicefoundation.org",
+        covers: "United Kingdom",
+        notes:
+          "Charity offering free, confidential debt advice by phone and online. Focused on education and practical support.",
+      },
     ],
   },
   {
@@ -91,14 +105,14 @@ const sections = [
         url: "https://www.turn2us.org.uk",
         covers: "United Kingdom",
         notes:
-          "Charity that helps people find benefits, grants and other financial support. Includes a benefits calculator and grant search.",
+          "Charity that helps people find benefits, grants and other financial support. Includes a benefits calculator and a grants search tool.",
       },
       {
-        name: "MoneyHelper – benefits and money guidance",
+        name: "MoneyHelper – benefits",
         url: "https://www.moneyhelper.org.uk/en/benefits",
         covers: "United Kingdom",
         notes:
-          "Government-backed guidance on benefits, dealing with money worries and planning ahead.",
+          "Government-backed guidance on benefits, dealing with money worries and planning ahead, with clear explanations and tools.",
       },
       {
         name: "GOV.UK – Get free debt advice",
@@ -106,6 +120,13 @@ const sections = [
         covers: "United Kingdom (signposting)",
         notes:
           "Official government page that lists recognised free debt advice providers and explains how to get help.",
+      },
+      {
+        name: "entitledto – benefits calculator",
+        url: "https://www.entitledto.co.uk",
+        covers: "United Kingdom",
+        notes:
+          "Independent benefits calculator to estimate what you might be able to claim, based on your circumstances.",
       },
     ],
   },
@@ -196,6 +217,85 @@ const sections = [
     ],
   },
   {
+    id: "housing-energy-essentials",
+    title: "Housing, energy and essentials",
+    description:
+      "If you are worried about rent, eviction, homelessness or the cost of heating and powering your home, these organisations focus on housing rights and energy support.",
+    items: [
+      {
+        name: "Shelter",
+        url: "https://www.shelter.org.uk",
+        covers: "England, Scotland, Wales (with some services across the UK)",
+        notes:
+          "Housing and homelessness charity. Helps with homelessness, eviction, bad housing conditions, rent arrears and mortgage problems.",
+      },
+      {
+        name: "Shelter – housing advice",
+        url: "https://england.shelter.org.uk/housing_advice",
+        covers: "England (online advice), links to Scotland and Wales sites",
+        notes:
+          "Online housing advice on homelessness, renting, eviction, mortgage arrears, benefits, debts and more.",
+      },
+      {
+        name: "National Energy Action (NEA)",
+        url: "https://www.nea.org.uk",
+        covers: "England, Wales, Northern Ireland",
+        notes:
+          "Charity working to end fuel poverty, offering energy advice and information about schemes to help with energy bills.",
+      },
+      {
+        name: "Turn2us – Cost of living and energy help",
+        url: "https://www.turn2us.org.uk/get-support/information-for-your-situation/cost-of-living",
+        covers: "United Kingdom",
+        notes:
+          "Information about help with energy and water bills, charitable grants and wider cost of living support.",
+      },
+      {
+        name: "The Trussell Trust",
+        url: "https://www.trusselltrust.org",
+        covers: "United Kingdom",
+        notes:
+          "Network of food banks across the UK. Offers emergency food and practical support, often alongside signposting to local advice.",
+      },
+    ],
+  },
+  {
+    id: "disability-and-money",
+    title: "Disability, health and money",
+    description:
+      "Disabled people, people with long-term conditions and carers often face extra costs. These organisations focus on disability-related money support, benefits and grants.",
+    items: [
+      {
+        name: "Scope – money and finances",
+        url: "https://www.scope.org.uk/advice-and-support/money-and-finances",
+        covers: "England, Wales, Scotland, Northern Ireland (online content)",
+        notes:
+          "Disability charity with advice on benefits, extra costs, budgeting and managing money if you are disabled or supporting someone who is.",
+      },
+      {
+        name: "Scope – grants and funding information",
+        url: "https://www.scope.org.uk/advice-and-support/finding-applying-funds-grants",
+        covers: "United Kingdom",
+        notes:
+          "Guidance on finding and applying for grants if you are disabled or care for a disabled person, including links to grant search tools.",
+      },
+      {
+        name: "Disability Grants",
+        url: "https://www.disability-grants.org",
+        covers: "United Kingdom",
+        notes:
+          "Independent website gathering information on charities and trusts that give grants to disabled people and their families.",
+      },
+      {
+        name: "Lightning Reach",
+        url: "https://www.lightningreach.org",
+        covers: "United Kingdom",
+        notes:
+          "Platform that helps people find and apply for financial support such as grants, based on their situation and location.",
+      },
+    ],
+  },
+  {
     id: "money-guides",
     title: "Money information and practical tools",
     description:
@@ -213,14 +313,14 @@ const sections = [
         url: "https://www.gov.uk/browse/tax",
         covers: "United Kingdom",
         notes:
-          "Official government information on tax, benefits, allowances and related money topics.",
+          "Official government information on tax, benefits, allowances and related money and tax topics.",
       },
       {
-        name: "Citizens Advice – Debt and money",
-        url: "https://www.citizensadvice.org.uk/debt-and-money",
-        covers: "England, Wales, Scotland, Northern Ireland (online content)",
+        name: "MoneyHelper – everyday money",
+        url: "https://www.moneyhelper.org.uk/en/everyday-money",
+        covers: "United Kingdom",
         notes:
-          "Practical guides on dealing with debts, bailiffs, court action, bills and budgeting, with links to local advice.",
+          "Government-backed guidance on everyday money, including budgeting, banking, borrowing and saving.",
       },
     ],
   },
@@ -230,25 +330,53 @@ const sections = [
 <BaseLayout {title} {description} {canonicalUrl}>
   <main id="main-content" class="bg-primary-50 min-h-screen">
     <section class="mx-auto max-w-6xl px-4 py-10 sm:py-14 space-y-8">
-      <header class="space-y-3 max-w-3xl">
-        <p class="text-sm font-semibold text-primary-700 uppercase tracking-wide">
-          Resources
-        </p>
-        <h1>Organisations and resources we signpost to</h1>
-        <p class="text-base text-slate-800 leading-relaxed">
-          This page pulls together some of the main organisations and websites we link to around the
-          site. They offer help with debt, money, mental health and safety. Use them to find the
-          right kind of support for your situation.
-        </p>
-        <p class="text-sm text-slate-800 leading-relaxed">
-          We’re independent and not part of any of these organisations. We don’t earn commission or
-          referral fees if you choose to contact them.
-        </p>
-        <p class="text-xs text-slate-600">
-          Version 1.1.0 &middot; Last reviewed: {lastReviewed}
-        </p>
-      </header>
+      {/* Intro + Table of contents */}
+      <div class="grid gap-6 md:grid-cols-3 items-start">
+        <header class="space-y-3 max-w-3xl md:col-span-2">
+          <p class="text-sm font-semibold text-primary-700 uppercase tracking-wide">
+            Resources
+          </p>
+          <h1>Organisations and resources we signpost to</h1>
+          <p class="text-base text-slate-800 leading-relaxed">
+            This page pulls together some of the main organisations and websites we link to around the
+            site. They offer help with debt, money, housing, energy, mental health and safety. Use
+            them to find the right kind of support for your situation.
+          </p>
+          <p class="text-sm text-slate-800 leading-relaxed">
+            We’re independent and not part of any of these organisations. We don’t earn commission or
+            referral fees if you choose to contact them.
+          </p>
+          <p class="text-xs text-slate-600">
+            Version 1.2.0 &middot; Last reviewed: {lastReviewed}
+          </p>
+        </header>
 
+        <nav
+          class="rounded-xl border border-slate-200 bg-white p-4 sm:p-5 space-y-3 md:sticky md:top-24"
+          aria-label="Resources sections"
+        >
+          <h2 class="text-sm font-semibold text-slate-900">
+            Jump to a section
+          </h2>
+          <p class="text-xs text-slate-700">
+            Use these links to go straight to the type of help you&apos;re looking for.
+          </p>
+          <ul class="mt-2 space-y-1 text-sm">
+            {sections.map((section) => (
+              <li>
+                <a
+                  href={`#${section.id}`}
+                  class="block rounded-md px-2 py-1 text-slate-800 hover:text-primary-700 hover:bg-primary-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+                >
+                  {section.title}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </div>
+
+      {/* How we choose orgs */}
       <section class="rounded-xl border border-slate-200 bg-white p-4 sm:p-5 space-y-3">
         <h2 class="text-base font-semibold text-slate-900">
           How we choose organisations to list here
@@ -258,7 +386,7 @@ const sections = [
         </p>
         <ul class="list-disc pl-5 text-sm text-slate-800 leading-relaxed space-y-1">
           <li>are free to contact for help or information</li>
-          <li>have a clear role in debt, money, mental health or safety support</li>
+          <li>have a clear role in debt, money, housing, mental health or safety support</li>
           <li>explain who they help and which country or countries of the UK they cover</li>
           <li>have a track record, official status or widely recognised role</li>
         </ul>
@@ -269,8 +397,9 @@ const sections = [
         </p>
       </section>
 
+      {/* Sections */}
       {sections.map((section) => (
-        <section id={section.id} class="space-y-4">
+        <section id={section.id} class="space-y-4 scroll-mt-24">
           <header class="space-y-2 max-w-3xl">
             <h2 class="text-xl font-semibold text-slate-900">{section.title}</h2>
             <p class="text-sm text-slate-800 leading-relaxed">
@@ -303,6 +432,7 @@ const sections = [
         </section>
       ))}
 
+      {/* Suggest a service */}
       <section class="space-y-3 max-w-3xl">
         <h2 class="text-base font-semibold text-slate-900">
           Suggest a service or update
@@ -329,7 +459,7 @@ const sections = [
           "@type": "ItemList",
           name: "Organisations and resources we signpost to",
           description:
-            "A curated list of trusted organisations for debt advice, money guidance, mental health and safety support across the UK.",
+            "A curated list of trusted organisations for debt advice, money guidance, mental health, housing, energy and safety support across the UK.",
           itemListElement: sections.flatMap((section, sectionIndex) =>
             section.items.map((item, index) => ({
               "@type": "ListItem",
