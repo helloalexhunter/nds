@@ -4,9 +4,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 const title = "Contact National Debt Service";
 const description =
   "Contact National Debt Service about the website itself. We can’t give debt advice, but you can share feedback or flag problems with the site.";
-
-const { searchParams } = Astro.url;
-const status = searchParams.get("status");
 ---
 
 <BaseLayout {title} {description}>
@@ -23,30 +20,28 @@ const status = searchParams.get("status");
         </p>
       </header>
 
-      <!-- Status messages -->
-      {status === "success" && (
-        <div
-          class="rounded-md border border-green-300 bg-green-50 px-4 py-3 text-sm text-green-900 shadow-sm"
-          role="status"
-          aria-live="polite"
-        >
-          <p class="font-semibold">Message sent.</p>
-          <p>Thanks for getting in touch. If a reply is needed, we’ll respond by email.</p>
-        </div>
-      )}
+      <!-- Status messages, hidden by default and toggled by JS -->
+      <div
+        id="status-success"
+        class="hidden rounded-md border border-green-300 bg-green-50 px-4 py-3 text-sm text-green-900 shadow-sm"
+        role="status"
+        aria-live="polite"
+      >
+        <p class="font-semibold">Message sent.</p>
+        <p>Thanks for getting in touch. If a reply is needed, we’ll respond by email.</p>
+      </div>
 
-      {status === "error" && (
-        <div
-          class="rounded-md border border-red-300 bg-red-50 px-4 py-3 text-sm text-red-900 shadow-sm"
-          role="status"
-          aria-live="polite"
-        >
-          <p class="font-semibold">Something went wrong.</p>
-          <p>
-            Your message couldn’t be sent just now. Please check the form and try again later.
-          </p>
-        </div>
-      )}
+      <div
+        id="status-error"
+        class="hidden rounded-md border border-red-300 bg-red-50 px-4 py-3 text-sm text-red-900 shadow-sm"
+        role="status"
+        aria-live="polite"
+      >
+        <p class="font-semibold">Something went wrong.</p>
+        <p>
+          Your message couldn’t be sent just now. Please check the form and try again later.
+        </p>
+      </div>
 
       <section class="space-y-3">
         <h2 class="text-xl font-semibold text-slate-900">Before you get in touch</h2>
@@ -169,5 +164,20 @@ const status = searchParams.get("status");
         </form>
       </section>
     </section>
+
+    <script is:inline>
+      if (typeof window !== "undefined") {
+        const params = new URLSearchParams(window.location.search);
+        const status = params.get("status");
+        const successEl = document.getElementById("status-success");
+        const errorEl = document.getElementById("status-error");
+
+        if (status === "success" && successEl) {
+          successEl.classList.remove("hidden");
+        } else if (status === "error" && errorEl) {
+          errorEl.classList.remove("hidden");
+        }
+      }
+    </script>
   </main>
 </BaseLayout>

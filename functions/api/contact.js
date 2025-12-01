@@ -1,17 +1,16 @@
 // functions/api/contact.js
-// Minimal, no email sending yet – just redirects back with status.
 
+// GET: quick health check at /api/contact
 export async function onRequestGet() {
-  // Simple check endpoint for your browser:
-  // https://www.nationaldebtservice.co.uk/api/contact
   return new Response("Contact endpoint is alive (GET)", {
     status: 200,
     headers: { "Content-Type": "text/plain" },
   });
 }
 
+// POST: handle the contact form
 export async function onRequestPost(context) {
-  const { request } = context;
+  const { request, env } = context;
 
   try {
     const contentType = request.headers.get("content-type") || "";
@@ -31,19 +30,79 @@ export async function onRequestPost(context) {
       consent = form.get("consent") === "on";
     }
 
-    // Decide success / error, but do NOT throw
-    const ok = name && email && subject && message && consent;
+    const valid = name && email && subject && message && consent;
 
-    // Build redirect URL safely
+    // If the form is incomplete, don’t even try to send an email
+    if (!valid) {
+      const url = new URL(request.url);
+      url.pathname = "/contact";
+      url.search = "";
+      url.searchParams.set("status", "error");
+      return Response.redirect(url.toString(), 302);
+    }
+
+    const text = `
+New contact form submission:
+
+Name: ${name}
+Email: ${email}
+Subject: ${subject}
+
+Message:
+${message}
+
+Consent: ${consent ? "Yes" : "No"}
+`.trim();
+
+    const apiKey = env.RESEND_API_KEY;
+    const to = env.TO_EMAIL || "helloalexhunter@gmail.com";
+    const from =
+      env.FROM_EMAIL || "National Debt Service <contact@nationaldebtservice.co.uk>";
+
+    if (!apiKey) {
+      console.error("Missing RESEND_API_KEY in Cloudflare Pages env");
+      const url = new URL(request.url);
+      url.pathname = "/contact";
+      url.search = "";
+      url.searchParams.set("status", "error");
+      return Response.redirect(url.toString(), 302);
+    }
+
+    const resendRes = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${apiKey}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        from,
+        to,
+        subject: `NDS Contact Form: ${subject}`,
+        text,
+      }),
+    });
+
+    if (!resendRes.ok) {
+      console.error("Resend error:", await resendRes.text());
+      const url = new URL(request.url);
+      url.pathname = "/contact";
+      url.search = "";
+      url.searchParams.set("status", "error");
+      return Response.redirect(url.toString(), 302);
+    }
+
+    // All good success
     const url = new URL(request.url);
     url.pathname = "/contact";
-    url.search = ""; // clear existing query
-    url.searchParams.set("status", ok ? "success" : "error");
-
+    url.search = "";
+    url.searchParams.set("status", "success");
     return Response.redirect(url.toString(), 302);
   } catch (err) {
     console.error("Contact function error:", err);
-    // Hard-fail fallback – still redirect to error state, no 1101
-    return Response.redirect("/contact?status=error", 302);
+    const url = new URL(request.url);
+    url.pathname = "/contact";
+    url.search = "";
+    url.searchParams.set("status", "error");
+    return Response.redirect(url.toString(), 302);
   }
 }
