@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { ArrowRight, HeartHandshake, Info } from "lucide-astro";
+
 const title = "National Debt Service – simple signposting to free help";
 const description =
   "If you’re worried about debt or money in the UK, this site points you to free, regulated debt advice and mental health support. We don’t give advice or collect your details.";
@@ -8,29 +9,25 @@ const canonicalUrl = "https://www.nationaldebtservice.co.uk";
 ---
 
 <BaseLayout {title} {description} {canonicalUrl}>
-  <main id="main-content" class="bg-neutral-soft">
-    <section class="border-b border-neutral-border bg-white">
+  <main id="main-content" class="bg-primary-50">
+    <section class="border-b border-slate-200 bg-white">
       <div
         class="mx-auto max-w-6xl px-4 py-10 sm:py-14 grid gap-8 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] items-center"
       >
         <div class="space-y-4">
-          <p class="text-sm font-semibold text-trust-blue uppercase tracking-wide">
+          <p class="text-sm font-semibold text-primary-700 uppercase tracking-wide">
             Worrying about money is exhausting
           </p>
-   
-        <h1>
-            Clear signposting to free, trusted help in the UK
-          </h1>
+          <h1>Clear signposting to free, trusted help in the UK</h1>
           <p class="text-base text-slate-800 leading-relaxed">
-            If you’re stressed about debts or bills, it can be hard to think straight.
- This site
-            doesn’t try to sell you anything.
- It simply points you to free, regulated debt advice
+            If you’re stressed about debts or bills, it can be hard to think straight. This site
+            doesn’t try to sell you anything. It simply points you to free, regulated debt advice
             services and mental health support in your country.
- </p>
+          </p>
           <p class="text-sm text-slate-700">
-            We don’t give debt advice, handle your case or collect your personal information.
- </p>
+            We don’t give debt advice, handle your case or collect detailed information about your
+            debts.
+          </p>
 
           <div class="flex flex-col gap-3 sm:flex-row sm:items-center">
             <a href="/get-help" class="btn-primary inline-flex items-center gap-2">
@@ -38,62 +35,47 @@ const canonicalUrl = "https://www.nationaldebtservice.co.uk";
               <ArrowRight class="w-4 h-4" aria-hidden="true" />
             </a>
             <a href="#mental-health" class="btn-secondary inline-flex items-center gap-2">
-   
-           Mental health support
+              Mental health support
             </a>
           </div>
         </div>
 
         <aside
-          class="rounded-2xl border border-neutral-border bg-neutral-soft p-5 space-y-3 shadow-sm"
+          class="rounded-2xl border border-slate-200 bg-primary-50/60 p-5 space-y-3 shadow-sm"
           aria-label="Reassurance about debt and money worries"
-       
- >
+        >
           <div class="flex items-center gap-2">
-            <HeartHandshake class="w-5 h-5 text-trust-blue" aria-hidden="true" />
-            <h2 class="text-base font-semibold mb-0">
-              You’re not the only one
-            </h2>
+            <HeartHandshake class="w-5 h-5 text-primary-700" aria-hidden="true" />
+            <h2 class="text-base font-semibold mb-0">You’re not the only one</h2>
           </div>
           <p class="text-sm text-slate-800 leading-relaxed">
- 
-            Money problems are common and rarely just about numbers.
- People often feel ashamed,
-            stuck or alone.
- You deserve clear information and support without pressure.
+            Money problems are common and rarely just about numbers. People often feel ashamed,
+            stuck or alone. You deserve clear information and support without pressure.
           </p>
           <p class="text-xs text-slate-600">
-            If you feel overwhelmed or unsafe, it’s important to talk to someone.
- The support
-            services we link to are there for you.
- </p>
+            If you feel overwhelmed or unsafe, it’s important to talk to someone. The support
+            services we link to are there to listen and help you plan next steps.
+          </p>
         </aside>
       </div>
     </section>
 
     <section id="debt-help" class="mx-auto max-w-6xl px-4 py-10 sm:py-14 space-y-6">
       <header class="space-y-2 max-w-3xl">
-        <h2>
-          Free debt advice in the UK
-        </h2>
+        <h2>Free debt advice in the UK</h2>
         <p class="text-sm text-slate-800 leading-relaxed">
-          Debt advice 
- is organised differently across the UK. The services below are well-known,
-          free and regulated.
- They can talk through your full situation and explain your options
-          in more detail.
- </p>
+          Debt advice is organised differently across the UK. The services below are well known,
+          free and regulated. They can talk through your full situation and explain your options in
+          more detail.
+        </p>
       </header>
 
       <div class="grid gap-6 md:grid-cols-3">
         <article
-          class="rounded-xl bg-white border border-neutral-border p-4 space-y-2 shadow-sm"
+          class="rounded-xl bg-white border border-slate-200 p-4 space-y-2 shadow-sm"
           aria-label="Free debt advice in England and Wales"
         >
-          <h3 class="text-lg font-semibold text-dark-text">
-            
- England &amp; Wales
-          </h3>
+          <h3 class="text-lg font-semibold text-slate-900">England &amp; Wales</h3>
           <ul class="text-sm text-slate-800 space-y-1">
             <li>
               <a href="https://www.stepchange.org" target="_blank" rel="noopener noreferrer">
@@ -101,7 +83,6 @@ const canonicalUrl = "https://www.nationaldebtservice.co.uk";
                 <span class="sr-only">(opens in new tab)</span>
               </a>
             </li>
- 
             <li>
               <a href="https://www.nationaldebtline.org" target="_blank" rel="noopener noreferrer">
                 National Debtline
@@ -110,24 +91,21 @@ const canonicalUrl = "https://www.nationaldebtservice.co.uk";
             </li>
             <li>
               <a
-  
-               href="https://www.citizensadvice.org.uk"
+                href="https://www.citizensadvice.org.uk"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 Citizens Advice (England &amp; Wales)
                 <span class="sr-only">(opens in new tab)</span>
               </a>
-     
-        </li>
+            </li>
             <li>
               <a
                 href="https://www.moneyhelper.org.uk/en/money-troubles/dealing-with-debt"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-    
-             MoneyHelper (Government-backed)
+                MoneyHelper (government-backed)
                 <span class="sr-only">(opens in new tab)</span>
               </a>
             </li>
@@ -135,18 +113,14 @@ const canonicalUrl = "https://www.nationaldebtservice.co.uk";
         </article>
 
         <article
-          class="rounded-xl bg-white border border-neutral-border p-4 space-y-2 shadow-sm"
-         
-  aria-label="Free debt advice in Scotland"
+          class="rounded-xl bg-white border border-slate-200 p-4 space-y-2 shadow-sm"
+          aria-label="Free debt advice in Scotland"
         >
-          <h3 class="text-lg font-semibold text-dark-text">
-            Scotland
-          </h3>
+          <h3 class="text-lg font-semibold text-slate-900">Scotland</h3>
           <ul class="text-sm text-slate-800 space-y-1">
             <li>
               <a
-             
-    href="https://www.nationaldebtline.org/scotland"
+                href="https://www.nationaldebtline.org/scotland"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -154,15 +128,13 @@ const canonicalUrl = "https://www.nationaldebtservice.co.uk";
                 <span class="sr-only">(opens in new tab)</span>
               </a>
             </li>
-      
             <li>
               <a
                 href="https://www.citizensadvice.org.uk/scotland"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Citizens 
- Advice Scotland
+                Citizens Advice Scotland
                 <span class="sr-only">(opens in new tab)</span>
               </a>
             </li>
@@ -170,8 +142,7 @@ const canonicalUrl = "https://www.nationaldebtservice.co.uk";
               <a
                 href="https://www.moneyhelper.org.uk/en/money-troubles/dealing-with-debt"
                 target="_blank"
-               
-  rel="noopener noreferrer"
+                rel="noopener noreferrer"
               >
                 MoneyHelper
                 <span class="sr-only">(opens in new tab)</span>
@@ -181,17 +152,13 @@ const canonicalUrl = "https://www.nationaldebtservice.co.uk";
         </article>
 
         <article
-     
-      class="rounded-xl bg-white border border-neutral-border p-4 space-y-2 shadow-sm"
+          class="rounded-xl bg-white border border-slate-200 p-4 space-y-2 shadow-sm"
           aria-label="Free debt advice in Northern Ireland"
         >
-          <h3 class="text-lg font-semibold text-dark-text">
-            Northern Ireland
-          </h3>
+          <h3 class="text-lg font-semibold text-slate-900">Northern Ireland</h3>
           <ul class="text-sm text-slate-800 space-y-1">
             <li>
-     
-          <a href="https://www.adviceni.net" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.adviceni.net" target="_blank" rel="noopener noreferrer">
                 Advice NI
                 <span class="sr-only">(opens in new tab)</span>
               </a>
@@ -199,16 +166,14 @@ const canonicalUrl = "https://www.nationaldebtservice.co.uk";
             <li>
               <a
                 href="https://www.citizensadvice.org.uk/about-us/our-work/advice/"
-  
-               target="_blank"
+                target="_blank"
                 rel="noopener noreferrer"
               >
                 Citizens Advice (NI)
                 <span class="sr-only">(opens in new tab)</span>
               </a>
             </li>
-           
-  <li>
+            <li>
               <a
                 href="https://www.moneyhelper.org.uk/en/money-troubles/dealing-with-debt"
                 target="_blank"
@@ -216,48 +181,42 @@ const canonicalUrl = "https://www.nationaldebtservice.co.uk";
               >
                 MoneyHelper
                 <span class="sr-only">(opens in new tab)</span>
-      
-         </a>
+              </a>
             </li>
           </ul>
         </article>
       </div>
 
       <div class="mt-4">
-        <a href="/get-help"
-            class="btn-secondary inline-flex items-center gap-2"
-            aria-label="See full list of free debt and mental health support services">
-   
-        See full list of support
+        <a
+          href="/get-help"
+          class="btn-secondary inline-flex items-center gap-2"
+          aria-label="See full list of free debt and mental health support services"
+        >
+          See full list of support
           <ArrowRight class="w-4 h-4" aria-hidden="true" />
         </a>
       </div>
     </section>
 
-    <section id="mental-health" class="border-t border-neutral-border bg-white">
+    <section id="mental-health" class="border-t border-slate-200 bg-white">
       <div class="mx-auto max-w-6xl px-4 py-10 sm:py-14 space-y-6">
         <header class="space-y-2 max-w-3xl">
-          <h2>
-         
-    Money and mental health
-          </h2>
+          <h2>Money and mental health</h2>
           <p class="text-sm text-slate-800 leading-relaxed">
             Worrying about money can affect sleep, mood, relationships and your sense of control.
- You don’t have to wait until things feel “bad enough” to reach out for support.
- </p>
+            You don’t have to wait until things feel “bad enough” to reach out for support.
+          </p>
         </header>
 
         <div class="grid gap-6 md:grid-cols-2">
           <article
-            class="rounded-xl border border-neutral-border bg-neutral-soft p-5 space-y-2"
+            class="rounded-xl border border-slate-200 bg-primary-50/60 p-5 space-y-2"
             aria-label="Free mental health support"
           >
             <div class="flex items-center gap-2">
-              
- <Info class="w-5 h-5 text-trust-blue" aria-hidden="true" />
-              <h3 class="text-base font-semibold mb-0">
-                Free mental health support
-              </h3>
+              <Info class="w-5 h-5 text-primary-700" aria-hidden="true" />
+              <h3 class="text-base font-semibold mb-0">Free mental health support</h3>
             </div>
             <ul class="mt-2 text-sm text-slate-800 space-y-1">
               <li>
@@ -274,7 +233,8 @@ const canonicalUrl = "https://www.nationaldebtservice.co.uk";
               </li>
               <li>
                 <a href="https://www.thecalmzone.net" target="_blank" rel="noopener noreferrer">
-                  CALM (Campaign Against Living Miserably) – support for people feeling low or struggling.
+                  CALM (Campaign Against Living Miserably) – support for people feeling low or
+                  struggling.
                   <span class="sr-only">(opens in new tab)</span>
                 </a>
               </li>
@@ -288,36 +248,130 @@ const canonicalUrl = "https://www.nationaldebtservice.co.uk";
           </article>
 
           <article
-            class="rounded-xl border border-neutral-border bg-neutral-soft p-5 space-y-2"
+            class="rounded-xl border border-slate-200 bg-primary-50/60 p-5 space-y-2"
             aria-label="NHS and GP mental health support"
           >
-            <h3 class="text-base font-semibold">
-          
-    Your GP and NHS services
-            </h3>
+            <h3 class="text-base font-semibold">Your GP and NHS services</h3>
             <p class="text-sm text-slate-800 leading-relaxed">
               If you’re worried about your mental health, you can speak to your GP or, in an
-              emergency, use NHS services in your area.
- They can talk through options like talking
+              emergency, use NHS services in your area. They can talk through options like talking
               therapies, crisis lines or local support.
- </p>
+            </p>
             <p class="text-xs text-slate-700">
               If you feel at immediate risk of harm, treat it as an emergency and use local
               emergency services.
- </p>
+            </p>
           </article>
         </div>
+      </div>
+    </section>
+
+    <section
+      id="site-faq"
+      class="border-t border-slate-200 bg-white"
+      aria-labelledby="site-faq-heading"
+    >
+      <div class="mx-auto max-w-6xl px-4 py-10 sm:py-14 space-y-6">
+        <header class="space-y-2 max-w-3xl">
+          <h2 id="site-faq-heading">Quick questions about this site</h2>
+          <p class="text-sm text-slate-800 leading-relaxed">
+            A few short answers to help you understand who runs this site, what it does and what it
+            doesn’t do.
+          </p>
+        </header>
+
+        <div class="grid gap-6 md:grid-cols-3">
+          <article class="rounded-xl border border-slate-200 bg-primary-50/60 p-4 space-y-2">
+            <h3 class="text-base font-semibold text-slate-900">
+              Is this a debt advice service?
+            </h3>
+            <p class="text-sm text-slate-800 leading-relaxed">
+              No. This site doesn’t give personal debt advice or manage cases. It only signposts you
+              to free, regulated organisations that can help.
+            </p>
+          </article>
+
+          <article class="rounded-xl border border-slate-200 bg-primary-50/60 p-4 space-y-2">
+            <h3 class="text-base font-semibold text-slate-900">
+              Do you earn money from this?
+            </h3>
+            <p class="text-sm text-slate-800 leading-relaxed">
+              No. We don’t earn commission, referral fees or advertising income if you use any of
+              the links on this site.
+            </p>
+          </article>
+
+          <article class="rounded-xl border border-slate-200 bg-primary-50/60 p-4 space-y-2">
+            <h3 class="text-base font-semibold text-slate-900">
+              Why is there a notice at the top?
+            </h3>
+            <p class="text-sm text-slate-800 leading-relaxed">
+              The domain used to be run by a different organisation that was reprimanded by the
+              Advertising Standards Authority (ASA). The site is now under new, independent
+              ownership with a different purpose.
+            </p>
+          </article>
+        </div>
+
+        <p class="text-xs text-slate-700">
+          For more detail, see the <a href="/about">About</a> and{" "}
+          <a href="/faq">Frequently asked questions</a> pages.
+        </p>
+      </div>
+    </section>
+
+    <section class="border-t border-slate-200 bg-primary-50">
+      <div class="mx-auto max-w-6xl px-4 py-6 flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
+        <p class="text-xs text-slate-700">
+          Version 2.4.1
+        </p>
+        <p class="text-xs text-slate-700">
+          Last reviewed: 1 December 2025
+        </p>
       </div>
     </section>
 
     <script type="application/ld+json" is:inline>
       {JSON.stringify({
         "@context": "https://schema.org",
-        "@type": "WebSite",
-        name: "National Debt Service",
-        url: "https://www.nationaldebtservice.co.uk",
-        description:
-          "National Debt Service is a simple, independent signposting site helping people find free, trusted debt and mental health support across the UK.",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            name: "National Debt Service",
+            url: "https://www.nationaldebtservice.co.uk",
+            description:
+              "National Debt Service is a simple, independent signposting site helping people find free, trusted debt and mental health support across the UK.",
+          },
+          {
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "Is this a debt advice service?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "No. National Debt Service does not provide personal debt advice or manage individual cases. It signposts visitors to free, regulated organisations in the UK.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Do you earn money from this site?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "No. The site does not earn commission, referral fees or advertising income if visitors use the links provided.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Why is there a notice at the top of the page?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "The notice explains that the domain nationaldebtservice.co.uk was previously run by a different organisation that was reprimanded by the Advertising Standards Authority (ASA). The current site is under new, independent ownership.",
+                },
+              },
+            ],
+          },
+        ],
       })}
     </script>
   </main>

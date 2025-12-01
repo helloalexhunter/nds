@@ -49,6 +49,13 @@ const isCurrent = (path: string) =>
         Where to get help
       </a>
       <a
+        href="/resources"
+        class="text-slate-700 hover:text-primary-800"
+        aria-current={isCurrent("/resources") ? "page" : undefined}
+      >
+        Resources
+      </a>
+      <a
         href="/about"
         class="text-slate-700 hover:text-primary-800"
         aria-current={isCurrent("/about") ? "page" : undefined}

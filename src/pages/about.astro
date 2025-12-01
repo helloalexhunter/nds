@@ -3,79 +3,143 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 const title = "About National Debt Service";
 const description =
-  "Learn what National Debt Service is, what it is not, and how we signpost to free, regulated support without collecting your details.";
+  "Find out who runs National Debt Service, what changed with this domain, and how we signpost to free, trusted support without collecting your details.";
+const canonicalUrl = "https://www.nationaldebtservice.co.uk/about";
 ---
 
-<BaseLayout {title} {description}>
-  <main id="main-content" class="bg-neutral-soft min-h-screen">
+<BaseLayout {title} {description} {canonicalUrl}>
+  <main id="main-content" class="bg-primary-50 min-h-screen">
     <section class="mx-auto max-w-6xl px-4 py-10 sm:py-14 space-y-8">
       <header class="space-y-3 max-w-3xl">
-        <p class="text-sm font-semibold text-trust-blue uppercase tracking-wide">
+        <p class="text-sm font-semibold text-primary-700 uppercase tracking-wide">
           About this site
         </p>
         <h1>What National Debt Service is here to do</h1>
         <p class="text-base text-slate-800 leading-relaxed">
-          National Debt Service is a small, independent website. It exists to signpost people in the
-          UK to free, regulated debt advice and mental health support. That’s it. We don’t sell
-          products, handle your case or share your details with anyone.
+          National Debt Service is a small, independent website. It exists to point people in the UK
+          to free, trusted debt advice and mental health support. We don’t sell products, handle
+          your case or pass your details to anyone.
+        </p>
+        <p class="text-xs text-slate-600">
+          Version 1.0.2 &middot; Last reviewed: 1 December 2025
         </p>
       </header>
 
       <section class="space-y-3 max-w-3xl">
-        <h2>A place to start, not a service in itself</h2>
+        <h2>Who runs this site</h2>
         <p class="text-sm text-slate-800 leading-relaxed">
-          When money worries build up, it can be hard to know where to begin. There are lots of
-          websites and adverts saying they can “wipe out debt” or “write off 80% of what you owe”.
-          It’s easy to feel pushed into things when you’re already under pressure.
-        </p>
-        <p class="text-sm text-slate-800 leading-relaxed">
-          This site takes a different approach. We don’t try to persuade you to choose any
-          particular route. Instead, we point you towards free, regulated organisations and trusted
-          sources of information in your country, so you can speak to people whose job it is to
-          help.
+          The site is run independently by a single owner. There are no links to debt management
+          companies, lead generators, marketing agencies or claims firms. The aim is simple: give
+          you a clear starting point without sales pressure.
         </p>
       </section>
 
       <section class="space-y-3 max-w-3xl">
-        <h2>What we don’t do</h2>
+        <h2>What changed with this domain</h2>
+        <p class="text-sm text-slate-800 leading-relaxed">
+          In the past, this domain was used by a different organisation. They were reprimanded by
+          the Advertising Standards Authority (ASA) for misleading people who were searching for
+          debt help.
+        </p>
+        <p class="text-sm text-slate-800 leading-relaxed">
+          We are <strong>not connected</strong> to that organisation. The domain changed ownership
+          after the ASA ruling. This version of National Debt Service is run with a completely
+          different purpose and ethos.
+        </p>
+        <p class="text-sm text-slate-800 leading-relaxed">
+          We use a clear banner at the top of the site to explain this history so you can see at a
+          glance that things are different now.
+        </p>
+      </section>
+
+      <section class="space-y-3 max-w-3xl">
+        <h2>What this site is for</h2>
+        <p class="text-sm text-slate-800 leading-relaxed">
+          When money worries build up, it can be hard to know where to start. There are lots of
+          websites and adverts promising to “write off” debts or “wipe the slate clean”. That noise
+          can make it harder to think straight.
+        </p>
+        <p class="text-sm text-slate-800 leading-relaxed">
+          This site takes a calmer approach. It:
+        </p>
         <ul class="text-sm text-slate-800 leading-relaxed list-disc pl-5 space-y-1">
-          <li>We don’t give debt advice or financial advice.</li>
-          <li>We don’t tell you what solution you should choose.</li>
-          <li>We don’t arrange IVAs, DMPs, DROs, Trust Deeds, sequestration or any other product.</li>
-          <li>We don’t collect your personal details through forms on this site.</li>
-          <li>We don’t sell your information or pass it to third parties.</li>
+          <li>uses plain English to explain common situations</li>
+          <li>signposts to official and charity services in your country</li>
+          <li>lists well-known, free and regulated debt advice organisations</li>
+          <li>highlights mental health and crisis support alongside money help</li>
+        </ul>
+        <p class="text-sm text-slate-800 leading-relaxed">
+          You stay in control. You choose who to contact and when.
+        </p>
+      </section>
+
+      <section class="space-y-3 max-w-3xl">
+        <h2>What this site does not do</h2>
+        <p class="text-sm text-slate-800 leading-relaxed">
+          To be clear about boundaries, this site does <strong>not</strong>:
+        </p>
+        <ul class="text-sm text-slate-800 leading-relaxed list-disc pl-5 space-y-1">
+          <li>give personal debt advice or financial advice</li>
+          <li>tell you which solution you should choose</li>
+          <li>arrange IVAs, DMPs, DROs, Trust Deeds, sequestration or any other product</li>
+          <li>contact creditors, courts or enforcement agents on your behalf</li>
+          <li>sell your details or earn commission if you use any of the links</li>
         </ul>
         <p class="text-xs text-slate-700">
           National Debt Service is not authorised by the Financial Conduct Authority (FCA) and is
-          not a debt management or insolvency firm.
+          not a debt management, insolvency or claims firm.
         </p>
       </section>
 
       <section class="space-y-3 max-w-3xl">
-        <h2>Why we mention different countries in the UK</h2>
+        <h2>Countries in the UK</h2>
         <p class="text-sm text-slate-800 leading-relaxed">
-          Debt rules and processes are not the same everywhere in the UK. England and Wales often
-          share one set of rules, while Scotland and Northern Ireland have their own. Names,
-          timeframes and legal terms can all change depending on where you live.
+          Debt rules and court processes are not the same across the UK. England and Wales often
+          share one set of rules, while Scotland and Northern Ireland have their own procedures,
+          terms and timescales.
         </p>
         <p class="text-sm text-slate-800 leading-relaxed">
-          That’s why we always signpost to organisations and information that are clear about which
-          country they cover. For anything detailed or time-sensitive, services in your own country
-          will always have the most up-to-date view.
+          That’s why the site always tries to:
+        </p>
+        <ul class="text-sm text-slate-800 leading-relaxed list-disc pl-5 space-y-1">
+          <li>label which country each service or piece of information applies to</li>
+          <li>link to country-specific versions of official guidance where possible</li>
+          <li>encourage you to speak to a service that covers the country you live in</li>
+        </ul>
+      </section>
+
+      <section class="space-y-3 max-w-3xl">
+        <h2>Accessibility and language</h2>
+        <p class="text-sm text-slate-800 leading-relaxed">
+          Money worries often go hand in hand with stress, poor sleep, anxiety or low mood. When
+          you feel like that, long or complicated pages can be hard to take in.
+        </p>
+        <p class="text-sm text-slate-800 leading-relaxed">
+          The site aims to follow good accessibility practice, including:
+        </p>
+        <ul class="text-sm text-slate-800 leading-relaxed list-disc pl-5 space-y-1">
+          <li>clear headings and short sections</li>
+          <li>high colour contrast for text and buttons</li>
+          <li>font sizes that are easy to read on mobile and desktop</li>
+          <li>links that make sense when read on their own</li>
+        </ul>
+        <p class="text-sm text-slate-800 leading-relaxed">
+          If you spot something that makes the site hard to use, please let us know through the{" "}
+          <a href="/contact">contact form</a>.
         </p>
       </section>
 
       <section class="space-y-3 max-w-3xl">
-        <h2>Accessibility and tone</h2>
+        <h2>Questions about how this site works</h2>
         <p class="text-sm text-slate-800 leading-relaxed">
-          Money worries often come with tiredness, stress, anxiety and low mood. We try to write in
-          simple, plain English so you don’t need lots of energy to understand the pages.
+          If you have a question about the banner, the history of the domain or how we use your
+          data, you can:
         </p>
-        <p class="text-sm text-slate-800 leading-relaxed">
-          The site is built with accessibility in mind: clear headings, readable font sizes and
-          good colour contrast. If you spot something that makes the site hard to use, you can let
-          us know on the contact page.
-        </p>
+        <ul class="text-sm text-slate-800 leading-relaxed list-disc pl-5 space-y-1">
+          <li>read the <a href="/faq">Frequently asked questions</a> page</li>
+          <li>check the <a href="/privacy">Privacy Policy</a> and <a href="/cookies">Cookies Policy</a></li>
+          <li>contact us using the <a href="/contact">contact form</a></li>
+        </ul>
       </section>
     </section>
   </main>
