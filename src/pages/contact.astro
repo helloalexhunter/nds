@@ -23,6 +23,31 @@ const status = searchParams.get("status");
         </p>
       </header>
 
+      <!-- Status messages -->
+      {status === "success" && (
+        <div
+          class="rounded-md border border-green-300 bg-green-50 px-4 py-3 text-sm text-green-900 shadow-sm"
+          role="status"
+          aria-live="polite"
+        >
+          <p class="font-semibold">Message sent.</p>
+          <p>Thanks for getting in touch. If a reply is needed, we’ll respond by email.</p>
+        </div>
+      )}
+
+      {status === "error" && (
+        <div
+          class="rounded-md border border-red-300 bg-red-50 px-4 py-3 text-sm text-red-900 shadow-sm"
+          role="status"
+          aria-live="polite"
+        >
+          <p class="font-semibold">Something went wrong.</p>
+          <p>
+            Your message couldn’t be sent just now. Please check the form and try again later.
+          </p>
+        </div>
+      )}
+
       <section class="space-y-3">
         <h2 class="text-xl font-semibold text-slate-900">Before you get in touch</h2>
         <p class="text-sm text-slate-800 leading-relaxed">
@@ -35,29 +60,6 @@ const status = searchParams.get("status");
           <a href="/get-help">Where to get help</a> page.
         </p>
       </section>
-
-      <!-- Status messages -->
-      {status === "success" && (
-        <div
-          class="rounded-md border border-green-200 bg-green-50 px-4 py-3 text-sm text-green-900"
-          role="status"
-        >
-          <p class="font-semibold">Message sent.</p>
-          <p>Thanks for getting in touch. If a reply is needed, we’ll respond by email.</p>
-        </div>
-      )}
-
-      {status === "error" && (
-        <div
-          class="rounded-md border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-900"
-          role="status"
-        >
-          <p class="font-semibold">Something went wrong.</p>
-          <p>
-            Your message couldn’t be sent just now. Please check the form and try again later.
-          </p>
-        </div>
-      )}
 
       <!-- Contact form -->
       <section aria-label="Contact form">
