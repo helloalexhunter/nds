@@ -1,7 +1,9 @@
 // functions/api/contact.js
+// Minimal, no email sending yet – just redirects back with status.
 
 export async function onRequestGet() {
-  // Simple check endpoint: https://www.nationaldebtservice.co.uk/api/contact
+  // Simple check endpoint for your browser:
+  // https://www.nationaldebtservice.co.uk/api/contact
   return new Response("Contact endpoint is alive (GET)", {
     status: 200,
     headers: { "Content-Type": "text/plain" },
@@ -9,67 +11,39 @@ export async function onRequestGet() {
 }
 
 export async function onRequestPost(context) {
-  const { request, env } = context;
+  const { request } = context;
 
   try {
-    const form = await request.formData();
-    const name = (form.get("name") || "").toString().trim();
-    const email = (form.get("email") || "").toString().trim();
-    const subject = (form.get("subject") || "").toString().trim();
-    const message = (form.get("message") || "").toString().trim();
-    const consent = form.get("consent") === "on";
+    const contentType = request.headers.get("content-type") || "";
 
-    // Basic validation
-    if (!name || !email || !subject || !message || !consent) {
-      return Response.redirect("/contact?status=error", 302);
+    let name = "";
+    let email = "";
+    let subject = "";
+    let message = "";
+    let consent = false;
+
+    if (contentType.includes("form")) {
+      const form = await request.formData();
+      name = (form.get("name") || "").toString().trim();
+      email = (form.get("email") || "").toString().trim();
+      subject = (form.get("subject") || "").toString().trim();
+      message = (form.get("message") || "").toString().trim();
+      consent = form.get("consent") === "on";
     }
 
-    const text = `
-New contact form submission:
+    // Decide success / error, but do NOT throw
+    const ok = name && email && subject && message && consent;
 
-Name: ${name}
-Email: ${email}
-Subject: ${subject}
+    // Build redirect URL safely
+    const url = new URL(request.url);
+    url.pathname = "/contact";
+    url.search = ""; // clear existing query
+    url.searchParams.set("status", ok ? "success" : "error");
 
-Message:
-${message}
-
-Consent: ${consent ? "Yes" : "No"}
-`.trim();
-
-    // Resend env vars (set these in Cloudflare Pages project settings)
-    const apiKey = env.RESEND_API_KEY;
-    const to = env.TO_EMAIL || "contact@nationaldebtservice.co.uk";
-    const from =
-      env.FROM_EMAIL || "National Debt Service <no-reply@nationaldebtservice.co.uk>";
-
-    if (!apiKey) {
-      console.error("Missing RESEND_API_KEY in Pages Functions env");
-      return Response.redirect("/contact?status=error", 302);
-    }
-
-    const resendRes = await fetch("https://api.resend.com/emails", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${apiKey}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        from,
-        to,
-        subject: `NDS Contact Form: ${subject}`,
-        text,
-      }),
-    });
-
-    if (!resendRes.ok) {
-      console.error("Resend error:", await resendRes.text());
-      return Response.redirect("/contact?status=error", 302);
-    }
-
-    return Response.redirect("/contact?status=success", 302);
+    return Response.redirect(url.toString(), 302);
   } catch (err) {
     console.error("Contact function error:", err);
+    // Hard-fail fallback – still redirect to error state, no 1101
     return Response.redirect("/contact?status=error", 302);
   }
 }
