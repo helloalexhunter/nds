@@ -325,6 +325,24 @@ const sections = [
     ],
   },
 ];
+
+// Build JSON-LD in one place, as plain data, so Google gets clean JSON
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "Organisations and resources we signpost to",
+  description:
+    "A curated list of trusted organisations for debt advice, money guidance, mental health, housing, energy and safety support across the UK.",
+  itemListElement: sections.flatMap((section, sectionIndex) =>
+    section.items.map((item, index) => ({
+      "@type": "ListItem",
+      position: sectionIndex * 100 + index + 1,
+      name: item.name,
+      url: item.url,
+      description: item.notes,
+    })),
+  ),
+};
 ---
 
 <BaseLayout {title} {description} {canonicalUrl}>
@@ -454,22 +472,7 @@ const sections = [
       </section>
 
       <script is:inline type="application/ld+json">
-        {JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "ItemList",
-          name: "Organisations and resources we signpost to",
-          description:
-            "A curated list of trusted organisations for debt advice, money guidance, mental health, housing, energy and safety support across the UK.",
-          itemListElement: sections.flatMap((section, sectionIndex) =>
-            section.items.map((item, index) => ({
-              "@type": "ListItem",
-              position: sectionIndex * 10 + index + 1,
-              name: item.name,
-              url: item.url,
-              description: item.notes,
-            })),
-          ),
-        })}
+        {JSON.stringify(structuredData)}
       </script>
     </section>
   </main>
