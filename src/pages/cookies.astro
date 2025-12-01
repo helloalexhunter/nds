@@ -1,56 +1,130 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-const title = "Cookies";
+const title = "Cookies Policy – National Debt Service";
 const description =
-  "Cookie information for National Debt Service. The site is designed to work without non-essential cookies or tracking.";
+  "Find out how National Debt Service uses cookies and similar technologies, including Cloudflare Analytics and Google Analytics 4.";
+const canonicalUrl = "https://www.nationaldebtservice.co.uk/cookies";
 ---
 
-<BaseLayout {title} {description}>
-  <main id="main-content" class="bg-neutral-soft min-h-screen">
-    <section class="mx-auto max-w-4xl px-4 py-10 sm:py-14 space-y-7">
+<BaseLayout {title} {description} {canonicalUrl}>
+  <main id="main-content" class="bg-primary-50 min-h-screen">
+    <section class="mx-auto max-w-4xl px-4 py-10 sm:py-14 space-y-8">
       <header class="space-y-3">
-        <p class="text-sm font-semibold text-trust-blue uppercase tracking-wide">
+        <p class="text-xs font-semibold uppercase tracking-wide text-primary-700">
           Cookies
         </p>
-        <h1>Cookie information</h1>
+        <h1>Cookies Policy</h1>
         <p class="text-base text-slate-800 leading-relaxed">
-          This page explains how cookies are (or are not) used on the National Debt Service
-          website.
+          This page explains how we use cookies and similar technologies on the National Debt
+          Service website.
+        </p>
+        <p class="text-xs text-slate-600">
+          Last updated: 1 December 2025
         </p>
       </header>
 
-      <section class="space-y-3">
-        <h2>No non-essential cookies</h2>
+      <section aria-labelledby="what-are-cookies" class="space-y-3">
+        <h2 id="what-are-cookies" class="text-xl font-semibold text-slate-900">
+          1. What are cookies?
+        </h2>
         <p class="text-sm text-slate-800 leading-relaxed">
-          The site is built as a simple, static website. It’s designed to work without using
-          non-essential cookies. We don’t use advertising cookies or third-party tracking pixels.
+          Cookies are small text files placed on your device by websites you visit. They’re
+          widely used to make websites work, or work more efficiently, and to provide
+          information to site owners.
         </p>
       </section>
 
-      <section class="space-y-3">
-        <h2>Essential technical cookies (if any)</h2>
+      <section aria-labelledby="how-we-use-cookies" class="space-y-3">
+        <h2 id="how-we-use-cookies" class="text-xl font-semibold text-slate-900">
+          2. How we use cookies
+        </h2>
         <p class="text-sm text-slate-800 leading-relaxed">
-          Our hosting provider may use strictly necessary cookies or similar technical tools to keep
-          the site secure and running reliably. These are not used to track your activity for
-          marketing purposes.
+          We keep cookie use on this site to a minimum. We do not use cookies for advertising
+          or marketing.
+        </p>
+        <p class="text-sm text-slate-800 leading-relaxed">
+          We currently use cookies only in connection with basic analytics.
         </p>
       </section>
 
-      <section class="space-y-3">
-        <h2>Links to other sites</h2>
+      <section aria-labelledby="essential-cookies" class="space-y-3">
+        <h2 id="essential-cookies" class="text-xl font-semibold text-slate-900">
+          3. Essential cookies
+        </h2>
         <p class="text-sm text-slate-800 leading-relaxed">
-          When you click a link to another website, such as a debt advice charity or mental health
-          service, that site may use its own cookies. Their cookie policy will explain what they
-          use and how you can manage your preferences.
+          At the moment, we do not use any cookies that are strictly necessary for the core
+          operation of the site.
         </p>
       </section>
 
-      <section class="space-y-3">
-        <h2>Changes to this page</h2>
+      <section aria-labelledby="analytics-cookies" class="space-y-3">
+        <h2 id="analytics-cookies" class="text-xl font-semibold text-slate-900">
+          4. Analytics and performance cookies
+        </h2>
         <p class="text-sm text-slate-800 leading-relaxed">
-          If we ever add analytics or other tools that use cookies, this page will be updated to
-          explain what’s used and why, and to make sure your choices are respected.
+          We use analytics to understand how the site is used and to improve its performance.
+        </p>
+
+        <h3 class="text-lg font-semibold text-slate-900">
+          4.1 Cloudflare Analytics
+        </h3>
+        <p class="text-sm text-slate-800 leading-relaxed">
+          Cloudflare Analytics helps us understand traffic patterns and performance. It does
+          not use tracking cookies and does not collect personal data about individual
+          visitors.
+        </p>
+
+        <h3 class="text-lg font-semibold text-slate-900">
+          4.2 Google Analytics 4 (GA4)
+        </h3>
+        <p class="text-sm text-slate-800 leading-relaxed">
+          GA4 helps us understand which pages are used, how users navigate the site and where
+          problems might occur. We configure GA4 to collect aggregated, anonymised usage
+          data. We do not use GA4 data for:
+        </p>
+        <ul class="list-disc pl-5 text-sm text-slate-800 leading-relaxed space-y-1">
+          <li>advertising or remarketing</li>
+          <li>building profiles of individual users</li>
+          <li>tracking your activity across other websites</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="managing-cookies" class="space-y-3">
+        <h2 id="managing-cookies" class="text-xl font-semibold text-slate-900">
+          5. Managing cookies in your browser
+        </h2>
+        <p class="text-sm text-slate-800 leading-relaxed">
+          You can control cookies using your browser settings. You can:
+        </p>
+        <ul class="list-disc pl-5 text-sm text-slate-800 leading-relaxed space-y-1">
+          <li>block all cookies</li>
+          <li>block cookies from specific sites</li>
+          <li>delete cookies that have already been set</li>
+        </ul>
+        <p class="text-sm text-slate-800 leading-relaxed">
+          Blocking or deleting cookies should not stop this site from working, but it may
+          affect some analytics information we see.
+        </p>
+      </section>
+
+      <section aria-labelledby="changes-cookies" class="space-y-3">
+        <h2 id="changes-cookies" class="text-xl font-semibold text-slate-900">
+          6. Changes to this Cookies Policy
+        </h2>
+        <p class="text-sm text-slate-800 leading-relaxed">
+          We will update this page if we start using new types of cookies or remove existing
+          ones. The date at the top of this page shows when it was last updated.
+        </p>
+      </section>
+
+      <section aria-labelledby="questions" class="space-y-3">
+        <h2 id="questions" class="text-xl font-semibold text-slate-900">
+          7. Questions about cookies
+        </h2>
+        <p class="text-sm text-slate-800 leading-relaxed">
+          If you have questions about how we use cookies, you can contact us using the{" "}
+          <a href="/contact">contact form</a>.
         </p>
       </section>
     </section>

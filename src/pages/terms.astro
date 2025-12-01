@@ -1,103 +1,185 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-const title = "Terms of use";
+const title = "Terms of use – National Debt Service";
 const description =
-  "Terms of use for the National Debt Service website, including important disclaimers about advice, accuracy and links to other sites.";
+  "Read the terms of use for the National Debt Service website. We provide general information and signpost to trusted debt advice organisations in the UK.";
+const canonicalUrl = "https://www.nationaldebtservice.co.uk/terms";
 ---
 
-<BaseLayout {title} {description}>
-  <main id="main-content" class="bg-neutral-soft min-h-screen">
-    <section class="mx-auto max-w-4xl px-4 py-10 sm:py-14 space-y-7">
+<BaseLayout {title} {description} {canonicalUrl}>
+  <main id="main-content" class="bg-primary-50 min-h-screen">
+    <section class="mx-auto max-w-4xl px-4 py-10 sm:py-14 space-y-8">
       <header class="space-y-3">
-        <p class="text-sm font-semibold text-trust-blue uppercase tracking-wide">
-          Terms
+        <p class="text-xs font-semibold uppercase tracking-wide text-primary-700">
+          Legal information
         </p>
         <h1>Terms of use</h1>
         <p class="text-base text-slate-800 leading-relaxed">
-          By using this website, you agree to these terms of use. They explain what you can expect
-          from the site and what the site does and doesn’t do.
+          These terms explain how you can use the National Debt Service website. Please read
+          them carefully before using the site.
+        </p>
+        <p class="text-xs text-slate-600">
+          Last updated: 1 December 2025
         </p>
       </header>
 
-      <section class="space-y-3">
-        <h2>Information only</h2>
+      <section aria-labelledby="who-we-are" class="space-y-3">
+        <h2 id="who-we-are" class="text-xl font-semibold text-slate-900">
+          1. Who we are
+        </h2>
         <p class="text-sm text-slate-800 leading-relaxed">
-          National Debt Service is an information and signposting website. It doesn’t give you
-          personal debt advice, financial advice or legal advice. Nothing on this site is intended
-          to tell you what you should do in your own situation.
+          National Debt Service is an independent, non-commercial website. We provide general
+          information and links to trusted debt advice and mental health support organisations
+          across the UK.
         </p>
         <p class="text-sm text-slate-800 leading-relaxed">
-          For personal advice about debt, you should contact a free, regulated debt advice service
-          or another qualified professional in your country.
-        </p>
-      </section>
-
-      <section class="space-y-3">
-        <h2>Not FCA authorised</h2>
-        <p class="text-sm text-slate-800 leading-relaxed">
-          National Debt Service is not authorised by the Financial Conduct Authority (FCA). We don’t
-          carry out regulated debt counselling or debt adjusting, and we don’t arrange or manage
-          debt solutions.
+          We do not offer debt advice and we are not authorised by the Financial Conduct
+          Authority (FCA). Nothing on this site is personal financial, legal or regulated
+          advice.
         </p>
       </section>
 
-      <section class="space-y-3">
-        <h2>Accuracy and changes</h2>
+      <section aria-labelledby="what-we-do" class="space-y-3">
+        <h2 id="what-we-do" class="text-xl font-semibold text-slate-900">
+          2. What this website does
+        </h2>
         <p class="text-sm text-slate-800 leading-relaxed">
-          We try to keep information on this site clear and up to date. However, rules and services
-          can change, and some pages may become out of date. We can’t guarantee that every detail
-          will always be current, complete or accurate.
+          This website is designed to help you:
+        </p>
+        <ul class="list-disc pl-5 text-sm text-slate-800 leading-relaxed space-y-1">
+          <li>understand the different types of free support available in the UK</li>
+          <li>find official and regulated organisations that can help</li>
+          <li>learn the basics about common money and debt topics</li>
+        </ul>
+        <p class="text-sm text-slate-800 leading-relaxed">
+          We do not:
+        </p>
+        <ul class="list-disc pl-5 text-sm text-slate-800 leading-relaxed space-y-1">
+          <li>provide personal debt advice or recommend specific products</li>
+          <li>contact creditors on your behalf</li>
+          <li>act for you in any legal or financial matter</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="not-advice" class="space-y-3">
+        <h2 id="not-advice" class="text-xl font-semibold text-slate-900">
+          3. This site is not advice
+        </h2>
+        <p class="text-sm text-slate-800 leading-relaxed">
+          All content on this site is for general information only. It does not take into
+          account your personal situation, and it should not be used as a basis for making
+          decisions about your debts or finances.
         </p>
         <p class="text-sm text-slate-800 leading-relaxed">
-          You should always check important details directly with an official source or a regulated
-          advice provider before making decisions.
+          Before you make any decisions, you should speak to a qualified, authorised debt
+          adviser or another regulated professional. You are responsible for any decisions you
+          make about your debts.
         </p>
       </section>
 
-      <section class="space-y-3">
-        <h2>Links to other websites</h2>
+      <section aria-labelledby="external-links" class="space-y-3">
+        <h2 id="external-links" class="text-xl font-semibold text-slate-900">
+          4. External links
+        </h2>
         <p class="text-sm text-slate-800 leading-relaxed">
-          This site links to other organisations, such as debt advice charities, mental health
-          services and official government pages. These links are provided for convenience and
-          signposting only.
+          We link to external websites, including government services, charities and other
+          support organisations. While we try to keep these links useful and up to date, we
+          can’t guarantee:
         </p>
+        <ul class="list-disc pl-5 text-sm text-slate-800 leading-relaxed space-y-1">
+          <li>the accuracy or completeness of external content</li>
+          <li>that the services they provide are right for you</li>
+          <li>that those websites will always be available or secure</li>
+        </ul>
         <p class="text-sm text-slate-800 leading-relaxed">
-          We don’t control, endorse or take responsibility for the content or policies of any other
-          website. Their terms and privacy policies will apply when you use them.
-        </p>
-      </section>
-
-      <section class="space-y-3">
-        <h2>Liability</h2>
-        <p class="text-sm text-slate-800 leading-relaxed">
-          We can’t accept responsibility for any loss, damage or inconvenience that you may suffer
-          as a result of using this site, relying on its content, or using services linked from it.
-        </p>
-        <p class="text-sm text-slate-800 leading-relaxed">
-          You’re responsible for how you choose to use the information on this website and for any
-          decisions you make about your own situation.
+          Following a link to another site is your choice and at your own risk.
         </p>
       </section>
 
-      <section class="space-y-3">
-        <h2>Changes to these terms</h2>
+      <section aria-labelledby="using-content" class="space-y-3">
+        <h2 id="using-content" class="text-xl font-semibold text-slate-900">
+          5. Using our content
+        </h2>
         <p class="text-sm text-slate-800 leading-relaxed">
-          These terms may be updated from time to time, for example if the site changes or if new
-          legal requirements apply. If you carry on using the site after changes are published, it
-          means you agree to the updated terms.
+          You can read and share links to our pages for personal use. You must not:
+        </p>
+        <ul class="list-disc pl-5 text-sm text-slate-800 leading-relaxed space-y-1">
+          <li>reuse large parts of our content on another website or service</li>
+          <li>present our content as your own work</li>
+          <li>suggest that we endorse your organisation, product or service</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="acceptable-use" class="space-y-3">
+        <h2 id="acceptable-use" class="text-xl font-semibold text-slate-900">
+          6. Acceptable use
+        </h2>
+        <p class="text-sm text-slate-800 leading-relaxed">
+          You agree not to use this website in any way that:
+        </p>
+        <ul class="list-disc pl-5 text-sm text-slate-800 leading-relaxed space-y-1">
+          <li>is unlawful, fraudulent or harmful</li>
+          <li>attempts to gain unauthorised access to the site or its systems</li>
+          <li>introduces viruses, malware or other harmful code</li>
+          <li>scrapes or copies the site using automated tools at scale</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="contact-form" class="space-y-3">
+        <h2 id="contact-form" class="text-xl font-semibold text-slate-900">
+          7. Contact form
+        </h2>
+        <p class="text-sm text-slate-800 leading-relaxed">
+          If you use the contact form on this site, you agree to:
+        </p>
+        <ul class="list-disc pl-5 text-sm text-slate-800 leading-relaxed space-y-1">
+          <li>provide accurate information</li>
+          <li>only contact us about the website itself</li>
+          <li>avoid sharing highly sensitive personal details</li>
+        </ul>
+        <p class="text-sm text-slate-800 leading-relaxed">
+          We’ll use your message and contact details only to respond to your query about the
+          website, as explained in our <a href="/privacy">Privacy Policy</a>.
         </p>
       </section>
 
-      <section class="space-y-3">
-        <h2>Contact about these terms</h2>
+      <section aria-labelledby="no-liability" class="space-y-3">
+        <h2 id="no-liability" class="text-xl font-semibold text-slate-900">
+          8. No liability
+        </h2>
         <p class="text-sm text-slate-800 leading-relaxed">
-          If you have questions about these terms of use, you can contact:
+          We try to keep the site accurate, up to date and available. But we can’t promise it
+          will be:
         </p>
-        <p class="text-sm font-semibold">
-          <a href="mailto:contact@nationaldebtservice.co.uk">
-            contact@nationaldebtservice.co.uk
-          </a>
+        <ul class="list-disc pl-5 text-sm text-slate-800 leading-relaxed space-y-1">
+          <li>error-free</li>
+          <li>complete</li>
+          <li>always available</li>
+        </ul>
+        <p class="text-sm text-slate-800 leading-relaxed">
+          To the fullest extent allowed by law, we’re not responsible for any loss, damage or
+          inconvenience that arises from using this website or relying on its content.
+        </p>
+      </section>
+
+      <section aria-labelledby="changes" class="space-y-3">
+        <h2 id="changes" class="text-xl font-semibold text-slate-900">
+          9. Changes to these terms
+        </h2>
+        <p class="text-sm text-slate-800 leading-relaxed">
+          We may update these terms from time to time to reflect changes to the site or the
+          law. The date at the top of this page shows when we last updated them.
+        </p>
+      </section>
+
+      <section aria-labelledby="contact-us" class="space-y-3">
+        <h2 id="contact-us" class="text-xl font-semibold text-slate-900">
+          10. How to contact us about these terms
+        </h2>
+        <p class="text-sm text-slate-800 leading-relaxed">
+          If you have a question or concern about these terms, you can contact us using the{" "}
+          <a href="/contact">contact form</a>.
         </p>
       </section>
     </section>

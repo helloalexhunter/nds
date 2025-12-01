@@ -4,18 +4,10 @@ import { ArrowRight, HeartHandshake, Info } from "lucide-astro";
 const title = "National Debt Service – simple signposting to free help";
 const description =
   "If you’re worried about debt or money in the UK, this site points you to free, regulated debt advice and mental health support. We don’t give advice or collect your details.";
-// WON'T HAVE: Removed the unnecessary WebSite Schema SearchAction property as the site lacks a search function.
-const websiteSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  name: "National Debt Service",
-  url: "https://www.nationaldebtservice.co.uk/",
-  description:
-    "Independent UK signposting site for free, regulated debt advice and mental health support. No forms, no lead selling.",
-};
+const canonicalUrl = "https://www.nationaldebtservice.co.uk";
 ---
 
-<BaseLayout {title} {description}>
+<BaseLayout {title} {description} {canonicalUrl}>
   <main id="main-content" class="bg-neutral-soft">
     <section class="border-b border-neutral-border bg-white">
       <div
@@ -319,7 +311,14 @@ const websiteSchema = {
     </section>
 
     <script type="application/ld+json" is:inline>
-      {JSON.stringify(websiteSchema)}
+      {JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        name: "National Debt Service",
+        url: "https://www.nationaldebtservice.co.uk",
+        description:
+          "National Debt Service is a simple, independent signposting site helping people find free, trusted debt and mental health support across the UK.",
+      })}
     </script>
   </main>
 </BaseLayout>
