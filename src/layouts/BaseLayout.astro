@@ -52,8 +52,30 @@ const siteUrl = "https://www.nationaldebtservice.co.uk";
   </head>
 
   <body class="min-h-screen bg-neutral-soft text-dark-text antialiased">
+    <!-- Site Notice Banner -->
+        <div
+          id="site-notice-banner"
+          class="w-full bg-amber-100 border-b border-amber-300 text-slate-900 px-4 py-3 text-sm font-medium flex items-start justify-between gap-4"
+          role="status"
+          aria-label="Important site information"
+        >
+          <p class="max-w-4xl leading-relaxed">
+            <strong>Important:</strong> NationalDebtService.co.uk is now under new ownership.  
+            Previous operators of this domain were reprimanded by the Advertising Standards Authority (ASA) for misleading users.  
+            We are <strong>not connected to the former organisation</strong>.  
+            This version of the site provides clear, unbiased signposting only; no advertising, no sales, and no debt advice.
+          </p>
+
+          <button
+            type="button"
+            aria-label="Dismiss this notice"
+            class="flex-shrink-0 text-slate-700 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 rounded"
+            onclick="document.getElementById('site-notice-banner').remove()"
+          >
+            ✕
+          </button>
+        </div>
     <Header />
-    <!-- Each page provides its own <main id="main-content"> for accessibility -->
     <slot />
     <Footer />
   </body>
