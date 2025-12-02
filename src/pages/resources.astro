@@ -1,12 +1,19 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { getLastCommitDate } from '../utils/git-time.js';
+const filePath = 'src/pages/resources.astro';
+
+const lastmod = getLastCommitDate(filePath);
+const lastReviewed = new Date(lastmod).toLocaleDateString('en-GB', { 
+    day: 'numeric', 
+    month: 'long', 
+    year: 'numeric' 
+});
 
 const title = "Organisations and resources we signpost to";
 const description =
   "A curated list of trusted organisations for debt advice, money guidance, mental health, housing, energy and safety support across the UK.";
 const canonicalUrl = "https://www.nationaldebtservice.co.uk/resources";
-
-const lastReviewed = "1 December 2025";
 
 const sections = [
   {

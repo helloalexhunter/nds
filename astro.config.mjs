@@ -6,18 +6,26 @@ import robotsTxt from 'astro-robots-txt';
 
 export default defineConfig({
   site: 'https://www.nationaldebtservice.co.uk',
+  
   integrations: [
-    sitemap(), 
+    sitemap({
+        filter: (page) => {
+            if (page.endsWith('/404/')) return false; 
+            return true;
+        },
+    }), 
+
     robotsTxt({
+      sitemap: true, 
       policy: [
         {
           userAgent: '*', 
           allow: '/',
         },
       ],
-      sitemap: true, 
     }),
   ],
+
   vite: {
     plugins: [tailwindcss()],
   },

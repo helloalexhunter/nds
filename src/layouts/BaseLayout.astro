@@ -9,7 +9,6 @@ const {
   canonicalUrl,
 } = Astro.props;
 
-
 const siteName = "National Debt Service";
 const siteUrl = "https://www.nationaldebtservice.co.uk";
 ---
@@ -31,6 +30,7 @@ const siteUrl = "https://www.nationaldebtservice.co.uk";
     <meta name="generator" content={Astro.generator} />
     <meta name="theme-color" content="#023047" />
     <meta name="color-scheme" content="light" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
     <meta name="robots" content="index,follow" />
 
     {description && <meta name="description" content={description} />}
