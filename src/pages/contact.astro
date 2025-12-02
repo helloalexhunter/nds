@@ -153,7 +153,13 @@ const canonicalUrl = "https://www.nationaldebtservice.co.uk/contact";
               We’ll use the information you send only to handle your message about the website.
             </p>
           </div>
-
+          <div 
+            class="cf-turnstile" 
+            data-sitekey="0x4AAAAAACEPwUBbzDYIAVa6"
+            data-theme="light" 
+            data-callback="[optionalCallbackFunctionName]"
+            >
+          </div>
           <div class="pt-2">
             <button
               type="submit"
@@ -182,4 +188,5 @@ const canonicalUrl = "https://www.nationaldebtservice.co.uk/contact";
       }
     </script>
   </main>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </BaseLayout>
