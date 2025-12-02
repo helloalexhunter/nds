@@ -471,9 +471,7 @@ const structuredData = {
         </p>
       </section>
 
-      <script is:inline type="application/ld+json">
-        {JSON.stringify(structuredData)}
-      </script>
+      <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
     </section>
   </main>
 </BaseLayout>
