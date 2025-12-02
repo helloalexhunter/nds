@@ -73,31 +73,27 @@ const siteUrl = "https://www.nationaldebtservice.co.uk";
     <slot />
     <Footer />
     <!-- Quick Exit CTA Script -->
-      <script is:inline>
-        if (typeof window !== "undefined") {
-          // Use a neutral, common website, ensuring it is a UK domain.
-          const safeUrl = "https://www.google.co.uk/"; 
+<script is:inline>
+      if (typeof window !== "undefined") {
+        const safeUrl = "https://www.google.co.uk/"; 
+        const exitButton = document.getElementById("quick-exit-button");
 
-          const exitButton = document.getElementById("quick-exit-button");
-
-          if (exitButton) {
-            const quickExit = (event) => {
-              if (event) event.preventDefault();
-              // CRITICAL: window.location.replace() removes the current page from the browser history.
-              window.location.replace(safeUrl);
-            };
-
-            // Activate on button click
-            exitButton.addEventListener("click", quickExit);
-            
-            // Best practice: Activate on the Escape key press for fastest exit
-            document.addEventListener("keydown", function(event) {
-              if (event.key === "Escape") {
-                quickExit();
-              }
-            });
-          }
+        if (exitButton) {
+          const quickExit = (event) => {
+            if (event) event.preventDefault();
+            window.location.replace(safeUrl);
+          };
+          exitButton.addEventListener("click", quickExit);
+          
+          document.addEventListener("keydown", function(event) {
+            if (event.key === "Escape") {
+              event.preventDefault();
+              event.stopPropagation();
+              quickExit();
+            }
+          });
         }
-      </script>
+      }
+    </script>
   </body>
 </html>
