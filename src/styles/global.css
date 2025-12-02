@@ -3,8 +3,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ---------- CUSTOM PRIMARY PALETTE UTILITIES ---------- */
-/* These are plain CSS classes, not Tailwind utilities. */
 :root {
   --color-primary-50: #eff2f5;
   --color-primary-100: #c1d8f6;
@@ -18,12 +16,6 @@
   --color-primary-900: #09213e;
   --color-primary-950: #030c16;
 }
-
-/* Utility-style helpers for the primary palette */
-
-/* NOTE: .text-primary-50 through .text-primary-300 have been removed 
-   because they fail WCAG contrast checks on light backgrounds. 
-   These colors should only be used for backgrounds or borders. */
 
 .bg-primary-50 { background-color: var(--color-primary-50); }
 .border-primary-50 { border-color: var(--color-primary-50); }
@@ -185,4 +177,29 @@
     @apply outline-none ring-4;
     --tw-ring-color: var(--color-primary-700);
   }
+
+:focus-visible {
+  /* Using blue-600 as a highly contrasting, standard Tailwind colour */
+  outline: 3px solid theme('colors.blue.600'); 
+  outline-offset: 3px;
+  border-radius: 4px; 
+}
+
+/* Removes the default focus outline only when focus-visible is supported */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.aa-target-size {
+    /* Ensures minimum size of 44px x 44px */
+    min-width: 44px;
+    min-height: 44px;
+    
+    /* Adds transparent padding to increase clickable area */
+    padding: 10px 4px; 
+    
+    /* Makes the element respect min-width/height and padding */
+    display: inline-block;
+}
+
 }

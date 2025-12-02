@@ -15,7 +15,6 @@ const isCurrent = (path: string) =>
 
 <header class="border-b border-primary-100 bg-white/90 backdrop-blur">
   <div class="mx-auto flex max-w-5xl items-center justify-between gap-4 px-4 py-3 sm:px-6 sm:py-4">
-    <!-- Brand -->
     <a href="/" class="flex items-center gap-3">
       <div
         class="flex h-9 w-9 items-center justify-center rounded-full bg-primary-100 text-primary-800"
@@ -31,40 +30,39 @@ const isCurrent = (path: string) =>
           National Debt Service
         </span>
         <span class="text-xs sm:text-sm text-slate-600">
-          Free, independent signposting in the UK.
+          Signposting to free, trusted UK support
         </span>
       </div>
     </a>
 
-    <!-- Desktop navigation -->
     <nav
       class="hidden items-center gap-5 text-sm md:flex"
       aria-label="Main navigation"
     >
       <a
         href="/get-help"
-        class="text-slate-700 hover:text-primary-800"
+        class="text-slate-700 hover:text-primary-800 py-3 -mx-2 px-2"
         aria-current={isCurrent("/get-help") ? "page" : undefined}
       >
         Where to get help
       </a>
       <a
         href="/resources"
-        class="text-slate-700 hover:text-primary-800"
+        class="text-slate-700 hover:text-primary-800 py-3 -mx-2 px-2"
         aria-current={isCurrent("/resources") ? "page" : undefined}
       >
         Resources
       </a>
       <a
         href="/about"
-        class="text-slate-700 hover:text-primary-800"
+        class="text-slate-700 hover:text-primary-800 py-3 -mx-2 px-2"
         aria-current={isCurrent("/about") ? "page" : undefined}
       >
         About
       </a>
       <a
         href="/contact"
-        class="text-slate-700 hover:text-primary-800"
+        class="text-slate-700 hover:text-primary-800 py-3 -mx-2 px-2"
         aria-current={isCurrent("/contact") ? "page" : undefined}
       >
         Contact
@@ -79,12 +77,15 @@ const isCurrent = (path: string) =>
     </nav>
   </div>
 
-  <!-- Mobile primary CTA -->
   <div class="border-t border-primary-100 bg-white px-4 pb-3 pt-2 md:hidden">
     <div class="mx-auto max-w-5xl">
-      <a href="/get-help" class="btn-primary w-full justify-center">I need support</a>
-      <a href="/resources" class="btn-primary w-full justify-center mt-1">Resources</a>
-      <a href="/contact" class="btn-primary w-full justify-center mt-1">Contact Us</a>
+      <a
+        href="/get-help"
+        class="btn-primary w-full justify-center"
+        aria-current={isCurrent("/get-help") ? "page" : undefined}
+      >
+        I need support now
+      </a>
     </div>
   </div>
 </header>
