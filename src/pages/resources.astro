@@ -359,133 +359,140 @@ const structuredData = {
 
 <BaseLayout {title} {description} {canonicalUrl}>
   <main id="main-content" class="bg-primary-50 min-h-screen">
-    <section class="mx-auto max-w-6xl px-4 py-10 sm:py-14 space-y-8">
-      {/* Intro + Table of contents */}
-      <div class="grid gap-6 md:grid-cols-3 items-start">
-        <header class="space-y-3 max-w-3xl md:col-span-2">
-          <p class="text-sm font-semibold text-primary-700 uppercase tracking-wide">
-            Resources
-          </p>
-          <h1>Organisations and resources we signpost to</h1>
-          <p class="text-base text-slate-800 leading-relaxed">
-            This page pulls together some of the main organisations and websites we link to around the
-            site. They offer help with debt, money, housing, energy, mental health and safety. Use
-            them to find the right kind of support for your situation.
-          </p>
-          <p class="text-sm text-slate-800 leading-relaxed">
-            We’re independent and not part of any of these organisations. We don’t earn commission or
-            referral fees if you choose to contact them.
-          </p>
-          <p class="text-xs text-slate-600">
-            Page last reviewed: <time datetime={lastmod}>{lastReviewedWithGMT}</time>
-          </p>
-        </header>
-
-        <nav
-          class="rounded-xl border border-slate-200 bg-white p-4 sm:p-5 space-y-3 md:sticky md:top-24"
-          aria-label="Resources sections"
-        >
-          <h2 class="text-sm font-semibold text-slate-900">
-            Jump to a section
-          </h2>
-          <p class="text-xs text-slate-700">
-            Use these links to go straight to the type of help you&apos;re looking for.
-          </p>
-          <ul class="mt-2 space-y-1 text-sm">
-            {sections.map((section) => (
-              <li>
-                {/* FIX: Increased padding to py-3 to ensure >44px target size */}
-                <a
-                  href={`#${section.id}`}
-                  class="block py-3 -ml-2 px-2 rounded-md text-slate-800 hover:text-primary-700 hover:bg-primary-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
-                >
-                  {section.title}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </div>
-
-      {/* How we choose orgs */}
-      <section class="rounded-xl border border-slate-200 bg-white p-4 sm:p-5 space-y-3">
-        <h2 class="text-base font-semibold text-slate-900">
-          How we choose organisations to list here
-        </h2>
-        <p class="text-sm text-slate-800 leading-relaxed">
-          We focus on organisations that:
+    <section class="mx-auto max-w-7xl px-4 py-10 sm:py-14">
+      
+      {/* 1. PAGE HEADER (Full Width) */}
+      <header class="max-w-3xl mb-10 md:mb-14">
+        <p class="text-sm font-semibold text-primary-700 uppercase tracking-wide leading-relaxed">
+          Resources
         </p>
-        <ul class="list-disc pl-5 text-sm text-slate-800 leading-relaxed space-y-1">
-          <li>are free to contact for help or information</li>
-          <li>have a clear role in debt, money, housing, mental health or safety support</li>
-          <li>explain who they help and which country or countries of the UK they cover</li>
-          <li>have a track record, official status or widely recognised role</li>
-        </ul>
-        <p class="text-xs text-slate-700">
-          We don’t list every possible service, and including a link here doesn’t mean we can
-          personally vouch for every experience. Always check you’re comfortable with any
-          organisation before sharing personal details.
+        <h1 class="mt-2 mb-4 leading-normal">Organisations and resources we signpost to</h1>
+        <p class="text-lg text-slate-800 leading-relaxed mb-4">
+          This page pulls together some of the main organisations and websites we link to around the
+          site. They offer help with debt, money, housing, energy, mental health and safety.
         </p>
-      </section>
+        <p class="text-xs text-slate-600 leading-relaxed">
+          Page last reviewed: <time datetime={lastmod}>{lastReviewedWithGMT}</time>
+        </p>
+      </header>
 
-      {/* Sections */}
-      {sections.map((section) => (
-        <section id={section.id} class="space-y-4 scroll-mt-24">
-          <header class="space-y-2 max-w-3xl">
-            <h2 class="text-xl font-semibold text-slate-900">{section.title}</h2>
-            <p class="text-sm text-slate-800 leading-relaxed">
-              {section.description}
-            </p>
-          </header>
-
-          <div class="grid gap-4 md:grid-cols-2">
-            {section.items.map((item) => (
-              <article class="rounded-xl border border-slate-200 bg-white p-4 space-y-2">
-                <h3 class="text-base font-semibold text-slate-900">
-                  {/* FIX: Increased padding to py-3 to ensure >44px target size */}
+      {/* 2. MAIN LAYOUT GRID */}
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+        
+        {/* === SIDEBAR (Sticky on Desktop) === */}
+        <aside class="lg:col-span-4 lg:sticky lg:top-24 space-y-6">
+          
+          {/* Navigation Card */}
+          <nav
+            class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm"
+            aria-label="Resources sections"
+          >
+            <h2 class="text-sm font-bold text-slate-900 uppercase tracking-wide mb-3 leading-relaxed">
+              Jump to a section
+            </h2>
+            <ul class="space-y-1 text-sm">
+              {sections.map((section) => (
+                <li>
+                  {/* AAA Fix: 'leading-relaxed' MUST be explicit here for text-sm links */}
                   <a
-                    href={item.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="block py-3 -ml-2 px-2 hover:bg-primary-50 rounded"
+                    href={`#${section.id}`}
+                    class="block py-3 -mx-2 px-2 rounded-md text-slate-700 hover:text-primary-800 hover:bg-primary-50 transition-colors leading-relaxed"
                   >
-                    {item.name}
-                    <span class="sr-only">(opens in a new tab)</span>
+                    {section.title}
                   </a>
-                </h3>
-                <p class="text-xs font-medium text-slate-700">
-                  Covers: {item.covers}
-                </p>
-                <p class="text-sm text-slate-800 leading-relaxed">
-                  {item.notes}
-                </p>
-              </article>
-            ))}
-          </div>
-        </section>
-      ))}
+                </li>
+              ))}
+            </ul>
+          </nav>
 
-      {/* Suggest a service */}
-      <section class="space-y-3 max-w-3xl">
-        <h2 class="text-base font-semibold text-slate-900">
-          Suggest a service or update
-        </h2>
-        <p class="text-sm text-slate-800 leading-relaxed">
-          If you work for a charity, advice service or support organisation and think you should be
-          listed here, or if you spot something out of date, you can ask us to review it.
-        </p>
-        <p class="text-sm text-slate-800 leading-relaxed">
-          We focus on well-established, free and trustworthy services. We can’t list everything, but
-          we do read genuine suggestions. Use the{" "}
-          {/* FIX: Used aa-target-size to keep inline flow correct while meeting AAA size */}
-          <a href="/contact" class="aa-target-size">contact form</a> and choose “Suggest a resource or correction” as the
-          subject.
-        </p>
-        <p class="text-xs text-slate-700">
-          We don’t accept paid placements, sponsored listings or affiliate links. Being listed here
-          never depends on payment.
-        </p>
-      </section>
+          {/* Context Card: How we choose */}
+          <div class="rounded-xl border border-primary-100 bg-primary-50/50 p-5 shadow-sm">
+            <h2 class="text-sm font-bold text-slate-900 mb-3 leading-relaxed">
+              How we choose organisations
+            </h2>
+            <p class="text-sm text-slate-700 leading-relaxed mb-3">
+              We focus on organisations that:
+            </p>
+            <ul class="list-disc pl-4 text-sm text-slate-700 leading-relaxed space-y-1 mb-3">
+              <li>are free to contact</li>
+              <li>have a clear, recognised role</li>
+              <li>explain their UK coverage clearly</li>
+            </ul>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              We don’t earn commission or referral fees.
+            </p>
+          </div>
+        </aside>
+
+
+        {/* === MAIN CONTENT FEED === */}
+        <div class="lg:col-span-8 space-y-12">
+          
+          {sections.map((section) => (
+            <section id={section.id} class="scroll-mt-24 space-y-5">
+              <header class="pb-2 border-b border-slate-200">
+                <h2 class="text-2xl font-bold text-slate-900 leading-normal">{section.title}</h2>
+                <p class="text-base text-slate-700 mt-2 max-w-2xl leading-relaxed">
+                  {section.description}
+                </p>
+              </header>
+
+              <div class="grid gap-6 md:grid-cols-2">
+                {section.items.map((item) => (
+                  <article class="flex flex-col h-full rounded-xl border border-slate-200 bg-white p-5 shadow-sm hover:shadow-md transition-shadow">
+                    <h3 class="text-lg font-semibold text-slate-900 mb-2 leading-normal">
+                      {/* AAA Fix: Block link with padding */}
+                      <a
+                        href={item.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="block -mx-2 px-2 py-2 hover:text-primary-700 hover:underline decoration-2 underline-offset-2 leading-relaxed"
+                      >
+                        {item.name}
+                        <span class="sr-only">(opens in a new tab)</span>
+                      </a>
+                    </h3>
+                    
+                    <div class="mb-3">
+                      {/* AAA Fix: 'leading-relaxed' on small badges */}
+                      <span class="inline-flex items-center rounded-md bg-slate-100 px-2 py-1 text-xs font-medium text-slate-700 leading-relaxed">
+                        {item.covers}
+                      </span>
+                    </div>
+                    
+                    <p class="text-sm text-slate-700 leading-relaxed flex-grow">
+                      {item.notes}
+                    </p>
+                  </article>
+                ))}
+              </div>
+            </section>
+          ))}
+
+          {/* Suggestion Box (At bottom of feed) */}
+          <section class="rounded-xl border border-slate-200 bg-slate-50 p-6 sm:p-8 mt-8">
+            <h2 class="text-xl font-bold text-slate-900 mb-3 leading-normal">
+              Suggest a service or update
+            </h2>
+            <p class="text-base text-slate-700 leading-relaxed mb-4">
+              If you work for a charity or advice service and think you should be listed here, or if 
+              you spot something out of date, please let us know. We read all genuine suggestions.
+            </p>
+            <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+              <a 
+                href="/contact" 
+                class="btn-primary"
+              >
+                Contact us
+              </a>
+              <p class="text-xs text-slate-500 max-w-sm leading-relaxed">
+                We don’t accept paid placements or sponsored listings. Being listed here never depends on payment.
+              </p>
+            </div>
+          </section>
+
+        </div>
+      </div>
 
       <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
     </section>

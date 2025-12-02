@@ -5,7 +5,6 @@ const year = new Date().getFullYear();
 <footer class="border-t border-slate-200 bg-white text-slate-800">
   <div class="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
     <div class="grid gap-8 md:grid-cols-4">
-      <!-- Brand + description -->
       <div class="space-y-3">
         <p class="font-semibold text-sm tracking-tight">
           National Debt Service
@@ -21,68 +20,55 @@ const year = new Date().getFullYear();
         </p>
       </div>
 
-      <!-- Site links -->
       <div class="space-y-3">
         <p class="text-xs font-semibold uppercase tracking-wide text-slate-900">
           Site
         </p>
         <ul class="space-y-1 text-xs">
-          <li><a href="/"class="block py-2 -ml-2 px-2">Home</a></li>
-          <li><a href="/get-help"class="block py-2 -ml-2 px-2">I need support now</a></li>
-          <li><a href="/faq"class="block py-2 -ml-2 px-2">Questions &amp; answers</a></li>
-          <li><a href="/about"class="block py-2 -ml-2 px-2">About this website</a></li>
-          <li><a href="/contact"class="block py-2 -ml-2 px-2">Contact us</a></li>
-          <li><a href="/contact"class="block py-2 -ml-2 px-2">Suggest a resource</a></li>
+          <li><a href="/" class="block py-3.5 -ml-2 px-2">Home</a></li>
+          <li><a href="/get-help" class="block py-3.5 -ml-2 px-2">I need support now</a></li>
+          <li><a href="/faq" class="block py-3.5 -ml-2 px-2">Questions &amp; answers</a></li>
+          <li><a href="/about" class="block py-3.5 -ml-2 px-2">About this website</a></li>
+          <li><a href="/contact" class="block py-3.5 -ml-2 px-2">Contact us</a></li>
+          <li><a href="/contact" class="block py-3.5 -ml-2 px-2">Suggest a resource</a></li>
         </ul>
       </div>
 
-      <!-- Support links -->
       <div class="space-y-3">
         <p class="text-xs font-semibold uppercase tracking-wide text-slate-900">
           Support &amp; signposting
         </p>
         <ul class="space-y-1 text-xs">
           <li>
-            <a href="/get-help#money-support"class="block py-2 -ml-2 px-2">
+            <a href="/get-help#money-support" class="block py-3.5 -ml-2 px-2">
               Money &amp; debt support
             </a>
           </li>
           <li>
-            <a href="/get-help#mental-health-support"class="block py-2 -ml-2 px-2">
+            <a href="/get-help#mental-health-support" class="block py-3.5 -ml-2 px-2">
               Mental health &amp; crisis support
             </a>
           </li>
           <li>
-            <a href="/get-help#domestic-abuse-support"class="block py-2 -ml-2 px-2">
+            <a href="/get-help#domestic-abuse-support" class="block py-3.5 -ml-2 px-2">
               Domestic abuse &amp; safety
             </a>
           </li>
         </ul>
       </div>
 
-      <!-- Legal links -->
       <div class="space-y-3">
         <p class="text-xs font-semibold uppercase tracking-wide text-slate-900">
           Legal &amp; data
         </p>
         <ul class="space-y-1 text-xs">
-          <li><a href="/terms"class="block py-3 -ml-2 px-2">Terms of use</a></li>
-          <li><a href="/privacy"class="block py-3 -ml-2 px-2">Privacy Policy</a></li>
-          <li><a href="/cookies" class="block py-3 -ml-2 px-2">Cookies Policy</a></li>
-          <li>
-            <button
-              type="button"
-              class="underline text-slate-700 hover:text-primary-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white rounded-xs"
-              data-cookie-settings
-            >
-              Change cookie settings
-            </button>
-          </li>
+          <li><a href="/terms" class="block py-3.5 -ml-2 px-2">Terms of use</a></li>
+          <li><a href="/privacy" class="block py-3.5 -ml-2 px-2">Privacy Policy</a></li>
+          <li><a href="/cookies" class="block py-3.5 -ml-2 px-2">Cookies Policy</a></li>
         </ul>
       </div>
     </div>
 
-    <!-- Bottom line -->
     <div class="mt-8 border-t border-slate-200 pt-4 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
       <p class="text-[11px] text-slate-600">
         © {year} National Debt Service. All rights reserved.
@@ -93,33 +79,4 @@ const year = new Date().getFullYear();
       </p>
     </div>
   </div>
-
-  <script is:inline>
-    document.addEventListener("DOMContentLoaded", function () {
-      var trigger = document.querySelector("[data-cookie-settings]");
-      if (!trigger) return;
-
-      trigger.addEventListener("click", function (event) {
-        event.preventDefault();
-
-        try {
-          // Preferred modern API
-          if (window.zaraz && typeof window.zaraz.showConsentModal === "function") {
-            window.zaraz.showConsentModal();
-            return;
-          }
-
-          // Fallback to older consent API shape
-          if (window.zaraz && window.zaraz.consent) {
-            window.zaraz.consent.modal = true;
-            return;
-          }
-
-          console.warn("Zaraz consent API is not available on this page.");
-        } catch (err) {
-          console.error("Error opening Zaraz consent modal", err);
-        }
-      });
-    });
-  </script>
 </footer>

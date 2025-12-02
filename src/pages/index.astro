@@ -1,8 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { ArrowRight, HeartHandshake, Info } from "lucide-astro";
+import { ArrowRight, HeartHandshake, Info, LifeBuoy } from "lucide-astro";
 import { getLastCommitDate } from '../utils/git-time.js';
-
 const title = "National Debt Service – simple signposting to free help";
 const description =
   "If you’re worried about debt or money in the UK, this site points you to free, regulated debt advice and mental health support. We don’t give advice or collect your details.";
@@ -31,6 +30,7 @@ const lastReviewedWithGMT = new Date(lastmod).toLocaleString('en-GB', {
           <p class="text-sm font-semibold text-primary-700 uppercase tracking-wide">
             Worrying about money is exhausting
           </p>
+        
           <h1>Clear signposting to free, trusted help in the UK</h1>
           <p class="text-base text-slate-800 leading-relaxed">
             If you’re stressed about debts or bills, it can be hard to think straight. This site
@@ -91,13 +91,13 @@ const lastReviewedWithGMT = new Date(lastmod).toLocaleString('en-GB', {
           <h3 class="text-lg font-semibold text-slate-900">England &amp; Wales</h3>
           <ul class="text-sm text-slate-800 space-y-1">
             <li>
-              <a href="https://www.stepchange.org" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.stepchange.org" target="_blank" rel="noopener noreferrer" class="aa-target-size">
                 StepChange Debt Charity
                 <span class="sr-only">(opens in new tab)</span>
               </a>
             </li>
             <li>
-              <a href="https://www.nationaldebtline.org" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.nationaldebtline.org" target="_blank" rel="noopener noreferrer" class="aa-target-size">
                 National Debtline
                 <span class="sr-only">(opens in new tab)</span>
               </a>
@@ -107,6 +107,7 @@ const lastReviewedWithGMT = new Date(lastmod).toLocaleString('en-GB', {
                 href="https://www.citizensadvice.org.uk"
                 target="_blank"
                 rel="noopener noreferrer"
+                class="aa-target-size"
               >
                 Citizens Advice (England &amp; Wales)
                 <span class="sr-only">(opens in new tab)</span>
@@ -117,6 +118,7 @@ const lastReviewedWithGMT = new Date(lastmod).toLocaleString('en-GB', {
                 href="https://www.moneyhelper.org.uk/en/money-troubles/dealing-with-debt"
                 target="_blank"
                 rel="noopener noreferrer"
+                class="aa-target-size"
               >
                 MoneyHelper (government-backed)
                 <span class="sr-only">(opens in new tab)</span>
@@ -136,6 +138,7 @@ const lastReviewedWithGMT = new Date(lastmod).toLocaleString('en-GB', {
                 href="https://www.nationaldebtline.org/scotland"
                 target="_blank"
                 rel="noopener noreferrer"
+                class="aa-target-size"
               >
                 National Debtline Scotland
                 <span class="sr-only">(opens in new tab)</span>
@@ -146,6 +149,7 @@ const lastReviewedWithGMT = new Date(lastmod).toLocaleString('en-GB', {
                 href="https://www.citizensadvice.org.uk/scotland"
                 target="_blank"
                 rel="noopener noreferrer"
+                class="aa-target-size"
               >
                 Citizens Advice Scotland
                 <span class="sr-only">(opens in new tab)</span>
@@ -156,6 +160,7 @@ const lastReviewedWithGMT = new Date(lastmod).toLocaleString('en-GB', {
                 href="https://www.moneyhelper.org.uk/en/money-troubles/dealing-with-debt"
                 target="_blank"
                 rel="noopener noreferrer"
+                class="aa-target-size"
               >
                 MoneyHelper
                 <span class="sr-only">(opens in new tab)</span>
@@ -171,7 +176,7 @@ const lastReviewedWithGMT = new Date(lastmod).toLocaleString('en-GB', {
           <h3 class="text-lg font-semibold text-slate-900">Northern Ireland</h3>
           <ul class="text-sm text-slate-800 space-y-1">
             <li>
-              <a href="https://www.adviceni.net" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.adviceni.net" target="_blank" rel="noopener noreferrer" class="aa-target-size">
                 Advice NI
                 <span class="sr-only">(opens in new tab)</span>
               </a>
@@ -181,6 +186,7 @@ const lastReviewedWithGMT = new Date(lastmod).toLocaleString('en-GB', {
                 href="https://www.citizensadvice.org.uk/about-us/our-work/advice/"
                 target="_blank"
                 rel="noopener noreferrer"
+                class="aa-target-size"
               >
                 Citizens Advice (NI)
                 <span class="sr-only">(opens in new tab)</span>
@@ -191,6 +197,7 @@ const lastReviewedWithGMT = new Date(lastmod).toLocaleString('en-GB', {
                 href="https://www.moneyhelper.org.uk/en/money-troubles/dealing-with-debt"
                 target="_blank"
                 rel="noopener noreferrer"
+                class="aa-target-size"
               >
                 MoneyHelper
                 <span class="sr-only">(opens in new tab)</span>
@@ -233,26 +240,26 @@ const lastReviewedWithGMT = new Date(lastmod).toLocaleString('en-GB', {
             </div>
             <ul class="mt-2 text-sm text-slate-800 space-y-1">
               <li>
-                <a href="https://www.samaritans.org" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.samaritans.org" target="_blank" rel="noopener noreferrer" class="aa-target-size">
                   Samaritans – 24/7 listening support.
                   <span class="sr-only">(opens in new tab)</span>
                 </a>
               </li>
               <li>
-                <a href="https://www.mind.org.uk" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.mind.org.uk" target="_blank" rel="noopener noreferrer" class="aa-target-size">
                   Mind – information and support for mental health.
                   <span class="sr-only">(opens in new tab)</span>
                 </a>
               </li>
               <li>
-                <a href="https://www.thecalmzone.net" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.thecalmzone.net" target="_blank" rel="noopener noreferrer" class="aa-target-size">
                   CALM (Campaign Against Living Miserably) – support for people feeling low or
                   struggling.
                   <span class="sr-only">(opens in new tab)</span>
                 </a>
               </li>
               <li>
-                <a href="https://andysmanclub.co.uk" target="_blank" rel="noopener noreferrer">
+                <a href="https://andysmanclub.co.uk" target="_blank" rel="noopener noreferrer" class="aa-target-size">
                   Andy’s Man Club – free peer support groups for men.
                   <span class="sr-only">(opens in new tab)</span>
                 </a>
@@ -262,9 +269,11 @@ const lastReviewedWithGMT = new Date(lastmod).toLocaleString('en-GB', {
 
           <article
             class="rounded-xl border border-slate-200 bg-primary-50/60 p-5 space-y-2"
-            aria-label="NHS and GP mental health support"
-          >
-            <h3 class="text-base font-semibold">Your GP and NHS services</h3>
+            aria-label="NHS and GP mental health support">
+            <div class="flex items-center gap-2">
+              <LifeBuoy class="w-5 h-5 text-primary-700" aria-hidden="true" />
+              <h3 class="text-base font-semibold">Your GP and NHS services</h3>
+            </div>
             <p class="text-sm text-slate-800 leading-relaxed">
               If you’re worried about your mental health, you can speak to your GP or, in an
               emergency, use NHS services in your area. They can talk through options like talking
@@ -327,8 +336,8 @@ const lastReviewedWithGMT = new Date(lastmod).toLocaleString('en-GB', {
         </div>
 
         <p class="text-xs text-slate-700">
-          For more detail, see the <a href="/about">About</a> and{" "}
-          <a href="/faq">Frequently asked questions</a> pages.
+          For more detail, see the <a href="/about" class="aa-target-size">About</a> and{" "}
+          <a href="/faq" class="aa-target-size">Frequently asked questions</a> pages.
         </p>
       </div>
     </section>
