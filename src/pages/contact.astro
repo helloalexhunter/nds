@@ -1,10 +1,24 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { getLastCommitDate } from '../utils/git-time.js';
 
 const title = "Contact National Debt Service";
 const description =
   "Contact National Debt Service about the website itself. We can’t give debt advice, but you can share feedback or flag problems with the site.";
 const canonicalUrl = "https://www.nationaldebtservice.co.uk/contact";
+
+const filePath = 'src/pages/contact.astro';
+const lastmod = getLastCommitDate(filePath);
+const lastReviewedWithGMT = new Date(lastmod).toLocaleString('en-GB', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+    timeZone: 'GMT',
+    timeZoneName: 'short',
+});
+
 ---
 
 <BaseLayout {title} {description} {canonicalUrl}>
@@ -18,6 +32,9 @@ const canonicalUrl = "https://www.nationaldebtservice.co.uk/contact";
         <p class="text-base text-slate-800 leading-relaxed">
           You can contact us about the website itself – for example, to report a broken link,
           suggest an accessibility improvement, or raise a concern about any of the content.
+        </p>
+        <p class="text-xs text-slate-600">
+          Page last reviewed: <time datetime={lastmod}>{lastReviewedWithGMT}</time>
         </p>
       </header>
 

@@ -1,10 +1,23 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { getLastCommitDate } from '../utils/git-time.js';
 
 const title = "Cookies Policy – National Debt Service";
 const description =
   "Find out how National Debt Service uses cookies and similar technologies, including Cloudflare Analytics and Google Analytics 4.";
 const canonicalUrl = "https://www.nationaldebtservice.co.uk/cookies";
+
+const filePath = 'src/pages/cookies.astro';
+const lastmod = getLastCommitDate(filePath);
+const lastReviewedWithGMT = new Date(lastmod).toLocaleString('en-GB', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+    timeZone: 'GMT',
+    timeZoneName: 'short',
+});
 ---
 
 <BaseLayout {title} {description} {canonicalUrl}>
@@ -20,7 +33,7 @@ const canonicalUrl = "https://www.nationaldebtservice.co.uk/cookies";
           Service website.
         </p>
         <p class="text-xs text-slate-600">
-          Last updated: 1 December 2025
+          Page last reviewed: <time datetime={lastmod}>{lastReviewedWithGMT}</time>
         </p>
       </header>
 

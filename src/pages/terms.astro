@@ -1,10 +1,23 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { getLastCommitDate } from '../utils/git-time.js';
 
 const title = "Terms of use – National Debt Service";
 const description =
   "Read the terms of use for the National Debt Service website. We provide general information and signpost to trusted debt advice organisations in the UK.";
 const canonicalUrl = "https://www.nationaldebtservice.co.uk/terms";
+
+const filePath = 'src/pages/terms.astro';
+const lastmod = getLastCommitDate(filePath);
+const lastReviewedWithGMT = new Date(lastmod).toLocaleString('en-GB', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+    timeZone: 'GMT',
+    timeZoneName: 'short',
+});
 ---
 
 <BaseLayout {title} {description} {canonicalUrl}>
@@ -20,7 +33,7 @@ const canonicalUrl = "https://www.nationaldebtservice.co.uk/terms";
           them carefully before using the site.
         </p>
         <p class="text-xs text-slate-600">
-          Last updated: 1 December 2025
+          Page last reviewed: <time datetime={lastmod}>{lastReviewedWithGMT}</time>
         </p>
       </header>
 

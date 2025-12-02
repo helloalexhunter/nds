@@ -1,12 +1,23 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { getLastCommitDate } from '../utils/git-time.js';
 
 const title = "Get help now";
 const description =
   "If you’re worried about money or debt, these steps can help you find the right support quickly and safely.";
 const canonicalUrl = "https://www.nationaldebtservice.co.uk/get-help";
 
-const lastReviewed = "1 December 2025";
+const filePath = 'src/pages/get-help.astro';
+const lastmod = getLastCommitDate(filePath);
+const lastReviewedWithGMT = new Date(lastmod).toLocaleString('en-GB', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+    timeZone: 'GMT',
+    timeZoneName: 'short',
+});
 ---
 
 <BaseLayout {title} {description} {canonicalUrl}>
@@ -23,7 +34,7 @@ const lastReviewed = "1 December 2025";
           organisations that can help across the UK.
         </p>
         <p class="text-xs text-slate-700">
-          Version 1.1.0 &middot; Last reviewed: {lastReviewed}
+          Page last reviewed: <time datetime={lastmod}>{lastReviewedWithGMT}</time>
         </p>
       </header>
 
