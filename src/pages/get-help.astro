@@ -19,59 +19,66 @@ const lastReviewedWithGMT = new Date(lastmod).toLocaleString('en-GB', {
     timeZoneName: 'short',
 });
 ---
-
 <BaseLayout {title} {description} {canonicalUrl}>
   <main id="main-content" class="bg-primary-50 min-h-screen">
-    <section class="mx-auto max-w-6xl px-4 py-10 sm:py-14 space-y-8">
-      <header class="space-y-3">
+    <section class="mx-auto max-w-4xl px-4 py-10 sm:py-14 space-y-8">
+      <header class="space-y-4">
         <p class="text-sm font-semibold text-primary-700 uppercase tracking-wide">
-          Get help
+          Get help now
         </p>
-        <h1>I need support right now</h1>
-        <p class="text-base text-slate-800 leading-relaxed">
-          This page explains some first steps you can take if you&apos;re worried about money or
-          debt. We don&apos;t give debt advice or handle your case. Instead, we signpost to trusted
-          organisations that can help across the UK.
-        </p>
-        <p class="text-xs text-slate-700">
+        <h1>Get help now</h1>
+        <div class="space-y-3">
+          <p class="text-base text-slate-800 leading-relaxed">
+            If you&apos;re worried about money, debt, housing or your safety, you&apos;re not alone.
+            This page gives you <strong>one trusted starting point</strong> for each type of problem,
+            so you don&apos;t have to sift through lots of options when you&apos;re already under
+            pressure.
+          </p>
+          <p class="text-sm text-slate-800 leading-relaxed">
+            We don&apos;t give debt advice and we don&apos;t arrange solutions. We simply point you
+            towards organisations that are known for doing this work every day.
+          </p>
+        </div>
+
+        <div class="rounded-xl border border-red-200 bg-red-50 px-4 py-3">
+          <p class="text-sm text-red-900 leading-relaxed">
+            <strong>If you are in immediate danger or feel unsafe, call 999.</strong><br />
+            If you can&apos;t speak, you may still be able to get help. You can find more information
+            on silent and emergency calls on the{" "}
+            <a href="https://www.gov.uk/call-999" target="_blank" rel="noopener noreferrer">
+              GOV.UK website
+            </a>.
+          </p>
+        </div>
+
+        <p class="text-xs text-slate-600">
           Page last reviewed: <time datetime={lastmod}>{lastReviewedWithGMT}</time>
         </p>
       </header>
 
-      {/* 1. Immediate danger */}
-      <section class="rounded-xl border border-red-200 bg-white p-4 sm:p-5 space-y-3">
-        <h2 class="text-lg font-semibold text-red-800">If you or someone else is in immediate danger</h2>
-        <p class="text-sm text-slate-800 leading-relaxed">
-          If you feel at immediate risk of harm, or you think someone else is, call{" "}
-          <strong>999</strong> or go to your nearest{" "}
-          <a href="https://www.nhs.uk/nhs-services/urgent-and-emergency-care-services/"
-             target="_blank"
-             rel="noopener noreferrer">
-            A&amp;E department
-            <span class="sr-only">(opens in a new tab)</span>
-          </a>{" "}
-          straight away.
-        </p>
-      </section>
-
-      {/* 2. Worried about money or debts */}
-      <section id="money-support" class="rounded-xl border border-slate-200 bg-white p-4 sm:p-5 space-y-4">
-        <header class="space-y-2">
-          <h2 class="text-lg font-semibold text-slate-900">If you&apos;re worried about money or debt</h2>
+      {/* Money and debt */}
+      <section class="space-y-3 rounded-xl border border-slate-200 bg-white p-4 sm:p-5">
+        <header class="space-y-1">
+          <h2 class="text-lg font-semibold text-slate-900">
+            Money worries and problem debt
+          </h2>
           <p class="text-sm text-slate-800 leading-relaxed">
-            The sooner you speak to a free, regulated debt advice charity, the more options you&apos;re
-            likely to have. These organisations can help you understand your full situation and explain
-            what might be possible in your country of the UK.
+            For most people who are struggling with debts, a good first step is to talk to a free,
+            independent debt advice charity. They can look at your full situation, explain your
+            options and help you decide what to do next.
           </p>
         </header>
 
-        <ul class="space-y-3">
-          <li>
-            <p class="text-sm font-semibold text-slate-900">StepChange Debt Charity</p>
-            <p class="text-sm text-slate-800">
-              Free, regulated debt advice charity working across the UK. You can start online or by phone.
-            </p>
-            <p class="text-sm">
+        <article class="rounded-lg border border-primary-100 bg-primary-50 px-4 py-3 space-y-1">
+          <h3 class="text-base font-semibold text-slate-900">
+            StepChange Debt Charity
+          </h3>
+          <p class="text-sm text-slate-800 leading-relaxed">
+            StepChange is a free, regulated debt advice charity that helps people across the UK with
+            problem debt.
+          </p>
+          <ul class="text-sm text-slate-800 leading-relaxed space-y-0.5">
+            <li>
               Website:{" "}
               <a
                 href="https://www.stepchange.org"
@@ -79,91 +86,59 @@ const lastReviewedWithGMT = new Date(lastmod).toLocaleString('en-GB', {
                 rel="noopener noreferrer"
               >
                 https://www.stepchange.org
-                <span class="sr-only">(opens in a new tab)</span>
               </a>
-            </p>
-          </li>
-          <li>
-            <p class="text-sm font-semibold text-slate-900">National Debtline</p>
-            <p class="text-sm text-slate-800">
-              Free debt advice service from the Money Advice Trust, with separate guidance for England,
-              Wales and Scotland.
-            </p>
-            <p class="text-sm">
-              Website:{" "}
-              <a
-                href="https://www.nationaldebtline.org"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                https://www.nationaldebtline.org
-                <span class="sr-only">(opens in a new tab)</span>
-              </a>
-            </p>
-          </li>
-          <li>
-            <p class="text-sm font-semibold text-slate-900">Citizens Advice</p>
-            <p class="text-sm text-slate-800">
-              Independent advice on debts, benefits, work, housing and more. Local offices and online content.
-            </p>
-            <p class="text-sm">
-              Website:{" "}
-              <a
-                href="https://www.citizensadvice.org.uk/debt-and-money"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Debt and money section on Citizens Advice
-                <span class="sr-only">(opens in a new tab)</span>
-              </a>
-            </p>
-          </li>
-          <li>
-            <p class="text-sm font-semibold text-slate-900">MoneyHelper</p>
-            <p class="text-sm text-slate-800">
-              Government-backed guidance on dealing with money and debt, including tools and links to free
-              advice services.
-            </p>
-            <p class="text-sm">
-              Website:{" "}
-              <a
-                href="https://www.moneyhelper.org.uk/en/money-troubles/dealing-with-debt"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                MoneyHelper – dealing with debt
-                <span class="sr-only">(opens in a new tab)</span>
-              </a>
-            </p>
-          </li>
-        </ul>
-
-        <p class="text-xs text-slate-700">
-          We can&apos;t tell you which organisation to choose. The services listed above are widely
-          recognised, free to contact and explain clearly which country or countries they cover.
-        </p>
+            </li>
+            <li>
+              Coverage: England, Scotland, Wales, Northern Ireland
+            </li>
+          </ul>
+          <p class="text-xs text-slate-700 mt-1">
+            Other recognised free services include{" "}
+            <a
+              href="https://www.nationaldebtline.org"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              National Debtline
+            </a>{" "}
+            and{" "}
+            <a
+              href="https://www.citizensadvice.org.uk/debt-and-money"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Citizens Advice
+            </a>. You can find more options on our{" "}
+            <a href="/resources">Resources page</a>.
+          </p>
+        </article>
       </section>
 
-      {/* 3. Mental health and how you feel */}
-      <section id="mental-health" class="rounded-xl border border-slate-200 bg-white p-4 sm:p-5 space-y-4">
-        <header class="space-y-2">
+      {/* Feeling overwhelmed or in emotional crisis */}
+      <section class="space-y-3 rounded-xl border border-slate-200 bg-white p-4 sm:p-5">
+        <header class="space-y-1">
           <h2 class="text-lg font-semibold text-slate-900">
-            If money worries are affecting your mental health
+            Feeling overwhelmed or in emotional crisis
           </h2>
           <p class="text-sm text-slate-800 leading-relaxed">
-            It&apos;s very common for money problems to affect sleep, mood and relationships. You&apos;re
-            not weak or failing if you feel low, anxious or stuck. There are places you can talk about how
-            you feel, without judgment.
+            Money worries and debt can make you feel trapped, ashamed or exhausted. If you&apos;re
+            finding it hard to cope, talking to someone who will listen without judgement can help.
           </p>
         </header>
 
-        <ul class="space-y-3">
-          <li>
-            <p class="text-sm font-semibold text-slate-900">Samaritans</p>
-            <p class="text-sm text-slate-800">
-              24/7 listening support for anyone who&apos;s struggling to cope.
-            </p>
-            <p class="text-sm">
+        <article class="rounded-lg border border-primary-100 bg-primary-50 px-4 py-3 space-y-1">
+          <h3 class="text-base font-semibold text-slate-900">
+            Samaritans
+          </h3>
+          <p class="text-sm text-slate-800 leading-relaxed">
+            Samaritans offer 24/7 listening support for anyone who&apos;s struggling to cope, feeling
+            low or having suicidal thoughts.
+          </p>
+          <ul class="text-sm text-slate-800 leading-relaxed space-y-0.5">
+            <li>
+              Phone (free): <span class="font-semibold">116 123</span>
+            </li>
+            <li>
               Website:{" "}
               <a
                 href="https://www.samaritans.org"
@@ -171,72 +146,97 @@ const lastReviewedWithGMT = new Date(lastmod).toLocaleString('en-GB', {
                 rel="noopener noreferrer"
               >
                 https://www.samaritans.org
-                <span class="sr-only">(opens in a new tab)</span>
               </a>
-            </p>
-          </li>
-          <li>
-            <p class="text-sm font-semibold text-slate-900">Mind</p>
-            <p class="text-sm text-slate-800">
-              Mental health charity offering information, local services in some areas, and support lines.
-            </p>
-            <p class="text-sm">
-              Website:{" "}
-              <a
-                href="https://www.mind.org.uk"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                https://www.mind.org.uk
-                <span class="sr-only">(opens in a new tab)</span>
-              </a>
-            </p>
-          </li>
-          <li>
-            <p class="text-sm font-semibold text-slate-900">Andy&apos;s Man Club</p>
-            <p class="text-sm text-slate-800">
-              Free peer-support groups for men, meeting weekly in local venues and online.
-            </p>
-            <p class="text-sm">
-              Website:{" "}
-              <a
-                href="https://andysmanclub.co.uk"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                https://andysmanclub.co.uk
-                <span class="sr-only">(opens in a new tab)</span>
-              </a>
-            </p>
-          </li>
-        </ul>
+            </li>
+          </ul>
+          <p class="text-xs text-slate-700 mt-1">
+            They are there to listen, not to tell you what to do. If you need urgent medical help or
+            are at immediate risk, contact emergency services or NHS 111.
+          </p>
+        </article>
 
         <p class="text-xs text-slate-700">
-          If you&apos;re worried you might hurt yourself, or you feel you can&apos;t keep yourself safe,
-          please treat it as urgent. Call 999 or go to A&amp;E.
+          If you&apos;re a man who would find it easier to talk in a group of other men,{" "}
+          <a
+            href="https://andysmanclub.co.uk"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Andy&apos;s Man Club
+          </a>{" "}
+          runs free peer-support groups in many towns and cities across the UK.
         </p>
       </section>
 
-      {/* 4. Abuse, control or feeling unsafe */}
-      <section id="safety" class="rounded-xl border border-slate-200 bg-white p-4 sm:p-5 space-y-4">
-        <header class="space-y-2">
+      {/* Housing and risk of homelessness */}
+      <section class="space-y-3 rounded-xl border border-slate-200 bg-white p-4 sm:p-5">
+        <header class="space-y-1">
           <h2 class="text-lg font-semibold text-slate-900">
-            If money is being used to control or abuse you
+            Housing problems or risk of homelessness
           </h2>
           <p class="text-sm text-slate-800 leading-relaxed">
-            Sometimes debt and money worries are linked to abuse or control by a partner, ex-partner or
-            family member. This is sometimes called economic abuse or financial abuse.
+            If you&apos;re worried about eviction, rent arrears, losing your home or poor housing
+            conditions, it&apos;s important to get housing-specific advice.
           </p>
         </header>
 
-        <ul class="space-y-3">
-          <li>
-            <p class="text-sm font-semibold text-slate-900">Refuge</p>
-            <p class="text-sm text-slate-800">
-              Support for women and children experiencing domestic abuse, including financial and economic
-              abuse.
-            </p>
-            <p class="text-sm">
+        <article class="rounded-lg border border-primary-100 bg-primary-50 px-4 py-3 space-y-1">
+          <h3 class="text-base font-semibold text-slate-900">
+            Shelter
+          </h3>
+          <p class="text-sm text-slate-800 leading-relaxed">
+            Shelter is a housing and homelessness charity offering advice on renting, eviction,
+            homelessness, mortgage problems and bad housing.
+          </p>
+          <ul class="text-sm text-slate-800 leading-relaxed space-y-0.5">
+            <li>
+              Website:{" "}
+              <a
+                href="https://www.shelter.org.uk"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                https://www.shelter.org.uk
+              </a>
+            </li>
+            <li>
+              Coverage: England, Scotland, Wales (with some services UK-wide)
+            </li>
+          </ul>
+          <p class="text-xs text-slate-700 mt-1">
+            Scotland and Wales have their own specific Shelter sites and housing rules. Shelter&apos;s
+            main website will signpost you to the right place.
+          </p>
+        </article>
+      </section>
+
+      {/* Domestic abuse, control or feeling unsafe at home */}
+      <section class="space-y-3 rounded-xl border border-slate-200 bg-white p-4 sm:p-5">
+        <header class="space-y-1">
+          <h2 class="text-lg font-semibold text-slate-900">
+            Domestic abuse, control or feeling unsafe at home
+          </h2>
+          <p class="text-sm text-slate-800 leading-relaxed">
+            Abuse is not only physical. It can include emotional, financial or controlling behaviour.
+            If someone is controlling your money or making you feel unsafe, you can get specialist
+            support.
+          </p>
+        </header>
+
+        <article class="rounded-lg border border-primary-100 bg-primary-50 px-4 py-3 space-y-1">
+          <h3 class="text-base font-semibold text-slate-900">
+            Refuge – National Domestic Abuse Helpline
+          </h3>
+          <p class="text-sm text-slate-800 leading-relaxed">
+            Refuge runs the 24-hour National Domestic Abuse Helpline in England and provides support
+            and refuge spaces for women and children experiencing domestic abuse.
+          </p>
+          <ul class="text-sm text-slate-800 leading-relaxed space-y-0.5">
+            <li>
+              Helpline (free):{" "}
+              <span class="font-semibold">0808 2000 247</span>
+            </li>
+            <li>
               Website:{" "}
               <a
                 href="https://www.refuge.org.uk"
@@ -244,90 +244,38 @@ const lastReviewedWithGMT = new Date(lastmod).toLocaleString('en-GB', {
                 rel="noopener noreferrer"
               >
                 https://www.refuge.org.uk
-                <span class="sr-only">(opens in a new tab)</span>
               </a>
-            </p>
-          </li>
-          <li>
-            <p class="text-sm font-semibold text-slate-900">Women’s Aid</p>
-            <p class="text-sm text-slate-800">
-              Information and local services for women experiencing domestic abuse.
-            </p>
-            <p class="text-sm">
-              Website:{" "}
-              <a
-                href="https://www.womensaid.org.uk"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                https://www.womensaid.org.uk
-                <span class="sr-only">(opens in a new tab)</span>
-              </a>
-            </p>
-          </li>
-          <li>
-            <p class="text-sm font-semibold text-slate-900">Men’s Advice Line</p>
-            <p class="text-sm text-slate-800">
-              Confidential support for men experiencing domestic abuse in heterosexual or same-sex
-              relationships.
-            </p>
-            <p class="text-sm">
-              Website:{" "}
-              <a
-                href="https://mensadviceline.org.uk"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                https://mensadviceline.org.uk
-                <span class="sr-only">(opens in a new tab)</span>
-              </a>
-            </p>
-          </li>
-          <li>
-            <p class="text-sm font-semibold text-slate-900">Galop</p>
-            <p class="text-sm text-slate-800">
-              Support for LGBTQ+ people experiencing abuse or violence, including domestic abuse and hate
-              crime.
-            </p>
-            <p class="text-sm">
-              Website:{" "}
-              <a
-                href="https://galop.org.uk"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                https://galop.org.uk
-                <span class="sr-only">(opens in a new tab)</span>
-              </a>
-            </p>
-          </li>
-        </ul>
+            </li>
+          </ul>
+          <p class="text-xs text-slate-700 mt-1">
+            There are also services for men and LGBTQ+ people experiencing abuse. You can find more
+            options in the “Safety, abuse and financial control” section on our{" "}
+            <a href="/resources">Resources page</a>.
+          </p>
+        </article>
       </section>
 
-      {/* 5. Link through to the Resources page */}
-      <section class="rounded-xl border border-slate-200 bg-white p-4 sm:p-5 space-y-3">
-        <h2 class="text-lg font-semibold text-slate-900">More organisations and resources</h2>
+      {/* More options / Resources */}
+      <section class="space-y-3 rounded-xl border border-slate-200 bg-white p-4 sm:p-5">
+        <h2 class="text-lg font-semibold text-slate-900">
+          More places that can help
+        </h2>
         <p class="text-sm text-slate-800 leading-relaxed">
-          We keep a longer list of trusted organisations on our{" "}
-          <a href="/resources">Resources page</a>. You can use it to find more options for your country
-          of the UK, or to explore support around benefits, mental health and safety.
+          This page keeps things simple on purpose, with just one main contact for each area. If you
+          want to see a wider range of organisations, including more debt advice charities, mental
+          health services and cost of living support, you can use our full list.
+        </p>
+        <p class="text-sm text-slate-800 leading-relaxed">
+          Go to the{" "}
+          <a href="/resources">Resources page</a>{" "}
+          to see more options.
         </p>
         <p class="text-xs text-slate-700">
-          We don&apos;t earn commission or referral fees from any organisation listed. Being included on
-          the Resources page never depends on payment.
+          We keep this site under review, but organisations and phone numbers can change. Always
+          check you&apos;re comfortable that a service is genuine before sharing any personal or
+          financial information.
         </p>
       </section>
-
-      <script is:inline type="application/ld+json">
-        {JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "WebPage",
-          name: "Get help now",
-          description:
-            "If you’re worried about money or debt, these steps can help you find the right support quickly and safely.",
-          url: canonicalUrl,
-        })}
-      </script>
     </section>
   </main>
 </BaseLayout>

@@ -53,6 +53,16 @@ const siteUrl = "https://www.nationaldebtservice.co.uk";
 
   <body class="min-h-screen bg-neutral-soft text-dark-text antialiased">
     <Header />
+    <!-- Quick Exit CTA -->
+    <button 
+      id="quick-exit-button" 
+      class="fixed top-2 right-2 z-[9999] bg-red-600 text-white text-sm uppercase font-bold py-1 px-3 rounded border-8 border-amber-400 hover:bg-red-700"
+      aria-label="Quickly escape this website"
+    >
+      Escape this website
+      <br />
+      <span class="font-normal text-white text-xs">(Click or press 'Escape' key)</span>
+    </button>
     <!-- New ownership banner -->
       <div class="bg-red-50 border-b border-red-200 py-3 px-4 text-center rounded-b-lg shadow-sm">
         <p class="text-sm text-red-800 font-medium max-w-3xl mx-auto leading-snug">
@@ -62,5 +72,32 @@ const siteUrl = "https://www.nationaldebtservice.co.uk";
       </div>
     <slot />
     <Footer />
+    <!-- Quick Exit CTA Script -->
+      <script is:inline>
+        if (typeof window !== "undefined") {
+          // Use a neutral, common website, ensuring it is a UK domain.
+          const safeUrl = "https://www.google.co.uk/"; 
+
+          const exitButton = document.getElementById("quick-exit-button");
+
+          if (exitButton) {
+            const quickExit = (event) => {
+              if (event) event.preventDefault();
+              // CRITICAL: window.location.replace() removes the current page from the browser history.
+              window.location.replace(safeUrl);
+            };
+
+            // Activate on button click
+            exitButton.addEventListener("click", quickExit);
+            
+            // Best practice: Activate on the Escape key press for fastest exit
+            document.addEventListener("keydown", function(event) {
+              if (event.key === "Escape") {
+                quickExit();
+              }
+            });
+          }
+        }
+      </script>
   </body>
 </html>
