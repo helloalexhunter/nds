@@ -54,14 +54,27 @@ const siteUrl = "https://www.nationaldebtservice.co.uk";
   <body class="min-h-screen bg-neutral-soft text-dark-text antialiased">
     <Header />
     <!-- Quick Exit CTA -->
-    <button 
+<button 
       id="quick-exit-button" 
-      class="fixed top-2 right-2 z-[9999] bg-red-600 text-white text-sm uppercase font-bold py-1 px-3 rounded border-8 border-amber-400 hover:bg-red-700"
-      aria-label="Quickly escape this website"
+      class="
+        fixed z-[9999] bg-red-600 text-white uppercase font-bold shadow-lg hover:bg-red-700 transition-colors border-8 border-amber-400 leading-tight 
+        
+        /* MOBILE STYLES (Default) */
+        bottom-0 left-1/2 -translate-x-1/2 max-w-xs w-full 
+        text-center text-sm py-3 rounded-t-lg
+        
+        /* DESKTOP STYLES (md: prefix) */
+        md:w-auto md:max-w-none 
+        md:top-2 md:right-2 md:bottom-auto md:left-auto md:translate-x-0
+        md:text-center md:py-1 md:px-3 md:rounded
+      "
+      aria-label="Quickly escape this website. Click or press the Escape key."
     >
       Escape this website
       <br />
-      <span class="font-normal text-white text-xs">(Click or press 'Escape' key)</span>
+      <span class="font-bold text-white text-xs">
+        (Tap/Click or press 'Escape' key)
+      </span>
     </button>
     <!-- New ownership banner -->
       <div class="bg-red-50 border-b border-red-200 py-3 px-4 text-center rounded-b-lg shadow-sm">
@@ -73,27 +86,27 @@ const siteUrl = "https://www.nationaldebtservice.co.uk";
     <slot />
     <Footer />
     <!-- Quick Exit CTA Script -->
-<script is:inline>
-      if (typeof window !== "undefined") {
-        const safeUrl = "https://www.google.co.uk/"; 
-        const exitButton = document.getElementById("quick-exit-button");
+      <script is:inline>
+            if (typeof window !== "undefined") {
+              const safeUrl = "https://www.google.co.uk/"; 
+              const exitButton = document.getElementById("quick-exit-button");
 
-        if (exitButton) {
-          const quickExit = (event) => {
-            if (event) event.preventDefault();
-            window.location.replace(safeUrl);
-          };
-          exitButton.addEventListener("click", quickExit);
-          
-          document.addEventListener("keydown", function(event) {
-            if (event.key === "Escape") {
-              event.preventDefault();
-              event.stopPropagation();
-              quickExit();
+              if (exitButton) {
+                const quickExit = (event) => {
+                  if (event) event.preventDefault();
+                  window.location.replace(safeUrl);
+                };
+                exitButton.addEventListener("click", quickExit);
+                
+                document.addEventListener("keydown", function(event) {
+                  if (event.key === "Escape") {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    quickExit();
+                  }
+                });
+              }
             }
-          });
-        }
-      }
-    </script>
+        </script>
   </body>
 </html>
