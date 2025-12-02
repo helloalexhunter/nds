@@ -1,7 +1,5 @@
 // functions/api/contact.js
 
-import { exec } from "node:child_process";
-
 // GET: quick health check at /api/contact
 export async function onRequestGet() {
   return new Response("Contact endpoint is alive (GET)", {
