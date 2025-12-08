@@ -1,0 +1,300 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "astro.config.mjs",
+			"settings":
+			{
+				"buffer_size": 624,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"Packa",
+				"Package Control: Install Package"
+			],
+			[
+				"package control",
+				"Package Control: Install Package"
+			],
+			[
+				"package contro",
+				"Install Package Control"
+			],
+			[
+				"Package Control:in",
+				"Package Control: Install Package"
+			],
+			[
+				"package con",
+				"Package Control: Install Package"
+			],
+			[
+				"package control: in",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Con",
+				"Package Control: Install Package"
+			],
+			[
+				"package control: remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 285.0,
+		"history":
+		[
+			"clear",
+			"cd desktop"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/alexhunter/Desktop/projects/nds/main"
+	],
+	"file_history":
+	[
+		"/Users/alexhunter/Desktop/projects/salnow/src/layouts/Layout.astro",
+		"/Users/alexhunter/Desktop/projects/salnow/src/components/Header.astro",
+		"/Users/alexhunter/Desktop/projects/salnow/astro.config.mjs",
+		"/Users/alexhunter/Desktop/projects/salnow/setup-starter-structure.sh",
+		"/Users/alexhunter/Desktop/projects/setup-starter-structure.sh",
+		"/Users/alexhunter/Desktop/projects/salarynow/src/styles/global.css",
+		"/Users/alexhunter/Desktop/projects/salarynow/salarynow.sublime-project",
+		"/Users/alexhunter/Desktop/projects/salarynow/src/pages/terms.astro",
+		"/Users/alexhunter/Desktop/projects/salarynow/src/pages/privacy.astro",
+		"/Users/alexhunter/Desktop/projects/salarynow/src/pages/contact.astro",
+		"/Users/alexhunter/Desktop/projects/salarynow/src/pages/services.astro",
+		"/Users/alexhunter/Desktop/projects/salarynow/src/pages/about.astro",
+		"/Users/alexhunter/Desktop/projects/salarynow/src/pages/index.astro",
+		"/Users/alexhunter/Desktop/projects/salarynow/src/layouts/Layout.astro",
+		"/Users/alexhunter/Desktop/projects/salarynow/src/components/CTA.astro",
+		"/Users/alexhunter/Desktop/projects/salarynow/src/components/Hero.astro",
+		"/Users/alexhunter/Desktop/projects/salarynow/src/components/Footer.astro",
+		"/Users/alexhunter/Desktop/projects/salarynow/src/components/Header.astro",
+		"/Users/alexhunter/Desktop/projects/salarynow/astro.config.mjs",
+		"/Users/alexhunter/Desktop/projects/setup-astro-robust.sh",
+		"/Users/alexhunter/Desktop/projects/alexhunter/src/pages/index.astro",
+		"/Users/alexhunter/Desktop/projects/alexhunter/src/pages/services.astro",
+		"/Users/alexhunter/Desktop/projects/alexhunter/src/pages/packages.astro",
+		"/Users/alexhunter/Desktop/projects/alexhunter/src/components/Header.astro",
+		"/Users/alexhunter/Desktop/projects/alexhunter/src/components/Footer.astro",
+		"/Users/alexhunter/Desktop/projects/alexhunter/src/components/ui/HeroHeading.astro",
+		"/Users/alexhunter/Desktop/projects/alexhunter/src/components/layout/HeroSection.astro",
+		"/Users/alexhunter/Desktop/projects/alexhunter/src/styles/global.css",
+		"/Users/alexhunter/Desktop/projects/alexhunter/src/pages/contact.astro",
+		"/Users/alexhunter/Desktop/projects/alexhunter/src/pages/about.astro",
+		"/Users/alexhunter/Desktop/projects/alexhunter/src/layouts/Layout.astro",
+		"/Users/alexhunter/Desktop/projects/alexhunter/src/components/HeroHeading.astro",
+		"/Users/alexhunter/Desktop/projects/alexhunter/src/components/Welcome.astro",
+		"/Users/alexhunter/Desktop/projects/alexhunter/astro.config.mjs",
+		"/Users/alexhunter/Desktop/projects/setup-astro.sh",
+		"/Users/alexhunter/Library/Application Support/Sublime Text/Packages/User/JsPrettier.sublime-settings",
+		"/Users/alexhunter/Desktop/projects/alexhunter/{",
+		"/Users/alexhunter/Library/Application Support/Sublime Text/Packages/User/SublimeLinter.sublime-settings",
+		"/Users/alexhunter/Library/Application Support/Sublime Text/Packages/SublimeLinter/SublimeLinter.sublime-settings",
+		"/Users/alexhunter/Library/Application Support/Sublime Text/Packages/User/prettierd_format.sublime-settings",
+		"/Users/alexhunter/Library/Application Support/Sublime Text/Packages/Prettierd Format/prettierd_format.sublime-settings",
+		"/Users/alexhunter/Desktop/projects/salarynow/.prettierrc"
+	],
+	"find":
+	{
+		"height": 38.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "astro.config.mjs",
+					"selected": true,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 624,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"stack_multiselect": false,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 24.0
+	},
+	"input":
+	{
+		"height": 36.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.SublimeLinter":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"output.find_results":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"pinned_build_system": "",
+	"project": "nds.sublime-project",
+	"replace":
+	{
+		"height": 44.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 238.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

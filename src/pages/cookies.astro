@@ -4,7 +4,7 @@ import { getLastCommitDate } from '../utils/git-time.js';
 
 const title = "Cookies Policy – National Debt Service";
 const description =
-  "Find out how National Debt Service uses cookies and similar technologies, including Cloudflare Analytics and Google Analytics 4.";
+  "Find out how National Debt Service uses cookies and similar technologies, including Cloudflare and Umami Analytics.";
 const canonicalUrl = "https://www.nationaldebtservice.co.uk/cookies";
 
 const filePath = 'src/pages/cookies.astro';
@@ -57,7 +57,7 @@ const lastReviewedWithGMT = new Date(lastmod).toLocaleString('en-GB', {
           or marketing.
         </p>
         <p class="text-sm text-slate-800 leading-relaxed">
-          We currently use cookies only in connection with basic analytics.
+          We currently use cookies only for essential website functions, or where technically required by our service providers. For analytics, we use cookieless tracking.
         </p>
       </section>
 
@@ -89,12 +89,13 @@ const lastReviewedWithGMT = new Date(lastmod).toLocaleString('en-GB', {
         </p>
 
         <h3 class="text-lg font-semibold text-slate-900">
-          4.2 Google Analytics 4 (GA4)
+          4.2 Umami Analytics
         </h3>
         <p class="text-sm text-slate-800 leading-relaxed">
-          GA4 helps us understand which pages are used, how users navigate the site and where
-          problems might occur. We configure GA4 to collect aggregated, anonymised usage
-          data. We do not use GA4 data for:
+        Umami is a privacy-focused, cookieless analytics tool. It helps us understand which pages are used and how 
+        users navigate the site, all while maintaining the anonymity of individual users. We use a pseudonymous 
+        identifier to track sessions but do not store or read any cookies for this purpose.
+        We do not use Umami Analytics data for:
         </p>
         <ul class="list-disc pl-5 text-sm text-slate-800 leading-relaxed space-y-1">
           <li>advertising or remarketing</li>
