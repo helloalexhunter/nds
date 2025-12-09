@@ -3,18 +3,18 @@
 	{
 		"selected_items":
 		[
+			[
+				"border",
+				"border-red-300"
+			],
+			[
+				"border-",
+				"border-red-300"
+			]
 		]
 	},
 	"buffers":
 	[
-		{
-			"file": "astro.config.mjs",
-			"settings":
-			{
-				"buffer_size": 624,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -86,10 +86,29 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/alexhunter/Desktop/projects/nds/main"
+		"/Users/alexhunter/Desktop/projects/nds/main",
+		"/Users/alexhunter/Desktop/projects/nds/main/functions",
+		"/Users/alexhunter/Desktop/projects/nds/main/src",
+		"/Users/alexhunter/Desktop/projects/nds/main/src/components",
+		"/Users/alexhunter/Desktop/projects/nds/main/src/layouts",
+		"/Users/alexhunter/Desktop/projects/nds/main/src/pages"
 	],
 	"file_history":
 	[
+		"/Users/alexhunter/Desktop/projects/nds/main/src/pages/index.astro",
+		"/Users/alexhunter/Desktop/projects/nds/main/src/components/Footer.astro",
+		"/Users/alexhunter/Desktop/projects/nds/main/src/pages/get-help.astro",
+		"/Users/alexhunter/Desktop/projects/nds/main/src/pages/resources.astro",
+		"/Users/alexhunter/Desktop/projects/nds/main/src/pages/contact.astro",
+		"/Users/alexhunter/Desktop/projects/nds/main/src/pages/about.astro",
+		"/Users/alexhunter/Desktop/projects/nds/main/src/layouts/BaseLayout.astro",
+		"/Users/alexhunter/Desktop/projects/nds/main/src/components/Header.astro",
+		"/Users/alexhunter/Desktop/projects/nds/main/src/pages/privacy.astro",
+		"/Users/alexhunter/Desktop/projects/nds/main/src/pages/terms.astro",
+		"/Users/alexhunter/Desktop/projects/nds/main/src/pages/cookies.astro",
+		"/Users/alexhunter/Desktop/projects/nds/main/.env",
+		"/Users/alexhunter/Desktop/projects/nds/main/src/pages/changelog.astro",
+		"/Users/alexhunter/Desktop/projects/nds/main/astro.config.mjs",
 		"/Users/alexhunter/Desktop/projects/salnow/src/layouts/Layout.astro",
 		"/Users/alexhunter/Desktop/projects/salnow/src/components/Header.astro",
 		"/Users/alexhunter/Desktop/projects/salnow/astro.config.mjs",
@@ -170,38 +189,6 @@
 		{
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "astro.config.mjs",
-					"selected": true,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 624,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"stack_multiselect": false,
-					"type": "text"
-				}
 			]
 		}
 	],
