@@ -81,10 +81,17 @@ const isCurrent = (path: string) =>
     <div class="mx-auto max-w-5xl">
       <a
         href="/get-help"
-        class="btn-primary w-full justify-center"
+        class="btn-primary w-full justify-center mb-2"
         aria-current={isCurrent("/get-help") ? "page" : undefined}
       >
         I need support now
+      </a>
+      <a
+        href="/resources"
+        class="btn-primary w-full justify-center"
+        aria-current={isCurrent("/get-help") ? "page" : undefined}
+      >
+        Resources
       </a>
     </div>
   </div>

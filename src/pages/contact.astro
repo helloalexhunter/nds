@@ -22,13 +22,13 @@ const lastReviewedWithGMT = new Date(lastmod).toLocaleString('en-GB', {
 
 <BaseLayout {title} {description} {canonicalUrl}>
   <main id="main-content" class="bg-primary-50 min-h-screen">
-    <section class="mx-auto max-w-6xl px-4 py-10 sm:py-14 space-y-6">
+    <section class="mx-auto max-w-7xl px-4 py-10 sm:py-14 space-y-6">
       <header class="space-y-3">
         <p class="text-xs font-semibold uppercase tracking-wide text-primary-700">
           Contact
         </p>
         <h1>Contact National Debt Service</h1>
-        <p class="text-base text-slate-800 leading-relaxed">
+        <p class="text-base text-slate-800 leading-relaxed max-w-none">
           You can contact us about the website itself – for example, to report a broken link,
           suggest an accessibility improvement, or raise a concern about any of the content.
         </p>
@@ -61,11 +61,11 @@ const lastReviewedWithGMT = new Date(lastmod).toLocaleString('en-GB', {
 
       <section class="space-y-3">
         <h2 class="text-xl font-semibold text-slate-900">Before you get in touch</h2>
-        <p class="text-sm text-slate-800 leading-relaxed">
+        <p class="text-sm text-slate-800 leading-relaxed max-w-none">
           We can’t give you debt advice or tell you what to do about your situation. We also
           can’t contact creditors or advice charities on your behalf.
         </p>
-        <p class="text-sm text-slate-800 leading-relaxed">
+        <p class="text-sm text-slate-800 leading-relaxed max-w-none">
           If you need personal help with money or mental health, the quickest route is to
           contact a free, regulated organisation directly. You’ll find a list on the{" "}
           <a href="/get-help" class="aa-target-size">Where to get help</a> page.
@@ -141,29 +141,29 @@ const lastReviewedWithGMT = new Date(lastmod).toLocaleString('en-GB', {
               required
               class="block w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-700"
             ></textarea>
-            <p class="mt-1 text-xs text-slate-600">
+            <p class="mt-5 text-xs uppercase font-bold text-slate-600 max-w-none">
               Please don’t include full account numbers, National Insurance numbers, passwords,
               or other highly sensitive details. A short description is enough.
             </p>
           </div>
 
-          <div class="space-y-2 rounded-md bg-slate-50 px-3 py-3">
+          <div class="space-y-2 rounded-md bg-slate-50 px-3 py-3 border border-red-500 border-3">
             <div class="flex items-start gap-2">
               <input
                 id="consent"
                 name="consent"
                 type="checkbox"
                 required
-                class="mt-1 h-4 w-4 rounded border-slate-300 text-primary-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-700"
+                class="mt-2 h-4 w-4 rounded border-slate-300 text-primary-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-700"
               />
-              <label for="consent" class="text-xs text-slate-800 leading-relaxed">
+              <label for="consent" class="text-xs text-slate-800 leading-relaxed max-w-none">
                 I understand this site can’t give me personal debt advice and is for general
                 information only. I’ve read and agree to the{" "}
                 <a href="/privacy" class="aa-target-size">Privacy notice</a> and{" "}
                 <a href="/terms" class="aa-target-size">Terms of use</a>.
               </label>
             </div>
-            <p class="text-[11px] text-slate-600">
+            <p class="text-[11px] text-slate-600 max-w-none">
               We’ll use the information you send only to handle your message about the website.
             </p>
           </div>
