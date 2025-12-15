@@ -28,7 +28,6 @@ export async function onRequestPost(context) {
     let subject = "";
     let message = "";
     let consent = false;
-    // New: Variable for the Turnstile token
     let turnstileResponse = ""; 
 
     if (contentType.includes("form")) {
@@ -38,7 +37,6 @@ export async function onRequestPost(context) {
       subject = (form.get("subject") || "").toString().trim();
       message = (form.get("message") || "").toString().trim();
       consent = form.get("consent") === "on";
-      // New: Get the Turnstile token from the form data
       turnstileResponse = (form.get("cf-turnstile-response") || "").toString();
     }
 
@@ -50,9 +48,6 @@ export async function onRequestPost(context) {
       return redirectError();
     }
     
-    // ======================================================
-    // VERIFY CLOUDFLARE TURNSTILE TOKEN
-    // ======================================================
     const turnstileSecret = env.TURNSTILE_SECRET_KEY;
     
     if (!turnstileSecret) {

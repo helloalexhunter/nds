@@ -18,6 +18,10 @@ const lastReviewedWithGMT = new Date(lastmod).toLocaleString('en-GB', {
     timeZone: 'GMT',
     timeZoneName: 'short',
 });
+
+const url = new URL(Astro.request.url);
+const initialSubject = url.searchParams.get("subject") || "";
+
 ---
 
 <BaseLayout {title} {description} {canonicalUrl}>
@@ -110,7 +114,7 @@ const lastReviewedWithGMT = new Date(lastmod).toLocaleString('en-GB', {
             </p>
           </div>
 
-          <div class="space-y-1">
+<div class="space-y-1">
             <label for="subject" class="text-sm font-medium text-slate-900">
               What is your message about?
             </label>
@@ -120,13 +124,13 @@ const lastReviewedWithGMT = new Date(lastmod).toLocaleString('en-GB', {
               required
               class="block w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-700"
             >
-              <option value="">Please choose an option</option>
-              <option value="website-feedback">General website feedback</option>
-              <option value="accessibility-issue">Accessibility issue</option>
-              <option value="broken-link">Broken link or out-of-date information</option>
-              <option value="content-concern">Concern about content</option>
-              <option value="resource">Suggest a resource or correction</option>
-              <option value="other">Something else</option>
+              <option value="" selected={!initialSubject}>Please choose an option</option>
+              <option value="website-feedback" selected={initialSubject === "website-feedback"}>General website feedback</option>
+              <option value="accessibility-issue" selected={initialSubject === "accessibility-issue"}>Accessibility issue</option>
+              <option value="broken-link" selected={initialSubject === "broken-link"}>Broken link or out-of-date information</option>
+              <option value="content-concern" selected={initialSubject === "content-concern"}>Concern about content</option>
+              <option value="resource-correction" selected={initialSubject === "resource-correction"}>Suggest a resource or correction</option>
+              <option value="other" selected={initialSubject === "other"}>Something else</option>
             </select>
           </div>
 
@@ -147,7 +151,7 @@ const lastReviewedWithGMT = new Date(lastmod).toLocaleString('en-GB', {
             </p>
           </div>
 
-          <div class="space-y-2 rounded-md bg-slate-50 px-3 py-3 border border-red-500 border-3">
+          <div class="space-y-2 rounded-md bg-slate-50 px-3 py-3 border border-slate-300 border-3">
             <div class="flex items-start gap-2">
               <input
                 id="consent"

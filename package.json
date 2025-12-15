@@ -6,7 +6,8 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "format": "prettier --write ."
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.6.0",
@@ -17,9 +18,13 @@
     "lucide-astro": "^0.555.0",
     "tailwindcss": "^4.1.17"
   },
+  "devDependencies": {
+    "prettier": "^3.2.5",
+    "prettier-plugin-astro": "^0.13.0"
+  },
   "description": "The official website for National Debt Service.",
   "main": "index.js",
   "keywords": [],
-  "author": "",
+  "author": "Alex Hunter",
   "license": "ISC"
 }

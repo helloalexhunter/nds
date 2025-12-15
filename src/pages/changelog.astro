@@ -9,12 +9,8 @@ import { unified } from 'unified';
 const GITHUB_API_URL = `https://api.github.com/repos/helloalexhunter/nds/releases`;
 const REPO_URL = `https://github.com/helloalexhunter/nds`;
 
-// --- DATA FETCHING ---
-const token = import.meta.env.GITHUB_READ_TOKEN || '';
-
 const response = await fetch(GITHUB_API_URL, {
   headers: {
-    ...(token && { Authorization: `token ${token}` }), 
     'X-GitHub-Api-Version': '2022-11-28',
     'Accept': 'application/vnd.github.v3+json',
   },
@@ -59,7 +55,7 @@ const description = "A transparent, chronological record of all updates, bug fix
           <article class="relative border-l-4 border-primary-500 pl-6 space-y-2">
             
             {/* The Version Tag and Title */}
-            <div class="absolute -left-2 top-0 h-4 w-4 rounded-full bg-primary-700 ring-4 ring-primary-50/80"></div>
+            <div class="absolute -left-2.5 top-0 h-4 w-4 rounded-sm bg-primary-700 ring-4 ring-primary-50/80"></div>
             
             <h2 class="text-xl font-bold text-slate-900 mb-0">
               {release.tag_name} <span class="font-normal text-slate-500">({release.name || 'Release'})</span>
