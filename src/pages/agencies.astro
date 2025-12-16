@@ -1,0 +1,265 @@
+---
+// src/pages/agencies.astro
+import Layout from '../layouts/BaseLayout.astro';
+import agencies from '../data/agencies.json';
+
+const pageTitle = 'Debt Collection Agency Directory';
+const description =
+	'Contact details and information for major UK debt collection agencies and enforcement firms.';
+---
+
+<Layout title={pageTitle} description={description}>
+	<div class="container mx-auto p-4 max-w-5xl">
+		<header class="mb-10 text-center">
+			<h1 class="text-4xl font-extrabold mb-4 text-slate-900">{pageTitle}</h1>
+			<p class="text-xl text-gray-600 max-w-2xl mx-auto">
+				Received a letter? Find out who is contacting you.
+			</p>
+		</header>
+
+		{/* SEARCH BAR */}
+		<div class="max-w-md mx-auto mb-12 relative">
+			{/* ACCESSIBILITY FIX: Screen Reader Live Region for Search Feedback */}
+			<div id="search-status" role="status" aria-live="polite" class="sr-only">
+			</div>
+
+			{/* Search Icon (Decorative) */}
+			<div
+				class="absolute top-1/2 left-3 -translate-y-1/2 pointer-events-none text-gray-400"
+				aria-hidden="true"
+			>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					class="h-5 w-5"
+					fill="none"
+					viewBox="0 0 24 24"
+					stroke="currentColor"
+				>
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-width="2"
+						d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+				</svg>
+			</div>
+
+			{/* ACCESSIBILITY FIX: Explicit Label */}
+			<label for="agency-search" class="sr-only">
+				Search for an agency by name or trading name
+			</label>
+			<input
+				type="text"
+				id="agency-search"
+				placeholder="Search for an agency (e.g. Lowell, Moorcroft)..."
+				class="block w-full pl-10 pr-10 py-3 border border-gray-300 rounded-lg leading-5 bg-white placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 shadow-sm"
+			/>
+
+			{/* Clear Button */}
+			<button
+				id="clear-search"
+				class="hidden absolute top-1/2 right-3 -translate-y-1/2 text-gray-400 hover:text-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-full p-1"
+				aria-label="Clear search terms"
+			>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					class="h-5 w-5"
+					viewBox="0 0 20 20"
+					fill="currentColor"
+					aria-hidden="true"
+				>
+					<path
+						fill-rule="evenodd"
+						d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+						clip-rule="evenodd"></path>
+				</svg>
+			</button>
+		</div>
+
+		{/* AGENCY GRID */}
+		<div
+			id="agency-grid"
+			class="grid gap-6 md:grid-cols-2"
+			role="list"
+			aria-label="Search results"
+		>
+			{
+				agencies.map((agency) => {
+					// Safe variables for logic
+					const phoneNumber = agency.phone || '';
+					const phoneLink = `tel:${phoneNumber.replace(/\s/g, '')}`;
+					const hasTradingNames =
+						agency.trading_names && agency.trading_names.length > 0;
+
+					return (
+						<div
+							class="agency-card bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-all flex flex-col h-full"
+							role="listitem"
+						>
+							<div class="flex justify-between items-start mb-4">
+								<h2 class="text-2xl font-bold text-slate-900 agency-name">
+									{agency.name}
+								</h2>
+								<span class="bg-slate-100 text-slate-600 text-xs font-bold px-2 py-1 rounded uppercase tracking-wide">
+									Agency
+								</span>
+							</div>
+
+							{hasTradingNames && (
+								<div class="mb-4">
+									<p class="text-xs text-gray-500 uppercase font-semibold mb-1">
+										Also known as:
+									</p>
+									<div class="flex flex-wrap gap-2">
+										{agency.trading_names.map((name) => (
+											<span class="trading-name text-sm bg-blue-50 text-blue-800 px-2 py-0.5 rounded border border-blue-100">
+												{name}
+											</span>
+										))}
+									</div>
+								</div>
+							)}
+
+							<div class="space-y-3 text-gray-600 mb-6 flex-grow">
+								<p class="text-sm border-l-2 border-blue-200 pl-3 italic">
+									"{agency.notes}"
+								</p>
+							</div>
+
+							<div class="pt-4 border-t border-gray-100 flex flex-col sm:flex-row gap-3">
+								<a
+									href={agency.website}
+									target="_blank"
+									rel="noopener noreferrer"
+									class="flex-1 inline-flex justify-center items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+									aria-label={`Visit ${agency.name} website (opens in new tab)`}
+								>
+									Visit Website
+								</a>
+
+								<a
+									href={phoneLink}
+									data-phone={phoneNumber}
+									class="phone-btn flex-1 inline-flex justify-center items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 cursor-pointer relative group"
+									aria-label={`Call ${agency.name} on ${phoneNumber}`}
+								>
+									<span class="btn-text">Call: {phoneNumber}</span>
+									{/* ACCESSIBILITY FIX: Role status for screen reader announcement */}
+									<span
+										role="status"
+										class="tooltip hidden absolute -top-8 left-1/2 -translate-x-1/2 bg-gray-800 text-white text-xs py-1 px-2 rounded opacity-0 transition-opacity duration-200"
+									>
+										Copied to clipboard
+									</span>
+								</a>
+							</div>
+						</div>
+					);
+				})
+			}
+		</div>
+
+		{/* NO RESULTS MESSAGE */}
+		<div id="no-results" class="hidden text-center py-10" role="alert">
+			<p class="text-xl text-gray-500">
+				No agencies found matching your search.
+			</p>
+		</div>
+	</div>
+
+	{/* CLIENT-SIDE SCRIPTS */}
+	<script>
+		const searchInput = document.getElementById('agency-search');
+		const clearBtn = document.getElementById('clear-search');
+		const agencyCards = document.querySelectorAll('.agency-card');
+		const noResults = document.getElementById('no-results');
+		const statusRegion = document.getElementById('search-status'); // Live Region
+
+		if (searchInput && agencyCards.length > 0) {
+			const searchableItems = Array.from(agencyCards).map((card) => {
+				const nameEl = card.querySelector('.agency-name');
+				const tradingNameSpans = card.querySelectorAll('.trading-name');
+				const nameText = nameEl ? nameEl.textContent.toLowerCase() || '' : '';
+				const tradingText = Array.from(tradingNameSpans)
+					.map((span) => span.textContent.toLowerCase() || '')
+					.join(' ');
+
+				return {
+					element: card,
+					text: `${nameText} ${tradingText}`,
+				};
+			});
+
+			searchInput.addEventListener('input', (e) => {
+				const target = e.target;
+				const searchTerm = target.value.toLowerCase().trim();
+				let visibleCount = 0;
+
+				if (clearBtn) clearBtn.classList.toggle('hidden', searchTerm === '');
+
+				searchableItems.forEach((item) => {
+					const isVisible = item.text.includes(searchTerm);
+					item.element.classList.toggle('hidden', !isVisible);
+					if (isVisible) visibleCount++;
+				});
+
+				// Handle No Results visibility
+				if (noResults) noResults.classList.toggle('hidden', visibleCount > 0);
+
+				// ACCESSIBILITY UPDATE: Announce results to screen reader
+				if (statusRegion) {
+					if (visibleCount === 0) {
+						statusRegion.textContent =
+							'No agencies found matching your search.';
+					} else {
+						// Using a small delay or debouncing in a real app is better,
+						// but this is sufficient for basic compliance
+						statusRegion.textContent = `Showing ${visibleCount} agencies.`;
+					}
+				}
+			});
+
+			if (clearBtn) {
+				clearBtn.addEventListener('click', () => {
+					searchInput.value = '';
+					searchInput.focus();
+					searchInput.dispatchEvent(new Event('input'));
+				});
+			}
+		}
+
+		// Phone functionality
+		const phoneButtons = document.querySelectorAll('.phone-btn');
+		const isTouchDevice =
+			'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
+		if (!isTouchDevice) {
+			phoneButtons.forEach((btn) => {
+				const button = btn;
+				const phoneNum = button.getAttribute('data-phone');
+				const tooltip = button.querySelector('.tooltip');
+
+				button.addEventListener('click', (e) => {
+					e.preventDefault();
+					if (phoneNum) {
+						navigator.clipboard
+							.writeText(phoneNum)
+							.then(() => {
+								if (tooltip) {
+									tooltip.classList.remove('hidden');
+									setTimeout(() => tooltip.classList.remove('opacity-0'), 10);
+									// Screen readers will announce content of 'role=status' element when it changes
+
+									setTimeout(() => {
+										tooltip.classList.add('opacity-0');
+										setTimeout(() => tooltip.classList.add('hidden'), 200);
+									}, 2000);
+								}
+							})
+							.catch((err) => console.error('Failed to copy: ', err));
+					}
+				});
+				button.title = 'Click to copy number';
+			});
+		}
+	</script>
+</Layout>

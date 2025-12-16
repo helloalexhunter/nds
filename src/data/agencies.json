@@ -1,0 +1,312 @@
+[
+	{
+		"name": "Advantis Credit",
+		"trading_names": [],
+		"phone": "01782 401 100",
+		"website": "https://www.advantiscredit.co.uk",
+		"notes": "Collects for HMRC, DVLA, water companies, and energy suppliers."
+	},
+	{
+		"name": "Akinika Debt Recovery",
+		"trading_names": ["Capita"],
+		"phone": "01772 557 600",
+		"website": "https://www.akinika.co.uk",
+		"notes": "Owned by Capita. Collects for major retailers and government bodies."
+	},
+	{
+		"name": "ARC Europe",
+		"trading_names": [],
+		"phone": "01932 251 000",
+		"website": "https://www.arceuropeltd.co.uk",
+		"notes": "Often collects for parking fines, health clubs (gyms), and finance companies."
+	},
+	{
+		"name": "Arrow Global",
+		"trading_names": ["Capquest", "Drydensfairfax"],
+		"phone": "0800 130 0169",
+		"website": "https://www.arrowglobal.net",
+		"notes": "Major debt purchaser. Owns Capquest and Drydensfairfax Solicitors."
+	},
+	{
+		"name": "BPO Collections",
+		"trading_names": [],
+		"phone": "0141 375 0900",
+		"website": "https://www.bpocollections.co.uk",
+		"notes": "Scottish agency collecting across the UK for Virgin Media, mobile networks, and energy firms."
+	},
+	{
+		"name": "Bristow & Sutor",
+		"trading_names": ["Credit Security Limited", "DRS"],
+		"phone": "0330 390 2010",
+		"website": "https://www.bristowsutor.co.uk",
+		"notes": "Enforcement agents (bailiffs). Primarily collects Council Tax and PCNs for local authorities."
+	},
+	{
+		"name": "BW Legal",
+		"trading_names": [],
+		"phone": "0113 487 0430",
+		"website": "https://www.bwlegal.co.uk",
+		"notes": "Legal firm specialising in debt recovery. Often deals with parking fines and energy debts."
+	},
+	{
+		"name": "Cabot Financial",
+		"trading_names": [
+			"Cabot Credit Management",
+			"Orbit",
+			"Apex Credit Management"
+		],
+		"phone": "0344 556 0263",
+		"website": "https://www.cabotfinancial.co.uk",
+		"notes": "One of the UK's largest debt buyers. Purchases debts from banks, credit cards, and lenders."
+	},
+	{
+		"name": "Capquest",
+		"trading_names": ["Arrow Global"],
+		"phone": "0333 999 7200",
+		"website": "https://www.capquest.co.uk",
+		"notes": "Part of Arrow Global. Manages accounts for high street banks and credit card providers."
+	},
+	{
+		"name": "CCS Collect",
+		"trading_names": ["Commercial Collection Services"],
+		"phone": "020 8665 4929",
+		"website": "https://www.ccscollect.co.uk",
+		"notes": "Collects for DWP, HMRC, water authorities, and eBay."
+	},
+	{
+		"name": "CDER Group",
+		"trading_names": ["JBW", "Phoenix Commercial"],
+		"phone": "0330 107 0023",
+		"website": "https://www.cdergroup.co.uk",
+		"notes": "Enforcement (bailiff) firm. Collects road traffic debts, council tax, and court fines."
+	},
+	{
+		"name": "CST Law",
+		"trading_names": ["Credit Style", "CST Law"],
+		"phone": "0114 231 6080",
+		"website": "https://cstlaw.co.uk",
+		"notes": "Solicitors often used for collecting debts for Sheffield City Council and other commercial clients."
+	},
+	{
+		"name": "DCBL",
+		"trading_names": ["Direct Collection Bailiffs Ltd"],
+		"phone": "0203 298 0201",
+		"website": "https://dcbltd.com",
+		"notes": "High Court Enforcement. Famous for 'Can't Pay? We'll Take It Away'. Collects parking fines and CCJs."
+	},
+	{
+		"name": "Debt Managers (Services) Ltd",
+		"trading_names": [],
+		"phone": "01709 758 400",
+		"website": "https://www.debt-managers.co.uk",
+		"notes": "Rotherham-based agency collecting for utilities and telecom companies."
+	},
+	{
+		"name": "Drydensfairfax",
+		"trading_names": ["Drydens", "Fairfax Solicitors"],
+		"phone": "0113 823 3443",
+		"website": "https://www.drydensfairfax.com",
+		"notes": "Law firm specialising in debt litigation. Often acts for Arrow Global and major banks."
+	},
+	{
+		"name": "Dukes Bailiffs",
+		"trading_names": [],
+		"phone": "01785 825 500",
+		"website": "https://www.dukeslimited.co.uk",
+		"notes": "Enforcement agents. Collects Council Tax, business rates, and commercial rent."
+	},
+	{
+		"name": "Equita",
+		"trading_names": ["Capita"],
+		"phone": "01604 628 360",
+		"website": "https://www.equita.co.uk",
+		"notes": "Enforcement agents owned by Capita. Handles Council Tax and parking fines."
+	},
+	{
+		"name": "Eversheds Sutherland",
+		"trading_names": [],
+		"phone": "020 7497 9797",
+		"website": "https://www.eversheds-sutherland.com",
+		"notes": "International law firm. Their debt team often pursues debts for major banks and HM Revenue & Customs."
+	},
+	{
+		"name": "High Court Enforcement Group",
+		"trading_names": ["HCE Group"],
+		"phone": "0845 099 9666",
+		"website": "https://hcegroup.co.uk",
+		"notes": "Largest independent High Court enforcement company. Executes High Court Writs."
+	},
+	{
+		"name": "Hoist Finance",
+		"trading_names": ["Robinson Way"],
+		"phone": "0800 121 6902",
+		"website": "https://www.hoistfinance.co.uk",
+		"notes": "Swedish debt purchaser. Operates in the UK primarily as 'Robinson Way'."
+	},
+	{
+		"name": "Intrum",
+		"trading_names": ["1st Credit"],
+		"phone": "01737 220 800",
+		"website": "https://www.intrum.co.uk",
+		"notes": "Europe's largest credit management firm. Previously known as 1st Credit in the UK."
+	},
+	{
+		"name": "Jacobs Enforcement",
+		"trading_names": [],
+		"phone": "0151 650 4800",
+		"website": "https://www.jacobsenforcement.com",
+		"notes": "Family-owned enforcement firm. Specialises in Council Tax and Business Rates recovery."
+	},
+	{
+		"name": "Just",
+		"trading_names": [],
+		"phone": "020 3848 9060",
+		"website": "https://www.justdebt.co.uk",
+		"notes": "Enforcement and debt recovery. Often collects High Court Writs and commercial debt."
+	},
+	{
+		"name": "Lantern",
+		"trading_names": ["Lantern Debt Recovery Services"],
+		"phone": "0113 887 6876",
+		"website": "https://lanternuk.com",
+		"notes": "Specialises in purchasing and collecting payday loans and short-term credit debts."
+	},
+	{
+		"name": "LCF Law",
+		"trading_names": [],
+		"phone": "01274 848 800",
+		"website": "https://lcf.co.uk",
+		"notes": "Law firm often instructed for utility debts and commercial disputes."
+	},
+	{
+		"name": "Link Financial",
+		"trading_names": ["Asset Link", "Kearns Solicitors"],
+		"phone": "0330 024 4130",
+		"website": "https://www.linkfinancial.co.uk",
+		"notes": "Major purchaser of auto finance, credit card, and student loan debts."
+	},
+	{
+		"name": "Lowell",
+		"trading_names": [
+			"Lowell Financial",
+			"Lowell Solicitors",
+			"Fredrickson",
+			"Overdales"
+		],
+		"phone": "0333 556 5550",
+		"website": "https://www.lowell.co.uk",
+		"notes": "One of the largest UK debt buyers. Owns Overdales (legal arm). Buys debts from Shop Direct, O2, and banks."
+	},
+	{
+		"name": "Marston Holdings",
+		"trading_names": ["Marston Group", "Engage"],
+		"phone": "0333 320 1822",
+		"website": "https://www.marstonholdings.co.uk",
+		"notes": "The UK's largest judicial services group. Heavy focus on High Court enforcement and Council fines."
+	},
+	{
+		"name": "Moorcroft",
+		"trading_names": ["Moorcroft Debt Recovery", "MDR"],
+		"phone": "0161 475 2970",
+		"website": "https://www.mdrl.co.uk",
+		"notes": "Very common agency based in Stockport. Collects for HMRC, DWP, energy firms, and high street retailers."
+	},
+	{
+		"name": "Mortimer Clarke Solicitors",
+		"trading_names": ["Cabot"],
+		"phone": "0333 121 4454",
+		"website": "https://www.mortimerclarke.co.uk",
+		"notes": "The legal arm of Cabot Financial. They issue CCJs for debts owned by Cabot."
+	},
+	{
+		"name": "Newlyn",
+		"trading_names": ["Newlyn PLC"],
+		"phone": "01604 633 001",
+		"website": "https://www.newlynplc.co.uk",
+		"notes": "Enforcement agents. Specialises in collecting Council Tax, parking fines, and business rates."
+	},
+	{
+		"name": "Opos",
+		"trading_names": ["Kapama", "Gothia"],
+		"phone": "0141 428 3990",
+		"website": "https://www.oposlimited.com",
+		"notes": "Scottish agency collecting commercial and consumer debts across the UK."
+	},
+	{
+		"name": "Overdales Solicitors",
+		"trading_names": ["Lucas Credit Services", "Lowell Solicitors"],
+		"phone": "0333 130 4060",
+		"website": "https://www.overdales.com",
+		"notes": "The legal firm for the Lowell Group. Formerly known as Lowell Solicitors."
+	},
+	{
+		"name": "Pastdue Credit Solutions",
+		"trading_names": ["PDC"],
+		"phone": "0141 951 4077",
+		"website": "https://www.pastduecredit.co.uk",
+		"notes": "Collects heavily for energy companies (British Gas, SSE) and HMRC tax credits."
+	},
+	{
+		"name": "PRA Group",
+		"trading_names": ["Portfolio Recovery Associates"],
+		"phone": "0800 877 2772",
+		"website": "https://pragroup.co.uk",
+		"notes": "Large US-owned debt purchaser. Buys credit card debts from banks like Barclaycard and MBNA."
+	},
+	{
+		"name": "Resolvecall",
+		"trading_names": ["Scotcall"],
+		"phone": "0141 212 8500",
+		"website": "https://resolvecall.co.uk",
+		"notes": "Specialises in home visits (doorstep collection) to re-establish contact with debtors."
+	},
+	{
+		"name": "Robinson Way",
+		"trading_names": ["Hoist Finance"],
+		"phone": "0800 121 6902",
+		"website": "https://www.robinson-way.com",
+		"notes": "Trading style of Hoist Finance. Very common collector for retail banks and catalogues."
+	},
+	{
+		"name": "Ross & Roberts",
+		"trading_names": [],
+		"phone": "01458 550 480",
+		"website": "https://www.rossandroberts.co.uk",
+		"notes": "Enforcement agents owned by Capita. Focuses on local authority collections."
+	},
+	{
+		"name": "Rundles",
+		"trading_names": ["Rundle & Co"],
+		"phone": "0800 081 6000",
+		"website": "https://www.rundles.org.uk",
+		"notes": "Enforcement agents providing services to local councils for tax and traffic debt."
+	},
+	{
+		"name": "The Sheriffs Office",
+		"trading_names": ["SHCE Ltd"],
+		"phone": "0333 001 5100",
+		"website": "https://thesheriffsoffice.com",
+		"notes": "High Court Enforcement Officers. Authorised to enforce High Court Writs and recover property."
+	},
+	{
+		"name": "TM Legal Services",
+		"trading_names": [],
+		"phone": "01253 531 528",
+		"website": "https://www.tm-legalservices.co.uk",
+		"notes": "Law firm often associated with lending companies like Perch Capital and ACI."
+	},
+	{
+		"name": "Wescot",
+		"trading_names": ["Wescot Credit Services"],
+		"phone": "01482 484 673",
+		"website": "https://www.wescot.co.uk",
+		"notes": "One of the UK's largest agencies. Collects for banking, utility, and telecoms sectors."
+	},
+	{
+		"name": "Whyte & Co",
+		"trading_names": [],
+		"phone": "01322 662 428",
+		"website": "https://www.whyte.co.uk",
+		"notes": "Enforcement agents specialising in London and South East council tax and parking recovery."
+	}
+]

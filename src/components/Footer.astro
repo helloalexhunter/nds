@@ -1,138 +1,139 @@
 ---
-const year = new Date().getFullYear();
+// src/components/Footer.astro
+const currentYear = new Date().getFullYear();
 ---
 
-<footer class="border-t border-slate-200 bg-white text-slate-800">
-  <div class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-    <div class="grid gap-8 md:grid-cols-[4fr_1fr_1fr_1fr]">
-      <div class="space-y-3">
-        <p class="font-semibold text-sm tracking-tight">
-          National Debt Service
+<footer
+  class="bg-slate-900 text-slate-300 py-12 border-t border-slate-800 font-sans"
+>
+  <div class="container mx-auto px-4 max-w-7xl">
+    {/* FOOTER GRID */}
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+      {/* Column 1: Brand & Mission */}
+      <div class="space-y-4">
+        <a
+          href="/"
+          class="inline-block text-white font-black text-2xl tracking-tight mb-2"
+        >
+          NDS
+        </a>
+        <p class="text-sm text-slate-400 leading-relaxed">
+          Providing free, independent signposting to regulated debt advice and
+          mental health support services across the UK.
         </p>
-        <p class="text-xs leading-relaxed text-slate-700 max-w-none">
-          A simple, independent website that helps you find trusted free money
-          and mental health support across the UK. We share information and
-          signpost to official and charity services.
-        </p>
-        <p class="text-[11px] leading-relaxed text-slate-600 max-w-none">
-          We do not provide regulated debt advice and we are not authorised by
-          the Financial Conduct Authority (FCA). Always speak to a qualified
-          adviser before making decisions about your debts.
-        </p>
-        <p class="text-[11px] leading-relaxed text-slate-600 max-w-none">
-          National Debt Service provides general information and signposting
-          only. You remain responsible for any decisions you make and should
-          contact a regulated advice organisation for personal guidance.
-        </p>
+        <div class="pt-2">
+          <a
+            href="/contact"
+            class="inline-flex items-center text-sm font-bold text-blue-400 hover:text-blue-300"
+          >
+            Get in touch &rarr;
+          </a>
+        </div>
       </div>
 
-      <div class="space-y-3">
-        <p class="text-xs font-semibold uppercase tracking-wide text-slate-900">
-          Site
-        </p>
-        <ul class="space-y-1 text-xs">
-          <li><a href="/" class="block py-3.5 -ml-2 px-2">Home</a></li>
-          <li>
-            <a href="/get-help" class="block py-3.5 -ml-2 px-2"
-              >I need support now</a
-            >
-          </li>
-          <li>
-            <a href="/faq" class="block
-py-3.5 -ml-2 px-2"
-              >Questions &amp; answers</a
-            >
-          </li>
-          <li>
-            <a href="/about" class="block py-3.5 -ml-2 px-2"
-              >About this website</a
-            >
-          </li>
-
-          <li>
-            <a href="/changelog" class="block py-3.5 -ml-2 px-2">Change Log</a>
-          </li>
-
-          <li>
-            <a href="/contact" class="block py-3.5 -ml-2 px-2">Contact us</a>
-          </li>
+      {/* Column 2: Information */}
+      <div>
+        <h3 class="text-white font-bold uppercase tracking-wider text-sm mb-6">
+          Information
+        </h3>
+        <ul class="space-y-3">
           <li>
             <a
-              href="/contact?subject=resource-correction"
-              class="block py-3.5 -ml-2 px-2"
-              >Suggest a resource or correction</a
+              href="/help"
+              class="hover:text-white hover:underline decoration-blue-500 underline-offset-4 transition-all"
             >
-          </li>
-        </ul>
-      </div>
-
-      <div class="space-y-3">
-        <p class="text-xs font-semibold uppercase tracking-wide text-slate-900">
-          Support &amp; signposting
-        </p>
-        <ul class="space-y-1 text-xs">
-          <li>
-            <a href="/get-help#money-support" class="block py-3.5 -ml-2 px-2">
-              Money &amp; debt support
+              Search for Local Help
             </a>
           </li>
           <li>
             <a
-              href="/get-help#mental-health-support"
-              class="block py-3.5 -ml-2 px-2"
+              href="/glossary"
+              class="hover:text-white hover:underline decoration-blue-500 underline-offset-4 transition-all"
             >
-              Mental health &amp; crisis support
-            </a>
-          </li>
-          <li>
-            <a
-              href="/get-help#housing-and-homelessness"
-              class="block py-3.5 -ml-2 px-2"
-            >
-              Housing and risk of homelessness
-            </a>
-          </li>
-          <li>
-            <a
-              href="/get-help#domestic-abuse-support"
-              class="block py-3.5 -ml-2 px-2"
-            >
-              Domestic abuse and safety
+              Debt Glossary
             </a>
           </li>
         </ul>
       </div>
 
-      <div class="space-y-3">
-        <p class="text-xs font-semibold uppercase tracking-wide text-slate-900">
-          Legal &amp; data
-        </p>
-        <ul class="space-y-1 text-xs">
+      {/* Column 3: Directories & Tools */}
+      <div>
+        <h3 class="text-white font-bold uppercase tracking-wider text-sm mb-6">
+          Resources
+        </h3>
+        <ul class="space-y-3">
           <li>
-            <a href="/terms" class="block py-3.5 -ml-2 px-2">Terms of use</a>
+            <a
+              href="/agencies"
+              class="hover:text-white hover:underline decoration-blue-500 underline-offset-4 transition-all"
+            >
+              Agency Directory
+            </a>
           </li>
           <li>
-            <a href="/privacy" class="block py-3.5 -ml-2 px-2">Privacy Policy</a
+            <span
+              class="text-slate-600 text-sm cursor-not-allowed"
+              title="Coming Soon">Enforcement Firms</span
             >
           </li>
           <li>
-            <a href="/cookies" class="block py-3.5 -ml-2 px-2">Cookies Policy</a
+            <span
+              class="text-slate-600 text-sm cursor-not-allowed"
+              title="Coming Soon">Budgeting Tools</span
+            >
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-white font-bold uppercase tracking-wider text-sm mb-6">
+          Who we are
+        </h3>
+        <ul class="space-y-3">
+          <li>
+            <a href="/about" class="hover:text-white transition-colors"
+              >About Us</a
+            >
+          </li>
+          <li>
+            <a href="/contact" class="hover:text-white transition-colors"
+              >Contact</a
+            >
+          </li>
+          <li class="pt-4 border-t border-slate-800 mt-4 flex flex-col gap-2">
+            <a
+              href="/privacy"
+              class="text-xs hover:text-white transition-colors"
+              >Privacy Policy</a
+            >
+            <a href="/terms" class="text-xs hover:text-white transition-colors"
+              >Terms of Use</a
+            >
+            <a
+              href="/cookies"
+              class="text-xs hover:text-white transition-colors"
+              >Cookie Policy</a
+            >
+            <a
+              href="/changelog"
+              class="text-xs hover:text-white transition-colors"
+              >Release Notes</a
             >
           </li>
         </ul>
       </div>
     </div>
+  </div>
 
-    <div
-      class="mt-8 border-t border-slate-200 pt-4 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between"
-    >
-      <p class="text-[11px] text-slate-600">
-        © {year} National Debt Service. All rights reserved.
+  {/* COPYRIGHT & DISCLAIMER */}
+  <div class="border-t border-slate-800 pt-8 text-center md:text-left">
+    <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="text-xs text-slate-500">
+        &copy; {currentYear} National Debt Service. All rights reserved.
       </p>
-      <p class="text-[11px] text-slate-600 max-w-none font-bold">
-        This site is for general information and signposting only. It is not a
-        substitute for regulated advice. If you are in immediate danger, call
-        999.
+      <p class="text-xs text-slate-600 max-w-md text-center md:text-right">
+        Information provided on this website is for educational purposes only
+        and does not constitute financial advice.
       </p>
     </div>
   </div>

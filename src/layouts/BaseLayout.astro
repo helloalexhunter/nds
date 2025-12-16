@@ -1,4 +1,5 @@
 ---
+// src/layouts/BaseLayout.astro
 import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
@@ -6,11 +7,13 @@ import Footer from '../components/Footer.astro';
 const {
   title = 'National Debt Service',
   description = 'Find free, regulated debt advice and mental health support services across the UK. Simple, independent signposting.',
+  image = '/images/social-share-default.jpg',
   canonicalUrl,
 } = Astro.props;
 
 const siteName = 'National Debt Service';
 const siteUrl = 'https://www.nationaldebtservice.co.uk';
+const socialImageURL = new URL(image, siteUrl).href;
 ---
 
 <!doctype html>
@@ -35,52 +38,53 @@ const siteUrl = 'https://www.nationaldebtservice.co.uk';
 
     {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
 
+    {/* --- OPEN GRAPH --- */}
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={siteName} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalUrl || siteUrl} />
     <meta property="og:locale" content="en_GB" />
+    <meta property="og:image" content={socialImageURL} />
 
+    {/* --- TWITTER --- */}
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImageURL} />
   </head>
 
-  <body class="min-h-screen bg-neutral-soft text-dark-text antialiased">
-    <div
-      class="bg-red-100 border-b-4 border-red-500 py-3 px-4 text-center shadow-lg"
-    >
-      <p class="text-sm text-red-900 font-bold max-w-4xl mx-auto tracking-wide">
-        IMPORTANT: We do not give debt advice. We signpost to free, regulated UK
-        services.
-      </p>
-    </div>
-
+  <body
+    class="min-h-screen bg-neutral-soft text-dark-text antialiased flex flex-col"
+  >
     <Header />
 
+    <main class="flex-grow">
+      <slot />
+    </main>
+
+    {/* FIXED 'ESCAPE' BUTTON - Top Right, Floating Pill */}
     <button
       id="quick-exit-button"
-      class="fixed z-[9999] bg-red-700 text-white uppercase font-black shadow-2xl hover:bg-red-800 transition-colors border-4 border-amber-400 leading-snug tracking-wider
-        
-        /* MOBILE STYLES (Default - at the very bottom) */
-        bottom-0 left-1/2 -translate-x-1/2 max-w-xs w-full
-        text-center text-sm py-3 rounded-t-xl
-        
-        /* DESKTOP STYLES (md: prefix - top right corner, pushed slightly further away) */
-        md:w-auto md:max-w-none
-        md:top-5 md:right-5 md:bottom-auto md:left-auto md:translate-x-0
-        md:text-lg md:py-2 md:px-5 md:rounded-lg"
-      aria-label="Quickly escape this website. Tap/Click or press Escape key"
+      class="fixed top-4 right-4 z-[9999] bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full shadow-2xl transition-transform hover:scale-105 border-2 border-white flex items-center gap-2 group"
+      aria-label="Quickly leave this site"
     >
-      <span class="text-sm">🚨 ESCAPE THIS WEBSITE 🚨</span>
-      <br />
-      <span class="font-bold text-white text-xs block mt-0.5">
-        (Tap/Click or press 'Escape' key)
-      </span>
+      <span class="text-sm uppercase tracking-wider">Exit Site</span>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-4 w-4"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
+        ></path>
+      </svg>
     </button>
-
-    <slot />
 
     <Footer />
 

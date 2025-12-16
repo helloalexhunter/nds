@@ -2,9 +2,7 @@
 // src/pages/changelog.astro
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { ArrowRight } from 'lucide-astro';
-import rehypeParse from 'rehype-parse';
-import rehypeStringify from 'rehype-stringify';
-import { unified } from 'unified';
+import MarkdownIt from 'markdown-it';
 
 const GITHUB_API_URL = `https://api.github.com/repos/helloalexhunter/nds/releases`;
 const REPO_URL = `https://github.com/helloalexhunter/nds`;
@@ -12,7 +10,7 @@ const REPO_URL = `https://github.com/helloalexhunter/nds`;
 const response = await fetch(GITHUB_API_URL, {
   headers: {
     'X-GitHub-Api-Version': '2022-11-28',
-    Accept: 'application/vnd.github.v3+json',
+    Accept: 'application/vnd.github.com+json',
   },
 });
 
@@ -30,12 +28,21 @@ if (!response.ok) {
 
 const releases = await response.json();
 
+const md = new MarkdownIt({
+  html: true,
+  linkify: true,
+  typographer: true,
+  breaks: true,
+});
+
 async function markdownToHtml(markdown: string) {
-  const file = await unified()
-    .use(rehypeParse)
-    .use(rehypeStringify)
-    .process(markdown);
-  return String(file);
+  if (!markdown) return '';
+
+  const preProcessedMarkdown = markdown
+    .replace(/([^>\n])\n(?! *\n)/g, '$1  \n')
+    .replace(/(\r\n|\r|\n){2,}/g, '\n\n');
+
+  return md.render(preProcessedMarkdown);
 }
 
 const title = 'Change Log – Site Updates and Version History';
@@ -72,6 +79,7 @@ const description =
                   ({release.name || 'Release'})
                 </span>
               </h2>
+
               <p class="text-sm text-slate-600">
                 Released:{' '}
                 {new Date(release.published_at).toLocaleDateString('en-GB', {
@@ -82,11 +90,10 @@ const description =
                 })}{' '}
                 (GMT)
               </p>
-
-              {/* Release Notes Content */}
-              <div class="prose prose-sm max-w-none text-slate-800 pt-2 max-w-none">
-                <p set:html={await markdownToHtml(release.body)} />
-              </div>
+              <div
+                class="prose prose-sm max-w-none text-slate-800 pt-2"
+                set:html={await markdownToHtml(release.body)}
+              />
             </article>
           ))
         }

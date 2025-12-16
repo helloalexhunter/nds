@@ -2,11 +2,12 @@
 // src/pages/glossary.astro
 import Layout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
-import { sort } from 'astro/components'; // Not strictly needed, but common
+import { getLastCommitDate } from '../utils/git-time.js';
 
 // 1. Fetch all terms and sort them
 const allTerms = await getCollection('glossary');
 const sortedTerms = allTerms.sort((a, b) => {
+	// Sort by weight first (lower numbers first), then alphabetically
 	if (a.data.weight !== b.data.weight) {
 		return a.data.weight - b.data.weight;
 	}
@@ -28,65 +29,170 @@ const groupedTerms = sortedTerms.reduce(
 
 const sortedCategories = Object.keys(groupedTerms).sort();
 
+// Helper to create safe URL anchors (e.g. "Legal & Court" -> "legal-court")
+const slugify = (text: string) => {
+	return text
+		.toString()
+		.toLowerCase()
+		.replace(/\s+/g, '-') // Replace spaces with -
+		.replace(/[^\w\-]+/g, '') // Remove all non-word chars
+		.replace(/\-\-+/g, '-') // Replace multiple - with single -
+		.replace(/^-+/, '') // Trim - from start of text
+		.replace(/-+$/, ''); // Trim - from end of text
+};
+
+const filePath = 'src/pages/glossary.astro';
+const lastmod = getLastCommitDate(filePath);
+const lastReviewedWithGMT = new Date(lastmod).toLocaleString('en-GB', {
+	day: 'numeric',
+	month: 'long',
+	year: 'numeric',
+	hour: '2-digit',
+	minute: '2-digit',
+	timeZone: 'GMT',
+	timeZoneName: 'short',
+});
+
 const pageTitle = 'Demystifying Debt Terms: Financial Glossary';
 ---
 
 <Layout title={pageTitle}>
-	<div class="container mx-auto p-4 max-w-7xl">
-		<header class="mb-10 border-b pb-4">
-			<h1 class="text-4xl font-extrabold mb-2 text-indigo-700">
-				{pageTitle}
-			</h1>
-			<p class="text-xl text-gray-600">
+	<div class="container mx-auto p-4 max-w-7xl px-4 py-10 sm:py-14 space-y-1">
+		<header class="space-y-4">
+			<p class="text-sm font-semibold text-primary-700 uppercase tracking-wide">
+				Glossary
+			</p>
+
+			<h1>Demystifying Debt Terms: Financial Glossary</h1>
+
+			<p class="text-base text-slate-800 leading-relaxed max-w-none">
 				Simple, direct explanations for commonly used and sometimes frightening
 				financial jargon.
+			</p>
+			<p class="text-xs text-slate-600 mb-5">
+				Page last reviewed:
+				<time datetime={lastmod}>{lastReviewedWithGMT}</time>
 			</p>
 		</header>
 
 		<div
-			class="bg-red-50 border-l-4 border-red-400 p-4 mb-10 text-sm text-red-800 font-semibold"
+			class="bg-red-50 border-l-4 border-red-400 p-4 mb-8 text-sm text-red-800 font-semibold rounded-r-md"
 		>
-			<p class="font-bold mb-1">THIS IS NOT FINANCIAL ADVICE</p>
-			<p>
+			<p class="font-bold mb-1 flex items-center">
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					class="h-5 w-5 mr-2"
+					fill="none"
+					viewBox="0 0 24 24"
+					stroke="currentColor"
+				>
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-width="2"
+						d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+					></path>
+				</svg>
+				THIS IS NOT FINANCIAL ADVICE
+			</p>
+			<p class="max-w-none font-normal">
 				The definitions provided here are for informational purposes only. If
 				you are experiencing financial difficulty, you must seek free,
 				regulated, and impartial advice from a qualified charity or official
-				government service. Do not rely on this information alone to make
-				decisions about your debt.
+				government service.
 			</p>
 		</div>
 
-		{
-			sortedCategories.map((category) => (
-				<section class="mb-8">
-					<h2 class="text-3xl font-bold mb-4 border-b pb-2 text-gray-800">
-						{category}
-					</h2>
-					<div class="space-y-6">
-						{groupedTerms[category].map(async (entry) => {
-							// Mark map callback as async
-							// 3. CORRECTLY RENDER THE MARKDOWN BODY
-							// We await the render() function to get the object containing the Content component.
-							const { Content } = await entry.render();
+		{/* QUICK NAVIGATION BAR */}
+		<div class="sticky top-2 z-10 mb-10">
+			<nav
+				class="bg-white/90 backdrop-blur-md shadow-md border border-gray-200 rounded-xl p-3 flex flex-wrap gap-2 items-center"
+			>
+				<span
+					class="text-xs font-bold text-gray-500 uppercase tracking-wider mr-2"
+				>
+					Jump to:
+				</span>
+				{
+					sortedCategories.map((category) => (
+						<a
+							href={`#${slugify(category)}`}
+							class="px-3 py-1.5 text-sm font-medium text-slate-700 bg-slate-100 hover:bg-primary-50 hover:text-primary-700 rounded-full transition-colors border border-transparent hover:border-primary-200"
+						>
+							{category}
+						</a>
+					))
+				}
+			</nav>
+		</div>
 
-							return (
-								<div class="p-4 bg-white border border-gray-200 rounded-lg shadow-sm">
-									<h3 class="text-xl font-semibold text-gray-900 mb-1">
-										{entry.data.term}
-									</h3>
-									{/* 4. Use the component directly inside the article tag */}
-									<article class="prose max-w-none text-gray-700">
-										<Content />
-									</article>
-								</div>
-							);
-						})}
-					</div>
-				</section>
-			))
-		}
+		{/* MAIN CONTENT LOOP */}
+		<div class="space-y-16">
+			{
+				sortedCategories.map((category) => (
+					// Added scroll-mt-24 to ensure the sticky header doesn't cover the title when clicked
+					<section id={slugify(category)} class="scroll-mt-32">
+						<div class="flex items-center mb-6 border-b pb-2">
+							<h2 class="text-3xl font-bold text-slate-800 mr-4">{category}</h2>
+							<span class="bg-slate-100 text-slate-600 text-xs font-semibold px-2.5 py-0.5 rounded-full">
+								{groupedTerms[category].length} Terms
+							</span>
+						</div>
 
-		<footer class="mt-10 pt-6 border-t text-sm text-gray-500">
+						<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-2">
+							{groupedTerms[category].map(async (entry) => {
+								const { Content } = await entry.render();
+								return (
+									<div class="p-5 bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col h-full">
+										<h3 class="text-xl font-bold text-slate-900 mb-2">
+											{entry.data.term}
+										</h3>
+
+										{/* FIX: Content Wrapper with full width enforcement */}
+										<div class="text-gray-700 w-full max-w-none [&_p]:max-w-none [&_p]:w-full space-y-3 flex-grow">
+											{/* Inline style used for maximum specificity against prose defaults */}
+											<div style="max-width: none !important; width: 100%;">
+												<Content />
+											</div>
+										</div>
+
+										{/* External Link Section (Only renders if 'link' exists in MD) */}
+										{entry.data.link && (
+											<div class="mt-5 pt-3 border-t border-gray-100">
+												<a
+													href={entry.data.link}
+													target="_blank"
+													rel="noopener noreferrer"
+													class="inline-flex items-center text-sm font-bold text-primary-600 hover:text-primary-800 transition-colors group"
+												>
+													Read about this on StepChange.org
+													<svg
+														xmlns="http://www.w3.org/2000/svg"
+														class="h-4 w-4 ml-1 group-hover:translate-x-0.5 transition-transform"
+														fill="none"
+														viewBox="0 0 24 24"
+														stroke="currentColor"
+													>
+														<path
+															stroke-linecap="round"
+															stroke-linejoin="round"
+															stroke-width="2"
+															d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+														/>
+													</svg>
+												</a>
+											</div>
+										)}
+									</div>
+								);
+							})}
+						</div>
+					</section>
+				))
+			}
+		</div>
+
+		<footer class="mt-16 pt-8 border-t text-sm text-gray-500 text-center">
 			<p>
 				Last updated: {
 					new Date().toLocaleDateString('en-GB', {

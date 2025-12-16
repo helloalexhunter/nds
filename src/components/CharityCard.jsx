@@ -19,6 +19,15 @@ const formatAddress = (c) => {
 		.join(', ');
 };
 
+const cleanWebUrl = (url) => {
+	if (!url) return null;
+	let cleanUrl = url.trim();
+	if (!/^https?:\/\//i.test(cleanUrl)) {
+		cleanUrl = 'https://' + cleanUrl;
+	}
+	return cleanUrl;
+};
+
 export default function CharityCard({ charity }) {
 	const cleanPhone = cleanPhoneNumber(charity.charity_contact_phone);
 	const isGeocoded = charity.latitude !== null && charity.longitude !== null; // Check for geocoding success

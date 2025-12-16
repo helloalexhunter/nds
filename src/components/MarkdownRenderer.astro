@@ -1,0 +1,21 @@
+---
+// src/components/MarkdownRenderer.astro
+import MarkdownIt from 'markdown-it';
+
+// Define the component properties
+const { content } = Astro.props;
+
+// Initialize the markdown parser
+const md = new MarkdownIt({
+	html: true, // Enable HTML tags in source
+	linkify: true, // Autoconvert URL-like text to links
+	typographer: true, // Enable smart quotes and dashes
+});
+
+// Convert the Markdown string to an HTML string
+const htmlContent = md.render(content || '');
+---
+
+<div>
+	<Fragment set:html={htmlContent} />
+</div>

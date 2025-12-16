@@ -1,10 +1,10 @@
 ---
-term: Bailiffs
-category: Core Debt Processes
-summary: Legally authorised agents who can visit your home to remove goods.
-weight: 10
+term: 'Bailiff (Enforcement Agent)'
+category: 'Legal & Court'
+weight: 20
+link: 'https://www.stepchange.org/debt-info/debt-collection/bailiffs-and-debt-collectors-differences.aspx'
 ---
 
-Bailiffs are legally authorised agents who can visit your home to remove goods to sell if you have outstanding court fines or specific types of priority debt (like Council Tax or parking fines).
+Commonly known as "bailiffs," the official legal term is now **Enforcement Agent**. These are individuals legally authorised to collect debts on behalf of creditors.
 
-They must follow strict rules and cannot just enter your property unless the door is unlocked. Their powers are limited, and they should be dealt with via a debt charity.
+They have the legal power to visit your home to remove and sell goods to pay off debts such as Council Tax arrears, parking fines, or County Court Judgments (CCJs). However, they usually cannot force entry into your home for most types of debt unless you have let them in previously or they have specific court authority (such as for criminal fines or tax debts). You should typically seek advice immediately if an enforcement agent contacts you.
