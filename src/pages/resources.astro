@@ -1,338 +1,339 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import BaseLayout from '../layouts/BaseLayout.astro';
 import { getLastCommitDate } from '../utils/git-time.js';
 
 const filePath = 'src/pages/resources.astro';
 const lastmod = getLastCommitDate(filePath);
 
 const lastReviewedWithGMT = new Date(lastmod).toLocaleString('en-GB', {
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric',
-    hour: '2-digit',
-    minute: '2-digit',
-    timeZone: 'GMT',
-    timeZoneName: 'short',
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric',
+  hour: '2-digit',
+  minute: '2-digit',
+  timeZone: 'GMT',
+  timeZoneName: 'short',
 });
 
-const title = "Organisations and resources we signpost to";
+const title = 'Trusted organisations and resources we signpost to';
 const description =
-  "A curated list of trusted organisations for debt advice, money guidance, mental health, housing, energy and safety support across the UK.";
-const canonicalUrl = "https://www.nationaldebtservice.co.uk/resources";
+  'A curated list of trusted organisations for debt advice, money guidance, mental health, housing, energy and safety support across the UK.';
+const canonicalUrl = 'https://www.nationaldebtservice.co.uk/resources';
 
 const sections = [
   {
-    id: "debt-advice",
-    title: "Free debt advice charities and services",
+    id: 'debt-advice',
+    title: 'Free debt advice charities and services',
     description:
-      "These organisations give free, impartial debt advice. Many are authorised and regulated by the Financial Conduct Authority (FCA). They can talk through your full situation and explain your options. Check each website for who they help and which country or countries of the UK they cover.",
+      'These organisations give free, impartial debt advice. Many are authorised and regulated by the Financial Conduct Authority (FCA). They can talk through your full situation and explain your options. Check each website for who they help and which country or countries of the UK they cover.',
     items: [
       {
-        name: "StepChange Debt Charity",
-        url: "https://www.stepchange.org",
-        covers: "England, Scotland, Wales, Northern Ireland",
+        name: 'StepChange Debt Charity',
+        url: 'https://www.stepchange.org',
+        covers: 'England, Scotland, Wales, Northern Ireland',
         notes:
-          "Free, regulated debt advice charity offering phone and online help with debts, budgeting and longer-term solutions.",
+          'Free, regulated debt advice charity offering phone and online help with debts, budgeting and longer-term solutions.',
       },
       {
-        name: "National Debtline",
-        url: "https://www.nationaldebtline.org",
-        covers: "England, Wales, Scotland",
+        name: 'National Debtline',
+        url: 'https://www.nationaldebtline.org',
+        covers: 'England, Wales, Scotland',
         notes:
-          "Free, confidential debt advice run by the Money Advice Trust. Phone, webchat and detailed online guides for many debt problems.",
+          'Free, confidential debt advice run by the Money Advice Trust. Phone, webchat and detailed online guides for many debt problems.',
       },
       {
-        name: "Business Debtline",
-        url: "https://www.businessdebtline.org",
-        covers: "England, Wales, Scotland",
+        name: 'Business Debtline',
+        url: 'https://www.businessdebtline.org',
+        covers: 'England, Wales, Scotland',
         notes:
-          "Free, independent debt advice for small business owners and self-employed people who are struggling with business or mixed debts.",
+          'Free, independent debt advice for small business owners and self-employed people who are struggling with business or mixed debts.',
       },
       {
-        name: "Christians Against Poverty (CAP)",
-        url: "https://capuk.org/get-help",
-        covers: "Most of the UK (check postcode)",
+        name: 'Christians Against Poverty (CAP)',
+        url: 'https://capuk.org/get-help',
+        covers: 'Most of the UK (check postcode)',
         notes:
-          "Free, face-to-face and phone-based debt help and money coaching delivered through local community groups and churches.",
+          'Free, face-to-face and phone-based debt help and money coaching delivered through local community groups and churches.',
       },
       {
-        name: "Citizens Advice – Debt and money",
-        url: "https://www.citizensadvice.org.uk/debt-and-money",
-        covers: "England, Wales, Scotland, Northern Ireland (online content and local offices)",
+        name: 'Citizens Advice – Debt and money',
+        url: 'https://www.citizensadvice.org.uk/debt-and-money',
+        covers:
+          'England, Wales, Scotland, Northern Ireland (online content and local offices)',
         notes:
-          "Independent advice on debts, benefits, work, housing and more. Many branches offer in-person, phone and online support.",
+          'Independent advice on debts, benefits, work, housing and more. Many branches offer in-person, phone and online support.',
       },
       {
-        name: "MoneyHelper – dealing with debt",
-        url: "https://www.moneyhelper.org.uk/en/money-troubles/dealing-with-debt",
-        covers: "United Kingdom",
+        name: 'MoneyHelper – dealing with debt',
+        url: 'https://www.moneyhelper.org.uk/en/money-troubles/dealing-with-debt',
+        covers: 'United Kingdom',
         notes:
-          "Government-backed guidance on dealing with debt, including tools and signposting to free debt advice services in your country of the UK.",
+          'Government-backed guidance on dealing with debt, including tools and signposting to free debt advice services in your country of the UK.',
       },
       {
-        name: "Advice NI",
-        url: "https://www.adviceni.net",
-        covers: "Northern Ireland",
+        name: 'Advice NI',
+        url: 'https://www.adviceni.net',
+        covers: 'Northern Ireland',
         notes:
-          "Independent advice network in Northern Ireland, including money and debt advice services.",
+          'Independent advice network in Northern Ireland, including money and debt advice services.',
       },
       {
-        name: "Community Money Advice",
-        url: "https://www.communitymoneyadvice.com",
-        covers: "England, Wales, Scotland",
+        name: 'Community Money Advice',
+        url: 'https://www.communitymoneyadvice.com',
+        covers: 'England, Wales, Scotland',
         notes:
-          "Network of local, church- and community-based money advice centres offering free help with budgeting and debts.",
+          'Network of local, church- and community-based money advice centres offering free help with budgeting and debts.',
       },
       {
-        name: "PayPlan",
-        url: "https://www.payplan.com",
-        covers: "United Kingdom",
+        name: 'PayPlan',
+        url: 'https://www.payplan.com',
+        covers: 'United Kingdom',
         notes:
-          "Free debt advice provider offering phone and online support and a range of debt solutions. Check their site for full details.",
+          'Free debt advice provider offering phone and online support and a range of debt solutions. Check their site for full details.',
       },
       {
-        name: "Money Advice Scotland",
-        url: "https://www.moneyadvicescotland.org.uk",
-        covers: "Scotland",
+        name: 'Money Advice Scotland',
+        url: 'https://www.moneyadvicescotland.org.uk',
+        covers: 'Scotland',
         notes:
-          "National charity for debt and money advice in Scotland, providing tools, training and signposting to local support.",
+          'National charity for debt and money advice in Scotland, providing tools, training and signposting to local support.',
       },
       {
-        name: "Debt Advice Foundation",
-        url: "https://www.debtadvicefoundation.org",
-        covers: "United Kingdom",
+        name: 'Debt Advice Foundation',
+        url: 'https://www.debtadvicefoundation.org',
+        covers: 'United Kingdom',
         notes:
-          "Charity offering free, confidential debt advice by phone and online. Focused on education and practical support.",
+          'Charity offering free, confidential debt advice by phone and online. Focused on education and practical support.',
       },
     ],
   },
   {
-    id: "benefits-and-income",
-    title: "Benefits, income and financial support",
+    id: 'benefits-and-income',
+    title: 'Benefits, income and financial support',
     description:
-      "If you are struggling to cover essentials, it can help to check whether you are missing out on benefits or other support. These organisations focus on income, benefits and grants.",
+      'If you are struggling to cover essentials, it can help to check whether you are missing out on benefits or other support. These organisations focus on income, benefits and grants.',
     items: [
       {
-        name: "Turn2us",
-        url: "https://www.turn2us.org.uk",
-        covers: "United Kingdom",
+        name: 'Turn2us',
+        url: 'https://www.turn2us.org.uk',
+        covers: 'United Kingdom',
         notes:
-          "Charity that helps people find benefits, grants and other financial support. Includes a benefits calculator and a grants search tool.",
+          'Charity that helps people find benefits, grants and other financial support. Includes a benefits calculator and a grants search tool.',
       },
       {
-        name: "MoneyHelper – benefits",
-        url: "https://www.moneyhelper.org.uk/en/benefits",
-        covers: "United Kingdom",
+        name: 'MoneyHelper – benefits',
+        url: 'https://www.moneyhelper.org.uk/en/benefits',
+        covers: 'United Kingdom',
         notes:
-          "Government-backed guidance on benefits, dealing with money worries and planning ahead, with clear explanations and tools.",
+          'Government-backed guidance on benefits, dealing with money worries and planning ahead, with clear explanations and tools.',
       },
       {
-        name: "GOV.UK – Get free debt advice",
-        url: "https://www.gov.uk/debt-advice",
-        covers: "United Kingdom (signposting)",
+        name: 'GOV.UK – Get free debt advice',
+        url: 'https://www.gov.uk/debt-advice',
+        covers: 'United Kingdom (signposting)',
         notes:
-          "Official government page that lists recognised free debt advice providers and explains how to get help.",
+          'Official government page that lists recognised free debt advice providers and explains how to get help.',
       },
       {
-        name: "entitledto – benefits calculator",
-        url: "https://www.entitledto.co.uk",
-        covers: "United Kingdom",
+        name: 'entitledto – benefits calculator',
+        url: 'https://www.entitledto.co.uk',
+        covers: 'United Kingdom',
         notes:
-          "Independent benefits calculator to estimate what you might be able to claim, based on your circumstances.",
+          'Independent benefits calculator to estimate what you might be able to claim, based on your circumstances.',
       },
     ],
   },
   {
-    id: "mental-health",
-    title: "Mental health and emotional support",
+    id: 'mental-health',
+    title: 'Mental health and emotional support',
     description:
-      "Money worries and problem debt can affect sleep, mood and relationships. These organisations focus on listening support, mental health information and campaigns around money and mental health.",
+      'Money worries and problem debt can affect sleep, mood and relationships. These organisations focus on listening support, mental health information and campaigns around money and mental health.',
     items: [
       {
-        name: "Samaritans",
-        url: "https://www.samaritans.org",
-        covers: "United Kingdom and Ireland",
+        name: 'Samaritans',
+        url: 'https://www.samaritans.org',
+        covers: 'United Kingdom and Ireland',
         notes:
-          "24/7 listening support by phone and email for anyone who is struggling to cope or feeling overwhelmed.",
+          '24/7 listening support by phone and email for anyone who is struggling to cope or feeling overwhelmed.',
       },
       {
-        name: "Mind",
-        url: "https://www.mind.org.uk",
-        covers: "England and Wales (plus online information)",
+        name: 'Mind',
+        url: 'https://www.mind.org.uk',
+        covers: 'England and Wales (plus online information)',
         notes:
-          "Mental health charity offering information, local services in some areas, and support for people living with mental health problems.",
+          'Mental health charity offering information, local services in some areas, and support for people living with mental health problems.',
       },
       {
-        name: "SAMH (Scottish Association for Mental Health)",
-        url: "https://www.samh.org.uk",
-        covers: "Scotland",
+        name: 'SAMH (Scottish Association for Mental Health)',
+        url: 'https://www.samh.org.uk',
+        covers: 'Scotland',
         notes:
-          "Information, campaigns and some local services for people experiencing mental health problems in Scotland.",
+          'Information, campaigns and some local services for people experiencing mental health problems in Scotland.',
       },
       {
-        name: "CALM (Campaign Against Living Miserably)",
-        url: "https://www.thecalmzone.net",
-        covers: "United Kingdom",
+        name: 'CALM (Campaign Against Living Miserably)',
+        url: 'https://www.thecalmzone.net',
+        covers: 'United Kingdom',
         notes:
-          "Support for people who feel down or suicidal, via helpline and webchat, with a focus on reducing suicide.",
+          'Support for people who feel down or suicidal, via helpline and webchat, with a focus on reducing suicide.',
       },
       {
-        name: "Andy’s Man Club",
-        url: "https://andysmanclub.co.uk",
-        covers: "United Kingdom (local groups and online)",
+        name: 'Andy’s Man Club',
+        url: 'https://andysmanclub.co.uk',
+        covers: 'United Kingdom (local groups and online)',
         notes:
-          "Free peer-support groups for men, meeting weekly in local venues and online, focused on talking openly about mental health.",
+          'Free peer-support groups for men, meeting weekly in local venues and online, focused on talking openly about mental health.',
       },
       {
-        name: "Money and Mental Health Policy Institute",
-        url: "https://www.moneyandmentalhealth.org",
-        covers: "United Kingdom",
+        name: 'Money and Mental Health Policy Institute',
+        url: 'https://www.moneyandmentalhealth.org',
+        covers: 'United Kingdom',
         notes:
-          "Charity set up by Martin Lewis that researches the links between money and mental health and campaigns for fairer systems.",
+          'Charity set up by Martin Lewis that researches the links between money and mental health and campaigns for fairer systems.',
       },
     ],
   },
   {
-    id: "safety",
-    title: "Safety, abuse and financial control",
+    id: 'safety',
+    title: 'Safety, abuse and financial control',
     description:
-      "Sometimes money worries are linked to abuse, control or feeling unsafe at home. These organisations focus on safety and protection.",
+      'Sometimes money worries are linked to abuse, control or feeling unsafe at home. These organisations focus on safety and protection.',
     items: [
       {
-        name: "Refuge",
-        url: "https://www.refuge.org.uk",
-        covers: "United Kingdom",
+        name: 'Refuge',
+        url: 'https://www.refuge.org.uk',
+        covers: 'United Kingdom',
         notes:
-          "Support for women and children experiencing domestic abuse, including helpline, refuge spaces and online resources.",
+          'Support for women and children experiencing domestic abuse, including helpline, refuge spaces and online resources.',
       },
       {
-        name: "Women’s Aid",
-        url: "https://www.womensaid.org.uk",
-        covers: "United Kingdom",
+        name: 'Women’s Aid',
+        url: 'https://www.womensaid.org.uk',
+        covers: 'United Kingdom',
         notes:
-          "Information, local services and a live chat service for women experiencing domestic abuse.",
+          'Information, local services and a live chat service for women experiencing domestic abuse.',
       },
       {
-        name: "Men’s Advice Line",
-        url: "https://mensadviceline.org.uk",
-        covers: "United Kingdom",
+        name: 'Men’s Advice Line',
+        url: 'https://mensadviceline.org.uk',
+        covers: 'United Kingdom',
         notes:
-          "Confidential helpline and webchat for men experiencing domestic abuse in heterosexual or same-sex relationships.",
+          'Confidential helpline and webchat for men experiencing domestic abuse in heterosexual or same-sex relationships.',
       },
       {
-        name: "Galop",
-        url: "https://galop.org.uk",
-        covers: "United Kingdom",
+        name: 'Galop',
+        url: 'https://galop.org.uk',
+        covers: 'United Kingdom',
         notes:
-          "Support for LGBTQ+ people experiencing abuse or violence, including domestic and sexual abuse and hate crime.",
+          'Support for LGBTQ+ people experiencing abuse or violence, including domestic and sexual abuse and hate crime.',
       },
     ],
   },
   {
-    id: "housing-energy-essentials",
-    title: "Housing, energy and essentials",
+    id: 'housing-energy-essentials',
+    title: 'Housing, energy and essentials',
     description:
-      "If you are worried about rent, eviction, homelessness or the cost of heating and powering your home, these organisations focus on housing rights and energy support.",
+      'If you are worried about rent, eviction, homelessness or the cost of heating and powering your home, these organisations focus on housing rights and energy support.',
     items: [
       {
-        name: "Shelter",
-        url: "https://www.shelter.org.uk",
-        covers: "England, Scotland, Wales (with some services across the UK)",
+        name: 'Shelter',
+        url: 'https://www.shelter.org.uk',
+        covers: 'England, Scotland, Wales (with some services across the UK)',
         notes:
-          "Housing and homelessness charity. Helps with homelessness, eviction, bad housing conditions, rent arrears and mortgage problems.",
+          'Housing and homelessness charity. Helps with homelessness, eviction, bad housing conditions, rent arrears and mortgage problems.',
       },
       {
-        name: "Shelter – housing advice",
-        url: "https://england.shelter.org.uk/housing_advice",
-        covers: "England (online advice), links to Scotland and Wales sites",
+        name: 'Shelter – housing advice',
+        url: 'https://england.shelter.org.uk/housing_advice',
+        covers: 'England (online advice), links to Scotland and Wales sites',
         notes:
-          "Online housing advice on homelessness, renting, eviction, mortgage arrears, benefits, debts and more.",
+          'Online housing advice on homelessness, renting, eviction, mortgage arrears, benefits, debts and more.',
       },
       {
-        name: "National Energy Action (NEA)",
-        url: "https://www.nea.org.uk",
-        covers: "England, Wales, Northern Ireland",
+        name: 'National Energy Action (NEA)',
+        url: 'https://www.nea.org.uk',
+        covers: 'England, Wales, Northern Ireland',
         notes:
-          "Charity working to end fuel poverty, offering energy advice and information about schemes to help with energy bills.",
+          'Charity working to end fuel poverty, offering energy advice and information about schemes to help with energy bills.',
       },
       {
-        name: "Turn2us – Cost of living and energy help",
-        url: "https://www.turn2us.org.uk/get-support/information-for-your-situation/cost-of-living",
-        covers: "United Kingdom",
+        name: 'Turn2us – Cost of living and energy help',
+        url: 'https://www.turn2us.org.uk/get-support/information-for-your-situation/cost-of-living',
+        covers: 'United Kingdom',
         notes:
-          "Information about help with energy and water bills, charitable grants and wider cost of living support.",
+          'Information about help with energy and water bills, charitable grants and wider cost of living support.',
       },
       {
-        name: "The Trussell Trust",
-        url: "https://www.trusselltrust.org",
-        covers: "United Kingdom",
+        name: 'The Trussell Trust',
+        url: 'https://www.trusselltrust.org',
+        covers: 'United Kingdom',
         notes:
-          "Network of food banks across the UK. Offers emergency food and practical support, often alongside signposting to local advice.",
+          'Network of food banks across the UK. Offers emergency food and practical support, often alongside signposting to local advice.',
       },
     ],
   },
   {
-    id: "disability-and-money",
-    title: "Disability, health and money",
+    id: 'disability-and-money',
+    title: 'Disability, health and money',
     description:
-      "Disabled people, people with long-term conditions and carers often face extra costs. These organisations focus on disability-related money support, benefits and grants.",
+      'Disabled people, people with long-term conditions and carers often face extra costs. These organisations focus on disability-related money support, benefits and grants.',
     items: [
       {
-        name: "Scope – money and finances",
-        url: "https://www.scope.org.uk/advice-and-support/money-and-finances",
-        covers: "England, Wales, Scotland, Northern Ireland (online content)",
+        name: 'Scope – money and finances',
+        url: 'https://www.scope.org.uk/advice-and-support/money-and-finances',
+        covers: 'England, Wales, Scotland, Northern Ireland (online content)',
         notes:
-          "Disability charity with advice on benefits, extra costs, budgeting and managing money if you are disabled or supporting someone who is.",
+          'Disability charity with advice on benefits, extra costs, budgeting and managing money if you are disabled or supporting someone who is.',
       },
       {
-        name: "Scope – grants and funding information",
-        url: "https://www.scope.org.uk/advice-and-support/finding-applying-funds-grants",
-        covers: "United Kingdom",
+        name: 'Scope – grants and funding information',
+        url: 'https://www.scope.org.uk/advice-and-support/finding-applying-funds-grants',
+        covers: 'United Kingdom',
         notes:
-          "Guidance on finding and applying for grants if you are disabled or care for a disabled person, including links to grant search tools.",
+          'Guidance on finding and applying for grants if you are disabled or care for a disabled person, including links to grant search tools.',
       },
       {
-        name: "Disability Grants",
-        url: "https://www.disability-grants.org",
-        covers: "United Kingdom",
+        name: 'Disability Grants',
+        url: 'https://www.disability-grants.org',
+        covers: 'United Kingdom',
         notes:
-          "Independent website gathering information on charities and trusts that give grants to disabled people and their families.",
+          'Independent website gathering information on charities and trusts that give grants to disabled people and their families.',
       },
       {
-        name: "Lightning Reach",
-        url: "https://www.lightningreach.org",
-        covers: "United Kingdom",
+        name: 'Lightning Reach',
+        url: 'https://www.lightningreach.org',
+        covers: 'United Kingdom',
         notes:
-          "Platform that helps people find and apply for financial support such as grants, based on their situation and location.",
+          'Platform that helps people find and apply for financial support such as grants, based on their situation and location.',
       },
     ],
   },
   {
-    id: "money-guides",
-    title: "Money information and practical tools",
+    id: 'money-guides',
+    title: 'Money information and practical tools',
     description:
-      "These websites focus on clear, practical information about everyday money, bills and consumer rights. They don’t replace regulated debt advice but can help you understand the basics.",
+      'These websites focus on clear, practical information about everyday money, bills and consumer rights. They don’t replace regulated debt advice but can help you understand the basics.',
     items: [
       {
-        name: "MoneySavingExpert",
-        url: "https://www.moneysavingexpert.com",
-        covers: "United Kingdom",
+        name: 'MoneySavingExpert',
+        url: 'https://www.moneysavingexpert.com',
+        covers: 'United Kingdom',
         notes:
-          "Guides, tools and tips to cut costs, understand bills, compare deals and learn more about credit and consumer rights.",
+          'Guides, tools and tips to cut costs, understand bills, compare deals and learn more about credit and consumer rights.',
       },
       {
-        name: "GOV.UK – Money and tax",
-        url: "https://www.gov.uk/browse/tax",
-        covers: "United Kingdom",
+        name: 'GOV.UK – Money and tax',
+        url: 'https://www.gov.uk/browse/tax',
+        covers: 'United Kingdom',
         notes:
-          "Official government information on tax, benefits, allowances and related money and tax topics.",
+          'Official government information on tax, benefits, allowances and related money and tax topics.',
       },
       {
-        name: "MoneyHelper – everyday money",
-        url: "https://www.moneyhelper.org.uk/en/everyday-money",
-        covers: "United Kingdom",
+        name: 'MoneyHelper – everyday money',
+        url: 'https://www.moneyhelper.org.uk/en/everyday-money',
+        covers: 'United Kingdom',
         notes:
-          "Government-backed guidance on everyday money, including budgeting, banking, borrowing and saving.",
+          'Government-backed guidance on everyday money, including budgeting, banking, borrowing and saving.',
       },
     ],
   },
@@ -340,19 +341,19 @@ const sections = [
 
 // Build JSON-LD in one place, as plain data, so Google gets clean JSON
 const structuredData = {
-  "@context": "https://schema.org",
-  "@type": "ItemList",
-  name: "Organisations and resources we signpost to",
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Organisations and resources we signpost to',
   description:
-    "A curated list of trusted organisations for debt advice, money guidance, mental health, housing, energy and safety support across the UK.",
+    'A curated list of trusted organisations for debt advice, money guidance, mental health, housing, energy and safety support across the UK.',
   itemListElement: sections.flatMap((section, sectionIndex) =>
     section.items.map((item, index) => ({
-      "@type": "ListItem",
+      '@type': 'ListItem',
       position: sectionIndex * 100 + index + 1,
       name: item.name,
       url: item.url,
       description: item.notes,
-    })),
+    }))
   ),
 };
 ---
@@ -360,60 +361,72 @@ const structuredData = {
 <BaseLayout {title} {description} {canonicalUrl}>
   <main id="main-content" class="bg-primary-50 min-h-screen">
     <section class="mx-auto max-w-7xl px-4 py-10 sm:py-14">
-      
       {/* 1. PAGE HEADER (Full Width) */}
       <header class="mb-10 md:mb-14">
-        <p class="text-sm font-semibold text-primary-700 uppercase tracking-wide leading-relaxed">
-          Resources
+        <p
+          class="text-sm font-semibold text-primary-700 uppercase tracking-wide leading-relaxed"
+        >
+          Core Services
         </p>
-        <h1 class="mt-2 mb-4 leading-normal">Organisations and resources we signpost to</h1>
+        <h1 class="mt-2 mb-4 leading-normal">
+          Trusted organisations and resources.
+        </h1>
         <p class="text-lg text-slate-800 leading-relaxed mb-4 max-w-none">
-          This page pulls together some of the main organisations and websites we link to around the
-          site. They offer help with debt, money, housing, energy, mental health and safety.
+          This page pulls together some of the main organisations and websites
+          we link to around the site. They offer help with debt, money, housing,
+          energy, mental health and safety.
         </p>
         <p class="text-xs text-slate-600 leading-relaxed">
-          Page last reviewed: <time datetime={lastmod}>{lastReviewedWithGMT}</time>
+          Page last reviewed: <time datetime={lastmod}
+            >{lastReviewedWithGMT}</time
+          >
         </p>
       </header>
 
       {/* 2. MAIN LAYOUT GRID */}
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-        
         {/* === SIDEBAR (Sticky on Desktop) === */}
         <aside class="lg:col-span-4 lg:sticky lg:top-24 space-y-6">
-          
           {/* Navigation Card */}
           <nav
             class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm"
             aria-label="Resources sections"
           >
-            <h2 class="text-sm font-bold text-slate-900 uppercase tracking-wide mb-3 leading-relaxed">
+            <h2
+              class="text-sm font-bold text-slate-900 uppercase tracking-wide mb-3 leading-relaxed"
+            >
               Jump to a section
             </h2>
             <ul class="space-y-1 text-sm">
-              {sections.map((section) => (
-                <li>
-                  {/* AAA Fix: 'leading-relaxed' MUST be explicit here for text-sm links */}
-                  <a
-                    href={`#${section.id}`}
-                    class="block py-3 -mx-2 px-2 rounded-md text-slate-700 hover:text-primary-800 hover:bg-primary-50 transition-colors leading-relaxed"
-                  >
-                    {section.title}
-                  </a>
-                </li>
-              ))}
+              {
+                sections.map((section) => (
+                  <li>
+                    {/* AAA Fix: 'leading-relaxed' MUST be explicit here for text-sm links */}
+                    <a
+                      href={`#${section.id}`}
+                      class="block py-3 -mx-2 px-2 rounded-md text-slate-700 hover:text-primary-800 hover:bg-primary-50 transition-colors leading-relaxed"
+                    >
+                      {section.title}
+                    </a>
+                  </li>
+                ))
+              }
             </ul>
           </nav>
 
           {/* Context Card: How we choose */}
-          <div class="rounded-xl border border-primary-100 bg-primary-50/50 p-5 shadow-sm">
+          <div
+            class="rounded-xl border border-primary-100 bg-primary-50/50 p-5 shadow-sm"
+          >
             <h2 class="text-sm font-bold text-slate-900 mb-3 leading-relaxed">
               How we choose organisations
             </h2>
             <p class="text-sm text-slate-700 leading-relaxed mb-3">
               We focus on organisations that:
             </p>
-            <ul class="list-disc pl-4 text-sm text-slate-700 leading-relaxed space-y-1 mb-3">
+            <ul
+              class="list-disc pl-4 text-sm text-slate-700 leading-relaxed space-y-1 mb-3"
+            >
               <li>are free to contact</li>
               <li>have a clear, recognised role</li>
               <li>explain their UK coverage clearly</li>
@@ -424,77 +437,84 @@ const structuredData = {
           </div>
         </aside>
 
-
         {/* === MAIN CONTENT FEED === */}
         <div class="lg:col-span-8 space-y-12">
-          
-          {sections.map((section) => (
-            <section id={section.id} class="scroll-mt-24 space-y-5">
-              <header class="pb-2 border-b border-slate-200">
-                <h2 class="text-2xl font-bold text-slate-900 leading-normal">{section.title}</h2>
-                <p class="text-base text-slate-700 mt-2 max-w-2xl leading-relaxed max-w-none">
-                  {section.description}
-                </p>
-              </header>
+          {
+            sections.map((section) => (
+              <section id={section.id} class="scroll-mt-24 space-y-5">
+                <header class="pb-2 border-b border-slate-200">
+                  <h2 class="text-2xl font-bold text-slate-900 leading-normal">
+                    {section.title}
+                  </h2>
+                  <p class="text-base text-slate-700 mt-2 max-w-2xl leading-relaxed max-w-none">
+                    {section.description}
+                  </p>
+                </header>
 
-              <div class="grid gap-6 md:grid-cols-2">
-                {section.items.map((item) => (
-                  <article class="flex flex-col h-full rounded-xl border border-slate-200 bg-white p-5 shadow-sm hover:shadow-md transition-shadow">
-                    <h3 class="text-lg font-semibold text-slate-900 mb-2 leading-normal">
-                      {/* AAA Fix: Block link with padding */}
-                      <a
-                        href={item.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="block -mx-2 px-2 py-2 hover:text-primary-700 hover:underline decoration-2 underline-offset-2 leading-relaxed"
-                      >
-                        {item.name}
-                        <span class="sr-only">(opens in a new tab)</span>
-                      </a>
-                    </h3>
-                    
-                    <div class="mb-3">
-                      {/* AAA Fix: 'leading-relaxed' on small badges */}
-                      <span class="inline-flex items-center rounded-md bg-slate-100 px-2 py-1 text-xs font-medium text-slate-700 leading-relaxed">
-                        {item.covers}
-                      </span>
-                    </div>
-                    
-                    <p class="text-sm text-slate-700 leading-relaxed flex-grow">
-                      {item.notes}
-                    </p>
-                  </article>
-                ))}
-              </div>
-            </section>
-          ))}
+                <div class="grid gap-6 md:grid-cols-2">
+                  {section.items.map((item) => (
+                    <article class="flex flex-col h-full rounded-xl border border-slate-200 bg-white p-5 shadow-sm hover:shadow-md transition-shadow">
+                      <h3 class="text-lg font-semibold text-slate-900 mb-2 leading-normal">
+                        {/* AAA Fix: Block link with padding */}
+                        <a
+                          href={item.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class="block -mx-2 px-2 py-2 hover:text-primary-700 hover:underline decoration-2 underline-offset-2 leading-relaxed"
+                        >
+                          {item.name}
+                          <span class="sr-only">(opens in a new tab)</span>
+                        </a>
+                      </h3>
+
+                      <div class="mb-3">
+                        {/* AAA Fix: 'leading-relaxed' on small badges */}
+                        <span class="inline-flex items-center rounded-md bg-slate-100 px-2 py-1 text-xs font-medium text-slate-700 leading-relaxed">
+                          {item.covers}
+                        </span>
+                      </div>
+
+                      <p class="text-sm text-slate-700 leading-relaxed flex-grow">
+                        {item.notes}
+                      </p>
+                    </article>
+                  ))}
+                </div>
+              </section>
+            ))
+          }
 
           {/* Suggestion Box (At bottom of feed) */}
-          <section class="rounded-xl border border-slate-200 bg-slate-50 p-6 sm:p-8 mt-8">
+          <section
+            class="rounded-xl border border-slate-200 bg-slate-50 p-6 sm:p-8 mt-8"
+          >
             <h2 class="text-xl font-bold text-slate-900 mb-3 leading-normal">
               Suggest a service or update
             </h2>
             <p class="text-base text-slate-700 leading-relaxed mb-4 max-w-none">
-              If you work for a charity or advice service and think you should be listed here, or if 
-              you spot something out of date, please let us know. We read all genuine suggestions.
+              If you work for a charity or advice service and think you should
+              be listed here, or if you spot something out of date, please let
+              us know. We read all genuine suggestions.
             </p>
-            <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-              <a 
-                href="/contact" 
-                class="btn-primary"
+            <div
+              class="flex flex-col sm:flex-row items-start sm:items-center gap-4"
+            >
+              <a href="/contact" class="btn-primary"> Contact us </a>
+              <p
+                class="text-xs text-slate-500 max-w-sm leading-relaxed max-w-none"
               >
-                Contact us
-              </a>
-              <p class="text-xs text-slate-500 max-w-sm leading-relaxed max-w-none">
-                We don’t accept paid placements or sponsored listings. Being listed here never depends on payment.
+                We don’t accept paid placements or sponsored listings. Being
+                listed here never depends on payment.
               </p>
             </div>
           </section>
-
         </div>
       </div>
 
-      <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+      <script
+        type="application/ld+json"
+        set:html={JSON.stringify(structuredData)}
+      />
     </section>
   </main>
 </BaseLayout>

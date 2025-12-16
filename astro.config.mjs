@@ -1,25 +1,27 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
-import tailwindcss from "@tailwindcss/vite";
+import preact from '@astrojs/preact';
+import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
 import robotsTxt from 'astro-robots-txt';
 
 export default defineConfig({
   site: 'https://www.nationaldebtservice.co.uk',
-  
+
   integrations: [
+    preact(),
     sitemap({
-        filter: (page) => {
-            if (page.endsWith('/404/')) return false; 
-            return true;
-        },
-    }), 
+      filter: (page) => {
+        if (page.endsWith('/404/')) return false;
+        return true;
+      },
+    }),
 
     robotsTxt({
-      sitemap: true, 
+      sitemap: true,
       policy: [
         {
-          userAgent: '*', 
+          userAgent: '*',
           allow: '/',
         },
       ],

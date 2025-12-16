@@ -1,5 +1,7 @@
 ---
-import { ShieldCheck } from "lucide-astro";
+// src/components/Header.astro
+import { ShieldCheck } from 'lucide-astro';
+import MobileNav from './MobileNav.jsx';
 
 const { pathname } = Astro.url;
 const isCurrent = (path: string) =>
@@ -14,7 +16,9 @@ const isCurrent = (path: string) =>
 </a>
 
 <header class="border-b border-primary-100 bg-white/90 backdrop-blur">
-  <div class="mx-auto flex max-w-5xl items-center justify-between gap-4 px-4 py-3 sm:px-6 sm:py-4">
+  <div
+    class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 sm:py-4 md:pr-40"
+  >
     <a href="/" class="flex items-center gap-3">
       <div
         class="flex h-9 w-9 items-center justify-center rounded-full bg-primary-100 text-primary-800"
@@ -22,9 +26,10 @@ const isCurrent = (path: string) =>
       >
         <ShieldCheck class="h-5 w-5" />
       </div>
+
       <div class="flex flex-col">
         <span
-          class="text-base sm:text-lg font-semibold tracking-tight"
+          class="text-base sm:text-lg font-bold tracking-tight text-primary-900"
           style="font-family: 'Noto Sans Display', system-ui, sans-serif;"
         >
           National Debt Service
@@ -36,63 +41,64 @@ const isCurrent = (path: string) =>
     </a>
 
     <nav
-      class="hidden items-center gap-5 text-sm md:flex"
+      class="hidden items-center gap-8 text-sm md:flex"
       aria-label="Main navigation"
     >
       <a
-        href="/get-help"
-        class="text-slate-700 hover:text-primary-800 py-3 -mx-2 px-2"
-        aria-current={isCurrent("/get-help") ? "page" : undefined}
+        href="/help"
+        class="text-slate-700 hover:text-primary-800 py-3 -mx-2 px-2 font-medium"
+        aria-current={isCurrent('/get-help') ? 'page' : undefined}
       >
-        Where to get help
+        Local Help
       </a>
       <a
         href="/resources"
-        class="text-slate-700 hover:text-primary-800 py-3 -mx-2 px-2"
-        aria-current={isCurrent("/resources") ? "page" : undefined}
+        class="text-slate-700 hover:text-primary-800 py-3 -mx-2 px-2 font-medium"
+        aria-current={isCurrent('/resources') ? 'page' : undefined}
       >
-        Resources
+        Core Services
+      </a>
+      <a
+        href="/glossary"
+        class="text-slate-700 hover:text-primary-800 py-3 -mx-2 px-2 font-medium"
+        aria-current={isCurrent('/glossary') ? 'page' : undefined}
+      >
+        Glossary
       </a>
       <a
         href="/about"
-        class="text-slate-700 hover:text-primary-800 py-3 -mx-2 px-2"
-        aria-current={isCurrent("/about") ? "page" : undefined}
+        class="text-slate-700 hover:text-primary-800 py-3 -mx-2 px-2 font-medium"
+        aria-current={isCurrent('/about') ? 'page' : undefined}
       >
         About
       </a>
       <a
         href="/contact"
-        class="text-slate-700 hover:text-primary-800 py-3 -mx-2 px-2"
-        aria-current={isCurrent("/contact") ? "page" : undefined}
+        class="text-slate-700 hover:text-primary-800 py-3 -mx-2 px-2 font-medium"
+        aria-current={isCurrent('/contact') ? 'page' : undefined}
       >
         Contact
       </a>
+
       <a
         href="/get-help"
-        class="btn-primary text-sm font-bold uppercase px-4 py-4"
-        aria-current={isCurrent("/get-help") ? "page" : undefined}
+        class="btn-primary text-sm font-extrabold uppercase px-5 py-2.5 rounded-sm tracking-wider shadow-lg hover:shadow-xl transition-shadow duration-200"
+        aria-current={isCurrent('/get-help') ? 'page' : undefined}
       >
-        I need support
+        GET SUPPORT
       </a>
     </nav>
-  </div>
 
-  <div class="border-t border-primary-100 bg-white px-4 pb-3 pt-2 md:hidden">
-    <div class="mx-auto max-w-5xl">
+    <div class="md:hidden flex items-center gap-3">
       <a
         href="/get-help"
-        class="btn-primary w-full justify-center mb-2"
-        aria-current={isCurrent("/get-help") ? "page" : undefined}
+        class="btn-primary text-sm font-bold uppercase px-4 py-2 rounded-full tracking-wider shadow-md"
+        aria-current={isCurrent('/get-help') ? 'page' : undefined}
       >
-        I need support now
+        Get Help
       </a>
-      <a
-        href="/resources"
-        class="btn-primary w-full justify-center"
-        aria-current={isCurrent("/resources") ? "page" : undefined}
-      >
-        Resources
-      </a>
+
+      <MobileNav currentPath={pathname} client:load />
     </div>
   </div>
 </header>

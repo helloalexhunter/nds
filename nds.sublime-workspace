@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"font-",
+				"font-semibold"
+			],
+			[
+				"font",
+				"font-bold"
+			],
+			[
+				"ma",
+				"mx-auto"
+			],
+			[
 				"border",
 				"border-red-300"
 			],
@@ -86,15 +98,46 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/alexhunter/Desktop/projects/nds/main",
-		"/Users/alexhunter/Desktop/projects/nds/main/functions",
-		"/Users/alexhunter/Desktop/projects/nds/main/src",
-		"/Users/alexhunter/Desktop/projects/nds/main/src/components",
-		"/Users/alexhunter/Desktop/projects/nds/main/src/layouts",
-		"/Users/alexhunter/Desktop/projects/nds/main/src/pages"
+		"/Users/alexhunter/Desktop/projects/nds",
+		"/Users/alexhunter/Desktop/projects/nds/functions",
+		"/Users/alexhunter/Desktop/projects/nds/functions/api",
+		"/Users/alexhunter/Desktop/projects/nds/src",
+		"/Users/alexhunter/Desktop/projects/nds/src/components",
+		"/Users/alexhunter/Desktop/projects/nds/src/content",
+		"/Users/alexhunter/Desktop/projects/nds/src/content/glossary",
+		"/Users/alexhunter/Desktop/projects/nds/src/data",
+		"/Users/alexhunter/Desktop/projects/nds/src/hooks",
+		"/Users/alexhunter/Desktop/projects/nds/src/layouts",
+		"/Users/alexhunter/Desktop/projects/nds/src/pages"
 	],
 	"file_history":
 	[
+		"/Users/alexhunter/Desktop/char/update_charity_data.py",
+		"/Users/alexhunter/Desktop/projects/nds/src/data/astro_charity_data.json",
+		"/Users/alexhunter/Desktop/char/geocode_script.py",
+		"/Users/alexhunter/Desktop/projects/nds/src/components/CharityList.jsx",
+		"/Users/alexhunter/Desktop/projects/nds/src/pages/help.astro",
+		"/Users/alexhunter/Desktop/projects/nds/src/pages/glossary.astro",
+		"/Users/alexhunter/Desktop/projects/nds/src/content/glossary/bailiffs.md",
+		"/Users/alexhunter/Desktop/projects/nds/src/content/config.ts",
+		"/Users/alexhunter/Desktop/projects/nds/src/components/CharityCard.jsx",
+		"/Users/alexhunter/Desktop/projects/nds/src/hooks/useDebounce.js",
+		"/Users/alexhunter/Desktop/projects/nds/src/pages/about.astro",
+		"/Users/alexhunter/Desktop/projects/nds/src/pages/faq.astro",
+		"/Users/alexhunter/Desktop/projects/nds/src/components/Footer.astro",
+		"/Users/alexhunter/Desktop/projects/nds/astro.config.mjs",
+		"/Users/alexhunter/Desktop/projects/nds/src/layouts/BaseLayout.astro",
+		"/Users/alexhunter/Desktop/projects/nds/src/pages/contact.astro",
+		"/Users/alexhunter/Desktop/char/process_charities.py",
+		"/Users/alexhunter/Desktop/char/astro_charity_data.json",
+		"/Users/alexhunter/Desktop/char/publicextract.charity.json",
+		"/Users/alexhunter/Desktop/projects/nds/package-lock.json",
+		"/Users/alexhunter/Desktop/projects/nds/src/pages/changelog.astro",
+		"/Users/alexhunter/Desktop/projects/nds/functions/api/contact.js",
+		"/Users/alexhunter/Desktop/projects/nds/tsconfig.json",
+		"/Users/alexhunter/Desktop/projects/nds/package.json",
+		"/Users/alexhunter/Desktop/projects/nds/.prettierrc",
+		"/Users/alexhunter/Desktop/projects/nds/src/components/Header.astro",
 		"/Users/alexhunter/Desktop/projects/nds/main/src/pages/index.astro",
 		"/Users/alexhunter/Desktop/projects/nds/main/src/components/Footer.astro",
 		"/Users/alexhunter/Desktop/projects/nds/main/src/pages/get-help.astro",
@@ -168,6 +211,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"charitable_objects",
+			"poverty"
 		],
 		"highlight": true,
 		"in_selection": false,

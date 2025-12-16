@@ -1,39 +1,43 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import BaseLayout from '../layouts/BaseLayout.astro';
 import { getLastCommitDate } from '../utils/git-time.js';
 
-const title = "Cookies Policy – National Debt Service";
+const title = 'Cookies Policy – National Debt Service';
 const description =
-  "Find out how National Debt Service uses cookies and similar technologies, including Cloudflare and Umami Analytics.";
-const canonicalUrl = "https://www.nationaldebtservice.co.uk/cookies";
+  'Find out how National Debt Service uses cookies and similar technologies, including Cloudflare and Umami Analytics.';
+const canonicalUrl = 'https://www.nationaldebtservice.co.uk/cookies';
 
 const filePath = 'src/pages/cookies.astro';
 const lastmod = getLastCommitDate(filePath);
 const lastReviewedWithGMT = new Date(lastmod).toLocaleString('en-GB', {
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric',
-    hour: '2-digit',
-    minute: '2-digit',
-    timeZone: 'GMT',
-    timeZoneName: 'short',
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric',
+  hour: '2-digit',
+  minute: '2-digit',
+  timeZone: 'GMT',
+  timeZoneName: 'short',
 });
 ---
 
 <BaseLayout {title} {description} {canonicalUrl}>
   <main id="main-content" class="bg-primary-50 min-h-screen">
-    <section class="mx-auto max-w-4xl px-4 py-10 sm:py-14 space-y-8">
+    <section class="mx-auto max-w-7xl px-4 py-10 sm:py-14 space-y-8">
       <header class="space-y-3">
-        <p class="text-xs font-semibold uppercase tracking-wide text-primary-700">
+        <p
+          class="text-xs font-semibold uppercase tracking-wide text-primary-700"
+        >
           Cookies
         </p>
         <h1>Cookies Policy</h1>
-        <p class="text-base text-slate-800 leading-relaxed">
-          This page explains how we use cookies and similar technologies on the National Debt
-          Service website.
+        <p class="text-base text-slate-800 leading-relaxed max-w-none">
+          This page explains how we use cookies and similar technologies on the
+          National Debt Service website.
         </p>
         <p class="text-xs text-slate-600">
-          Page last reviewed: <time datetime={lastmod}>{lastReviewedWithGMT}</time>
+          Page last reviewed: <time datetime={lastmod}
+            >{lastReviewedWithGMT}</time
+          >
         </p>
       </header>
 
@@ -41,23 +45,28 @@ const lastReviewedWithGMT = new Date(lastmod).toLocaleString('en-GB', {
         <h2 id="what-are-cookies" class="text-xl font-semibold text-slate-900">
           1. What are cookies?
         </h2>
-        <p class="text-sm text-slate-800 leading-relaxed">
-          Cookies are small text files placed on your device by websites you visit. They’re
-          widely used to make websites work, or work more efficiently, and to provide
-          information to site owners.
+        <p class="text-sm text-slate-800 leading-relaxed max-w-none">
+          Cookies are small text files placed on your device by websites you
+          visit. They’re widely used to make websites work, or work more
+          efficiently, and to provide information to site owners.
         </p>
       </section>
 
       <section aria-labelledby="how-we-use-cookies" class="space-y-3">
-        <h2 id="how-we-use-cookies" class="text-xl font-semibold text-slate-900">
+        <h2
+          id="how-we-use-cookies"
+          class="text-xl font-semibold text-slate-900"
+        >
           2. How we use cookies
         </h2>
-        <p class="text-sm text-slate-800 leading-relaxed">
-          We keep cookie use on this site to a minimum. We do not use cookies for advertising
-          or marketing.
+        <p class="text-sm text-slate-800 leading-relaxed max-w-none">
+          We keep cookie use on this site to a minimum. We do not use cookies
+          for advertising or marketing.
         </p>
-        <p class="text-sm text-slate-800 leading-relaxed">
-          We currently use cookies only for essential website functions, or where technically required by our service providers. For analytics, we use cookieless tracking.
+        <p class="text-sm text-slate-800 leading-relaxed max-w-none">
+          We currently use cookies only for essential website functions, or
+          where technically required by our service providers. For analytics, we
+          use cookieless tracking.
         </p>
       </section>
 
@@ -65,9 +74,9 @@ const lastReviewedWithGMT = new Date(lastmod).toLocaleString('en-GB', {
         <h2 id="essential-cookies" class="text-xl font-semibold text-slate-900">
           3. Essential cookies
         </h2>
-        <p class="text-sm text-slate-800 leading-relaxed">
-          At the moment, we do not use any cookies that are strictly necessary for the core
-          operation of the site.
+        <p class="text-sm text-slate-800 leading-relaxed max-w-none">
+          At the moment, we do not use any cookies that are strictly necessary
+          for the core operation of the site.
         </p>
       </section>
 
@@ -75,29 +84,33 @@ const lastReviewedWithGMT = new Date(lastmod).toLocaleString('en-GB', {
         <h2 id="analytics-cookies" class="text-xl font-semibold text-slate-900">
           4. Analytics and performance cookies
         </h2>
-        <p class="text-sm text-slate-800 leading-relaxed">
-          We use analytics to understand how the site is used and to improve its performance.
+        <p class="text-sm text-slate-800 leading-relaxed max-w-none">
+          We use analytics to understand how the site is used and to improve its
+          performance.
         </p>
 
         <h3 class="text-lg font-semibold text-slate-900">
           4.1 Cloudflare Analytics
         </h3>
-        <p class="text-sm text-slate-800 leading-relaxed">
-          Cloudflare Analytics helps us understand traffic patterns and performance. It does
-          not use tracking cookies and does not collect personal data about individual
-          visitors.
+        <p class="text-sm text-slate-800 leading-relaxed max-w-none">
+          Cloudflare Analytics helps us understand traffic patterns and
+          performance. It does not use tracking cookies and does not collect
+          personal data about individual visitors.
         </p>
 
         <h3 class="text-lg font-semibold text-slate-900">
           4.2 Umami Analytics
         </h3>
-        <p class="text-sm text-slate-800 leading-relaxed">
-        Umami is a privacy-focused, cookieless analytics tool. It helps us understand which pages are used and how 
-        users navigate the site, all while maintaining the anonymity of individual users. We use a pseudonymous 
-        identifier to track sessions but do not store or read any cookies for this purpose.
-        We do not use Umami Analytics data for:
+        <p class="text-sm text-slate-800 leading-relaxed max-w-none">
+          Umami is a privacy-focused, cookieless analytics tool. It helps us
+          understand which pages are used and how users navigate the site, all
+          while maintaining the anonymity of individual users. We use a
+          pseudonymous identifier to track sessions but do not store or read any
+          cookies for this purpose. We do not use Umami Analytics data for:
         </p>
-        <ul class="list-disc pl-5 text-sm text-slate-800 leading-relaxed space-y-1">
+        <ul
+          class="list-disc pl-5 text-sm text-slate-800 leading-relaxed space-y-1"
+        >
           <li>advertising or remarketing</li>
           <li>building profiles of individual users</li>
           <li>tracking your activity across other websites</li>
@@ -111,14 +124,16 @@ const lastReviewedWithGMT = new Date(lastmod).toLocaleString('en-GB', {
         <p class="text-sm text-slate-800 leading-relaxed">
           You can control cookies using your browser settings. You can:
         </p>
-        <ul class="list-disc pl-5 text-sm text-slate-800 leading-relaxed space-y-1">
+        <ul
+          class="list-disc pl-5 text-sm text-slate-800 leading-relaxed space-y-1"
+        >
           <li>block all cookies</li>
           <li>block cookies from specific sites</li>
           <li>delete cookies that have already been set</li>
         </ul>
-        <p class="text-sm text-slate-800 leading-relaxed">
-          Blocking or deleting cookies should not stop this site from working, but it may
-          affect some analytics information we see.
+        <p class="text-sm text-slate-800 leading-relaxed max-w-none">
+          Blocking or deleting cookies should not stop this site from working,
+          but it may affect some analytics information we see.
         </p>
       </section>
 
@@ -126,9 +141,10 @@ const lastReviewedWithGMT = new Date(lastmod).toLocaleString('en-GB', {
         <h2 id="changes-cookies" class="text-xl font-semibold text-slate-900">
           6. Changes to this Cookies Policy
         </h2>
-        <p class="text-sm text-slate-800 leading-relaxed">
-          We will update this page if we start using new types of cookies or remove existing
-          ones. The date at the top of this page shows when it was last updated.
+        <p class="text-sm text-slate-800 leading-relaxed max-w-none">
+          We will update this page if we start using new types of cookies or
+          remove existing ones. The date at the top of this page shows when it
+          was last updated.
         </p>
       </section>
 
@@ -137,7 +153,8 @@ const lastReviewedWithGMT = new Date(lastmod).toLocaleString('en-GB', {
           7. Questions about cookies
         </h2>
         <p class="text-sm text-slate-800 leading-relaxed">
-          If you have questions about how we use cookies, you can contact us using the{" "}
+          If you have questions about how we use cookies, you can contact us
+          using the{' '}
           <a href="/contact" class="aa-target-size">contact form</a>.
         </p>
       </section>

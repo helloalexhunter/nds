@@ -1,43 +1,47 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import BaseLayout from '../layouts/BaseLayout.astro';
 import { getLastCommitDate } from '../utils/git-time.js';
 
-const title = "Contact National Debt Service";
+const title = 'Contact National Debt Service';
 const description =
-  "Contact National Debt Service about the website itself. We can’t give debt advice, but you can share feedback or flag problems with the site.";
-const canonicalUrl = "https://www.nationaldebtservice.co.uk/contact";
+  'Contact National Debt Service about the website itself. We can’t give debt advice, but you can share feedback or flag problems with the site.';
+const canonicalUrl = 'https://www.nationaldebtservice.co.uk/contact';
 
 const filePath = 'src/pages/contact.astro';
 const lastmod = getLastCommitDate(filePath);
 const lastReviewedWithGMT = new Date(lastmod).toLocaleString('en-GB', {
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric',
-    hour: '2-digit',
-    minute: '2-digit',
-    timeZone: 'GMT',
-    timeZoneName: 'short',
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric',
+  hour: '2-digit',
+  minute: '2-digit',
+  timeZone: 'GMT',
+  timeZoneName: 'short',
 });
 
 const url = new URL(Astro.request.url);
-const initialSubject = url.searchParams.get("subject") || "";
-
+const initialSubject = url.searchParams.get('subject') || '';
 ---
 
 <BaseLayout {title} {description} {canonicalUrl}>
   <main id="main-content" class="bg-primary-50 min-h-screen">
     <section class="mx-auto max-w-7xl px-4 py-10 sm:py-14 space-y-6">
       <header class="space-y-3">
-        <p class="text-xs font-semibold uppercase tracking-wide text-primary-700">
+        <p
+          class="text-xs font-semibold uppercase tracking-wide text-primary-700"
+        >
           Contact
         </p>
         <h1>Contact National Debt Service</h1>
         <p class="text-base text-slate-800 leading-relaxed max-w-none">
-          You can contact us about the website itself – for example, to report a broken link,
-          suggest an accessibility improvement, or raise a concern about any of the content.
+          You can contact us about the website itself – for example, to report a
+          broken link, suggest an accessibility improvement, or raise a concern
+          about any of the content.
         </p>
         <p class="text-xs text-slate-600">
-          Page last reviewed: <time datetime={lastmod}>{lastReviewedWithGMT}</time>
+          Page last reviewed: <time datetime={lastmod}
+            >{lastReviewedWithGMT}</time
+          >
         </p>
       </header>
 
@@ -48,7 +52,10 @@ const initialSubject = url.searchParams.get("subject") || "";
         aria-live="polite"
       >
         <p class="font-semibold">Message sent.</p>
-        <p>Thanks for getting in touch. If a reply is needed, we’ll respond by email.</p>
+        <p>
+          Thanks for getting in touch. If a reply is needed, we’ll respond by
+          email.
+        </p>
       </div>
 
       <div
@@ -64,14 +71,18 @@ const initialSubject = url.searchParams.get("subject") || "";
       </div>
 
       <section class="space-y-3">
-        <h2 class="text-xl font-semibold text-slate-900">Before you get in touch</h2>
+        <h2 class="text-xl font-semibold text-slate-900">
+          Before you get in touch
+        </h2>
         <p class="text-sm text-slate-800 leading-relaxed max-w-none">
-          We can’t give you debt advice or tell you what to do about your situation. We also
-          can’t contact creditors or advice charities on your behalf.
+          We can’t give you debt advice or tell you what to do about your
+          situation. We also can’t contact creditors or advice charities on your
+          behalf.
         </p>
         <p class="text-sm text-slate-800 leading-relaxed max-w-none">
-          If you need personal help with money or mental health, the quickest route is to
-          contact a free, regulated organisation directly. You’ll find a list on the{" "}
+          If you need personal help with money or mental health, the quickest
+          route is to contact a free, regulated organisation directly. You’ll
+          find a list on the{' '}
           <a href="/get-help" class="aa-target-size">Where to get help</a> page.
         </p>
       </section>
@@ -110,11 +121,12 @@ const initialSubject = url.searchParams.get("subject") || "";
               class="block w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-700"
             />
             <p class="mt-1 text-xs text-slate-600">
-              We’ll only use this email address to reply to your message about the website.
+              We’ll only use this email address to reply to your message about
+              the website.
             </p>
           </div>
 
-<div class="space-y-1">
+          <div class="space-y-1">
             <label for="subject" class="text-sm font-medium text-slate-900">
               What is your message about?
             </label>
@@ -124,13 +136,37 @@ const initialSubject = url.searchParams.get("subject") || "";
               required
               class="block w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-700"
             >
-              <option value="" selected={!initialSubject}>Please choose an option</option>
-              <option value="website-feedback" selected={initialSubject === "website-feedback"}>General website feedback</option>
-              <option value="accessibility-issue" selected={initialSubject === "accessibility-issue"}>Accessibility issue</option>
-              <option value="broken-link" selected={initialSubject === "broken-link"}>Broken link or out-of-date information</option>
-              <option value="content-concern" selected={initialSubject === "content-concern"}>Concern about content</option>
-              <option value="resource-correction" selected={initialSubject === "resource-correction"}>Suggest a resource or correction</option>
-              <option value="other" selected={initialSubject === "other"}>Something else</option>
+              <option value="" selected={!initialSubject}
+                >Please choose an option</option
+              >
+              <option
+                value="website-feedback"
+                selected={initialSubject === 'website-feedback'}
+                >General website feedback</option
+              >
+              <option
+                value="accessibility-issue"
+                selected={initialSubject === 'accessibility-issue'}
+                >Accessibility issue</option
+              >
+              <option
+                value="broken-link"
+                selected={initialSubject === 'broken-link'}
+                >Broken link or out-of-date information</option
+              >
+              <option
+                value="content-concern"
+                selected={initialSubject === 'content-concern'}
+                >Concern about content</option
+              >
+              <option
+                value="resource-correction"
+                selected={initialSubject === 'resource-correction'}
+                >Suggest a resource or correction</option
+              >
+              <option value="other" selected={initialSubject === 'other'}
+                >Something else</option
+              >
             </select>
           </div>
 
@@ -145,13 +181,18 @@ const initialSubject = url.searchParams.get("subject") || "";
               required
               class="block w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-700"
             ></textarea>
-            <p class="mt-5 text-xs uppercase font-bold text-slate-600 max-w-none">
-              Please don’t include full account numbers, National Insurance numbers, passwords,
-              or other highly sensitive details. A short description is enough.
+            <p
+              class="mt-5 text-xs uppercase font-bold text-slate-600 max-w-none"
+            >
+              Please don’t include full account numbers, National Insurance
+              numbers, passwords, or other highly sensitive details. A short
+              description is enough.
             </p>
           </div>
 
-          <div class="space-y-2 rounded-md bg-slate-50 px-3 py-3 border border-slate-300 border-3">
+          <div
+            class="space-y-2 rounded-md bg-slate-50 px-3 py-3 border border-slate-300 border-3"
+          >
             <div class="flex items-start gap-2">
               <input
                 id="consent"
@@ -160,23 +201,29 @@ const initialSubject = url.searchParams.get("subject") || "";
                 required
                 class="mt-2 h-4 w-4 rounded border-slate-300 text-primary-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-700"
               />
-              <label for="consent" class="text-xs text-slate-800 leading-relaxed max-w-none">
-                I understand this site can’t give me personal debt advice and is for general
-                information only. I’ve read and agree to the{" "}
-                <a href="/privacy" class="aa-target-size">Privacy notice</a> and{" "}
+              <label
+                for="consent"
+                class="text-xs text-slate-800 leading-relaxed max-w-none"
+              >
+                I understand this site can’t give me personal debt advice and is
+                for general information only. I’ve read and agree to the{' '}
+                <a href="/privacy" class="aa-target-size">Privacy notice</a> and{
+                  ' '
+                }
                 <a href="/terms" class="aa-target-size">Terms of use</a>.
               </label>
             </div>
             <p class="text-[11px] text-slate-600 max-w-none">
-              We’ll use the information you send only to handle your message about the website.
+              We’ll use the information you send only to handle your message
+              about the website.
             </p>
           </div>
-          <div 
-            class="cf-turnstile" 
+          <div
+            class="cf-turnstile"
             data-sitekey="0x4AAAAAACEPwUBbzDYIAVa6"
-            data-theme="light" 
+            data-theme="light"
             data-callback="[optionalCallbackFunctionName]"
-            >
+          >
           </div>
           <div class="pt-2">
             <button
@@ -192,18 +239,21 @@ const initialSubject = url.searchParams.get("subject") || "";
     </section>
 
     <script is:inline>
-      if (typeof window !== "undefined") {
+      if (typeof window !== 'undefined') {
         const params = new URLSearchParams(window.location.search);
-        const status = params.get("status");
-        const successEl = document.getElementById("status-success");
-        const errorEl = document.getElementById("status-error");
-        if (status === "success" && successEl) {
-          successEl.classList.remove("hidden");
-        } else if (status === "error" && errorEl) {
-          errorEl.classList.remove("hidden");
+        const status = params.get('status');
+        const successEl = document.getElementById('status-success');
+        const errorEl = document.getElementById('status-error');
+        if (status === 'success' && successEl) {
+          successEl.classList.remove('hidden');
+        } else if (status === 'error' && errorEl) {
+          errorEl.classList.remove('hidden');
         }
       }
     </script>
   </main>
-  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  <script
+    src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+    async
+    defer></script>
 </BaseLayout>

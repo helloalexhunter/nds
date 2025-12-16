@@ -1,7 +1,7 @@
 ---
 // src/pages/changelog.astro
-import BaseLayout from "../layouts/BaseLayout.astro";
-import { ArrowRight } from "lucide-astro";
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { ArrowRight } from 'lucide-astro';
 import rehypeParse from 'rehype-parse';
 import rehypeStringify from 'rehype-stringify';
 import { unified } from 'unified';
@@ -12,15 +12,20 @@ const REPO_URL = `https://github.com/helloalexhunter/nds`;
 const response = await fetch(GITHUB_API_URL, {
   headers: {
     'X-GitHub-Api-Version': '2022-11-28',
-    'Accept': 'application/vnd.github.v3+json',
+    Accept: 'application/vnd.github.v3+json',
   },
 });
 
 if (!response.ok) {
-  console.error(`Failed to fetch GitHub releases: ${response.status} ${response.statusText}`);
-  const errorTitle = "Error Loading Change Log";
-  const errorBody = "We were unable to load the full release history from GitHub during the build process. Please check back later.";
-  return Astro.redirect(`/error?title=${encodeURIComponent(errorTitle)}&message=${encodeURIComponent(errorBody)}`);
+  console.error(
+    `Failed to fetch GitHub releases: ${response.status} ${response.statusText}`
+  );
+  const errorTitle = 'Error Loading Change Log';
+  const errorBody =
+    'We were unable to load the full release history from GitHub during the build process. Please check back later.';
+  return Astro.redirect(
+    `/error?title=${encodeURIComponent(errorTitle)}&message=${encodeURIComponent(errorBody)}`
+  );
 }
 
 const releases = await response.json();
@@ -33,49 +38,67 @@ async function markdownToHtml(markdown: string) {
   return String(file);
 }
 
-const title = "Change Log – Site Updates and Version History";
-const description = "A transparent, chronological record of all updates, bug fixes, and feature releases for the National Debt Service website.";
+const title = 'Change Log – Site Updates and Version History';
+const description =
+  'A transparent, chronological record of all updates, bug fixes, and feature releases for the National Debt Service website.';
 ---
 
 <BaseLayout {title} {description}>
   <main id="main-content" class="bg-primary-50">
-    <div class="mx-auto max-w-4xl px-4 py-10 sm:py-14">
+    <div class="mx-auto max-w-7xl px-4 py-10 sm:py-14">
       <header class="space-y-4 mb-10">
         <h1>Site Change Log</h1>
-        <p class="text-lg text-slate-700 leading-relaxed">
-          In the interest of complete transparency, this page provides a chronological, public record of every significant update, bug fix, and feature added to the National Debt Service website.
+        <p class="text-lg text-slate-700 leading-relaxed max-w-none">
+          In the interest of complete transparency, this page provides a
+          chronological, public record of every significant update, bug fix, and
+          feature added to the National Debt Service website.
         </p>
-        <p class="text-sm text-slate-600">
-          Releases are pulled directly from our GitHub repository, ensuring the log is always accurate and up-to-date.
+        <p class="text-sm text-slate-600 max-w-none">
+          Releases are pulled directly from our GitHub repository, ensuring the
+          log is always accurate and up-to-date.
         </p>
       </header>
 
       <div class="space-y-12">
-        {releases.map(async (release) => (
-          <article class="relative border-l-4 border-primary-500 pl-6 space-y-2">
-            
-            {/* The Version Tag and Title */}
-            <div class="absolute -left-2.5 top-0 h-4 w-4 rounded-sm bg-primary-700 ring-4 ring-primary-50/80"></div>
-            
-            <h2 class="text-xl font-bold text-slate-900 mb-0">
-              {release.tag_name} <span class="font-normal text-slate-500">({release.name || 'Release'})</span>
-            </h2>
-            <p class="text-sm text-slate-600">
-              Released: {new Date(release.published_at).toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'GMT' })} (GMT)
-            </p>
-            
-            {/* Release Notes Content */}
-            <div class="prose prose-sm max-w-none text-slate-800 pt-2">
-              <p set:html={await markdownToHtml(release.body)} />
-            </div>
-          </article>
-        ))}
+        {
+          releases.map(async (release) => (
+            <article class="relative border-l-4 border-primary-500 pl-6 space-y-2">
+              {/* The Version Tag and Title */}
+              <div class="absolute -left-2.5 top-0 h-4 w-4 rounded-sm bg-primary-700 ring-4 ring-primary-50/80" />
 
-        {releases.length === 0 && (
-          <p class="text-lg text-slate-600">
-            No releases found yet. Check back soon for the first official site update.
-          </p>
-        )}
+              <h2 class="text-xl font-bold text-slate-900 mb-0">
+                {release.tag_name}{' '}
+                <span class="font-normal text-slate-500">
+                  ({release.name || 'Release'})
+                </span>
+              </h2>
+              <p class="text-sm text-slate-600">
+                Released:{' '}
+                {new Date(release.published_at).toLocaleDateString('en-GB', {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric',
+                  timeZone: 'GMT',
+                })}{' '}
+                (GMT)
+              </p>
+
+              {/* Release Notes Content */}
+              <div class="prose prose-sm max-w-none text-slate-800 pt-2 max-w-none">
+                <p set:html={await markdownToHtml(release.body)} />
+              </div>
+            </article>
+          ))
+        }
+
+        {
+          releases.length === 0 && (
+            <p class="text-lg text-slate-600">
+              No releases found yet. Check back soon for the first official site
+              update.
+            </p>
+          )
+        }
       </div>
     </div>
   </main>

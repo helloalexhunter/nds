@@ -1,157 +1,260 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import BaseLayout from '../layouts/BaseLayout.astro';
 import { getLastCommitDate } from '../utils/git-time.js';
 
-const title = "About National Debt Service";
+const title = 'About National Debt Service';
 const description =
-  "Find out who runs National Debt Service, what changed with this domain, and how we signpost to free, trusted support without collecting your details.";
-const canonicalUrl = "https://www.nationaldebtservice.co.uk/about";
+  'Find out who runs National Debt Service, why it exists, and how it signposts to free, trusted support without collecting your details.';
+const canonicalUrl = 'https://www.nationaldebtservice.co.uk/about';
 
 const filePath = 'src/pages/about.astro';
 const lastmod = getLastCommitDate(filePath);
 const lastReviewedWithGMT = new Date(lastmod).toLocaleString('en-GB', {
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric',
-    hour: '2-digit',
-    minute: '2-digit',
-    timeZone: 'GMT',
-    timeZoneName: 'short',
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric',
+  hour: '2-digit',
+  minute: '2-digit',
+  timeZone: 'GMT',
+  timeZoneName: 'short',
 });
 ---
 
 <BaseLayout {title} {description} {canonicalUrl}>
   <main id="main-content" class="bg-primary-50 min-h-screen">
-    <section class="mx-auto max-w-7xl px-4 py-10 sm:py-14 space-y-8">
-      <header class="space-y-3">
-        <p class="text-sm font-semibold text-primary-700 uppercase tracking-wide">
+    <section class="mx-auto max-w-7xl px-4 py-10 sm:py-14 space-y-10">
+      <!-- Page header -->
+      <header class="space-y-4">
+        <p
+          class="text-sm font-semibold text-primary-700 uppercase tracking-wide"
+        >
           About this site
         </p>
+
         <h1>What National Debt Service is here to do</h1>
+
         <p class="text-base text-slate-800 leading-relaxed max-w-none">
-          National Debt Service is a small, independent website. It exists to point people in the UK
-          to free, trusted debt advice and mental health support. We don’t sell products, handle
-          your case or pass your details to anyone.
+          National Debt Service is a small, independent website. It exists to
+          help people in the UK find free, trusted debt and mental health
+          support. We don’t sell products, give advice, handle cases or pass
+          your details to anyone.
         </p>
+
+        <nav
+          aria-label="About page sections"
+          class="text-sm text-slate-700 pt-2"
+        >
+          <ul class="flex flex-wrap gap-4">
+            <li>
+              <a href="#why-this-site-exists" class="aa-target-size"
+                >Why this site exists</a>
+            </li>
+            <li>
+              <a href="#what-this-site-is-for" class="aa-target-size"
+                >What this site is for</a>
+            </li>
+            <li>
+              <a href="#what-this-site-does-not-do" class="aa-target-size"
+                >What this site does not do</a>
+            </li>
+            <li>
+              <a href="#accessibility-and-language" class="aa-target-size"
+                >Accessibility</a>
+            </li>
+          </ul>
+        </nav>
+
         <p class="text-xs text-slate-600">
-          Page last reviewed: <time datetime={lastmod}>{lastReviewedWithGMT}</time>
+          Page last reviewed:
+          <time datetime={lastmod}>{lastReviewedWithGMT}</time>
         </p>
       </header>
 
+      <!-- Why this site exists -->
+      <section id="why-this-site-exists" class="space-y-4">
+        <h2>Why this site exists</h2>
+
+        <p class="text-sm text-slate-800 leading-relaxed max-w-none">
+          Before my mental health took a turn, I was financially stable. My
+          credit scores were in the high 900s, and I had no debts other than a
+          mortgage. I managed my finances carefully and without difficulty.
+        </p>
+
+        <p class="text-sm text-slate-800 leading-relaxed max-w-none">
+          In 2024, I experienced a serious mental health breakdown. During that
+          period, I was unable to work, communicate properly, or manage
+          day-to-day responsibilities. The financial system did not pause. Bills
+          continued, credit was relied upon, and balances increased while I was
+          unwell.
+        </p>
+
+        <p class="text-sm text-slate-800 leading-relaxed max-w-none">
+          The debt I’m dealing with today is a direct result of that period of
+          illness.
+        </p>
+
+        <p class="text-sm text-slate-800 leading-relaxed max-w-none">
+          As I began recovery, with support from the NHS, therapy, and men’s
+          mental health groups, I found it difficult to locate clear,
+          trustworthy information in one place. Help existed, but it was
+          fragmented, technical, and often assumed a level of stability I didn’t
+          yet have.
+        </p>
+
+        <p class="text-sm text-slate-800 leading-relaxed max-w-none">
+          National Debt Service was created to address that gap. It does not
+          replace professional advice or services. Instead, it brings together
+          reliable information and signposts to free, trusted support, so people
+          can orient themselves before taking their next step.
+        </p>
+      </section>
+
+      <!-- Who runs this site -->
       <section class="space-y-3">
         <h2>Who runs this site</h2>
+
         <p class="text-sm text-slate-800 leading-relaxed max-w-none">
-          The site is run independently by a single owner. There are no links to debt management
-          companies, lead generators, marketing agencies or claims firms. The aim is simple: give
-          you a clear starting point without sales pressure.
+          The site is run independently by a single owner. There are no links to
+          debt management companies, lead generators, marketing agencies or
+          claims firms. The aim is simple: give you a clear starting point
+          without sales pressure.
         </p>
       </section>
 
+      <!-- Domain history -->
       <section class="space-y-3">
         <h2>What changed with this domain</h2>
+
         <p class="text-sm text-slate-800 leading-relaxed max-w-none">
-          In the past, this domain was used by a different organisation. They were reprimanded by
-          the Advertising Standards Authority (ASA) for misleading people who were searching for
-          debt help.
+          In the past, this domain was used by a different organisation. They
+          were reprimanded by the Advertising Standards Authority (ASA) for
+          misleading people who were searching for debt help.
         </p>
+
         <p class="text-sm text-slate-800 leading-relaxed max-w-none">
-          We are <strong>not connected</strong> to that organisation. The domain changed ownership
-          after the ASA ruling. This version of National Debt Service is run with a completely
-          different purpose and ethos.
+          We are <strong>not connected</strong> to that organisation. The domain changed
+          ownership after the ASA ruling. This version of National Debt Service is
+          run with a completely different purpose and ethos.
         </p>
+
         <p class="text-sm text-slate-800 leading-relaxed max-w-none">
-          We use a clear banner at the top of the site to explain this history so you can see at a
-          glance that things are different now.
+          A clear banner at the top of the site explains this history so you can
+          see at a glance that things are different now.
         </p>
       </section>
 
-      <section class="space-y-3">
+      <!-- What this site is for -->
+      <section id="what-this-site-is-for" class="space-y-3">
         <h2>What this site is for</h2>
+
         <p class="text-sm text-slate-800 leading-relaxed max-w-none">
-          When money worries build up, it can be hard to know where to start. There are lots of
-          websites and adverts promising to “write off” debts or “wipe the slate clean”. That noise
-          can make it harder to think straight.
+          When money worries build up, it can be hard to know where to start.
+          There are lots of websites and adverts promising to “write off” debts
+          or “wipe the slate clean”. That noise can make it harder to think
+          straight.
         </p>
+
         <p class="text-sm text-slate-800 leading-relaxed max-w-none">
           This site takes a calmer approach. It:
         </p>
-        <ul class="text-sm text-slate-800 leading-relaxed list-disc pl-5 space-y-1 max-w-none">
+
+        <ul
+          class="text-sm text-slate-800 leading-relaxed list-disc pl-5 space-y-1 max-w-none"
+        >
           <li>uses plain English to explain common situations</li>
+          <li>brings scattered information into one clear place</li>
           <li>signposts to official and charity services in your country</li>
-          <li>lists well-known, free and regulated debt advice organisations</li>
-          <li>highlights mental health and crisis support alongside money help</li>
+          <li>
+            highlights mental health and crisis support alongside money help
+          </li>
         </ul>
+
         <p class="text-sm text-slate-800 leading-relaxed max-w-none">
           You stay in control. You choose who to contact and when.
         </p>
       </section>
 
-      <section class="space-y-3">
+      <!-- What this site does not do -->
+      <section id="what-this-site-does-not-do" class="space-y-3">
         <h2>What this site does not do</h2>
+
         <p class="text-sm text-slate-800 leading-relaxed max-w-none">
           To be clear about boundaries, this site does <strong>not</strong>:
         </p>
-        <ul class="text-sm text-slate-800 leading-relaxed list-disc pl-5 space-y-1 max-w-none">
-          <li>give personal debt advice or financial advice</li>
+
+        <ul
+          class="text-sm text-slate-800 leading-relaxed list-disc pl-5 space-y-1 max-w-none"
+        >
+          <li>give personal debt or financial advice</li>
           <li>tell you which solution you should choose</li>
-          <li>arrange IVAs, DMPs, DROs, Trust Deeds, sequestration or any other product</li>
-          <li>contact creditors, courts or enforcement agents on your behalf</li>
-          <li>sell your details or earn commission if you use any of the links</li>
+          <li>arrange IVAs, DMPs, DROs, Trust Deeds or any other product</li>
+          <li>
+            contact creditors, courts or enforcement agents on your behalf
+          </li>
+          <li>sell your details or earn commission from links</li>
         </ul>
+
         <p class="text-xs text-slate-700 max-w-none">
-          National Debt Service is not authorised by the Financial Conduct Authority (FCA) and is
-          not a debt management, insolvency or claims firm.
+          National Debt Service is not authorised by the Financial Conduct
+          Authority (FCA) and is not a debt management, insolvency or claims
+          firm.
         </p>
       </section>
 
-      <section class="space-y-3">
-        <h2>Countries in the UK</h2>
-        <p class="text-sm text-slate-800 leading-relaxed max-w-none">
-          Debt rules and court processes are not the same across the UK. England and Wales often
-          share one set of rules, while Scotland and Northern Ireland have their own procedures,
-          terms and timescales.
-        </p>
-        <p class="text-sm text-slate-800 leading-relaxed">
-          That’s why the site always tries to:
-        </p>
-        <ul class="text-sm text-slate-800 leading-relaxed list-disc pl-5 space-y-1 max-w-none">
-          <li>label which country each service or piece of information applies to</li>
-          <li>link to country-specific versions of official guidance where possible</li>
-          <li>encourage you to speak to a service that covers the country you live in</li>
-        </ul>
-      </section>
-
-      <section class="space-y-3">
+      <!-- Accessibility -->
+      <section id="accessibility-and-language" class="space-y-3">
         <h2>Accessibility and language</h2>
+
         <p class="text-sm text-slate-800 leading-relaxed max-w-none">
-          Money worries often go hand in hand with stress, poor sleep, anxiety or low mood. When
-          you feel like that, long or complicated pages can be hard to take in.
+          Money worries often go hand in hand with stress, anxiety or low mood.
+          When that happens, long or complicated pages can be hard to take in.
         </p>
+
         <p class="text-sm text-slate-800 leading-relaxed max-w-none">
-          The site aims to follow good accessibility practice, including:
+          This site aims to follow good accessibility practice, including:
         </p>
-        <ul class="text-sm text-slate-800 leading-relaxed list-disc pl-5 space-y-1 max-w-none">
+
+        <ul
+          class="text-sm text-slate-800 leading-relaxed list-disc pl-5 space-y-1 max-w-none"
+        >
           <li>clear headings and short sections</li>
           <li>high colour contrast for text and buttons</li>
           <li>font sizes that are easy to read on mobile and desktop</li>
           <li>links that make sense when read on their own</li>
         </ul>
+
         <p class="text-sm text-slate-800 leading-relaxed max-w-none">
-          If you spot something that makes the site hard to use, please let us know through the{" "}
+          If something on the site makes it harder to use, please let us know
+          via the{' '}
           <a href="/contact" class="aa-target-size">contact form</a>.
         </p>
       </section>
 
+      <!-- Questions -->
       <section class="space-y-3">
         <h2>Questions about how this site works</h2>
+
         <p class="text-sm text-slate-800 leading-relaxed max-w-none">
-          If you have a question about the banner, the history of the domain or how we use your
-          data, you can:
+          If you have questions about the banner, the history of the domain, or
+          how your data is handled, you can:
         </p>
-        <ul class="text-sm text-slate-800 leading-relaxed list-disc pl-5 space-y-1 max-w-none">
-          <li>read the <a href="/faq" class="aa-target-size">Frequently asked questions</a> page</li>
-          <li>check the <a href="/privacy" class="aa-target-size">Privacy Policy</a> and <a href="/cookies" class="aa-target-size">Cookies Policy</a></li>
-          <li>contact us using the <a href="/contact" class="aa-target-size">contact form</a></li>
+
+        <ul
+          class="text-sm text-slate-800 leading-relaxed list-disc pl-5 space-y-1 max-w-none"
+        >
+          <li>
+            read the <a href="/faq" class="aa-target-size"
+              >Frequently asked questions</a>
+          </li>
+          <li>
+            check the <a href="/privacy" class="aa-target-size"
+              >Privacy Policy</a
+            > and <a href="/cookies" class="aa-target-size">Cookies Policy</a>
+          </li>
+          <li>
+            contact us using the <a href="/contact" class="aa-target-size"
+              >contact form</a>
+          </li>
         </ul>
       </section>
     </section>
