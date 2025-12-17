@@ -1,0 +1,280 @@
+---
+import Layout from '../layouts/BaseLayout.astro';
+import {
+	Lightbulb,
+	Construction,
+	CheckCircle2,
+	ArrowRight,
+	AlertTriangle,
+	FileText,
+	ShieldCheck,
+	MapPin,
+	Smartphone,
+	Snowflake,
+	MessageSquare,
+	Wand2, // NEW
+	Headphones, // NEW
+	Star, // NEW
+} from 'lucide-astro';
+
+const pageTitle = 'Public Roadmap';
+const description =
+	'See what we are building to help you navigate debt. From new tools to security updates.';
+
+const GITHUB_REPO = 'helloalexhunter/nds';
+
+async function fetchLatestVersion() {
+	try {
+		const response = await fetch(
+			`https://api.github.com/repos/${GITHUB_REPO}/releases/latest`
+		);
+		if (!response.ok) throw new Error('Failed to fetch');
+		const data = await response.json();
+		return data.tag_name;
+	} catch (error) {
+		console.warn('Could not fetch GitHub release, using fallback.');
+		return 'v?.?.?';
+	}
+}
+
+const latestVersion = await fetchLatestVersion();
+
+const roadmapItems = [
+	{
+		status: 'ice-box',
+		title: 'Interactive Letter Generator',
+		tag: 'Tool',
+		tagColor: 'bg-purple-100 text-purple-800',
+		desc: "A 'Wizard' tool. You answer 3 questions, and we generate a ready-to-print PDF legal letter for you.",
+		icon: Wand2,
+	},
+	{
+		status: 'ice-box',
+		title: 'Debt & Anxiety Audio',
+		tag: 'Wellness',
+		tagColor: 'bg-teal-100 text-teal-800',
+		desc: 'Short, guided audio tracks to help ground you when you feel overwhelmed or are about to open a scary letter.',
+		icon: Headphones,
+	},
+	{
+		status: 'ice-box',
+		title: 'Success Stories',
+		tag: 'Content',
+		tagColor: 'bg-yellow-100 text-yellow-800',
+		desc: 'Anonymous case studies of people who went from crisis to debt-free, proving it is possible.',
+		icon: Star,
+	},
+	{
+		status: 'ice-box',
+		title: 'Community Forum',
+		tag: 'Social',
+		tagColor: 'bg-gray-200 text-gray-800',
+		desc: 'A safe, anonymous space for users to share stories. (Parking this idea due to high moderation safety risks).',
+		icon: MessageSquare,
+	},
+	{
+		status: 'ice-box',
+		title: 'AI Debt Bot',
+		tag: 'AI / Tech',
+		tagColor: 'bg-indigo-100 text-indigo-800',
+		desc: 'An automated chatbot to answer basic questions. Need to determine if this is safer/better than static content.',
+		icon: Smartphone,
+	},
+
+	{
+		status: 'idea',
+		title: 'The Letter Decoder',
+		tag: 'Tool',
+		tagColor: 'bg-purple-100 text-purple-800',
+		desc: "Not sure what that scary letter is? Match it against our gallery to see if it's a Notice of Enforcement or just a standard letter.",
+		icon: FileText,
+	},
+	{
+		status: 'idea',
+		title: 'Emergency Mode',
+		tag: 'Crisis',
+		tagColor: 'bg-red-100 text-red-800',
+		desc: 'A simplified, high-contrast page for when the bailiff is at the door. Mobile-first scripts and rights, instantly accessible.',
+		icon: AlertTriangle,
+	},
+	{
+		status: 'idea',
+		title: 'Template Bank',
+		tag: 'Resources',
+		tagColor: 'bg-blue-100 text-blue-800',
+		desc: "Copy & Paste templates for 'Stop Harassment', 'Prove It', and 'Breathing Space' letters.",
+		icon: FileText,
+	},
+	{
+		status: 'idea',
+		title: 'Priority Sorter',
+		tag: 'Tool',
+		tagColor: 'bg-purple-100 text-purple-800',
+		desc: 'Drag and drop your debts to see which ones you must pay first (Rent/Council Tax) vs non-priorities.',
+		icon: ArrowRight,
+	},
+
+	{
+		status: 'in-progress',
+		title: 'Local Help Search',
+		tag: 'New Feature',
+		tagColor: 'bg-green-100 text-green-800',
+		desc: 'Integration with charity databases to find Food Banks and face-to-face advice by Postcode.',
+		icon: MapPin,
+	},
+	{
+		status: 'live',
+		title: 'UX/UI Overhaul',
+		tag: 'Design',
+		tagColor: 'bg-pink-100 text-pink-800',
+		desc: 'Complete rework of the navigation and mobile experience to make the site easier to use in high-stress situations.',
+		icon: Smartphone,
+	},
+
+	{
+		status: 'live',
+		title: 'Phone Verification',
+		tag: 'Security',
+		tagColor: 'bg-slate-800 text-white',
+		desc: 'Automated checks that scrape agency websites to verify the customer service number matches our records.',
+		icon: ShieldCheck,
+	},
+	{
+		status: 'live',
+		title: 'Anti-Bot Evasion',
+		tag: 'Backend',
+		tagColor: 'bg-gray-200 text-gray-800',
+		desc: 'Upgraded scrapers to bypass 403 blocks on financial sites, ensuring our directory status is accurate.',
+		icon: CheckCircle2,
+	},
+	{
+		status: 'live',
+		title: 'Manual Override System',
+		tag: 'Admin',
+		tagColor: 'bg-gray-200 text-gray-800',
+		desc: 'Ability to manually verify stubborn websites that block automated tools.',
+		icon: CheckCircle2,
+	},
+];
+
+const columnConfig = [
+	{
+		id: 'ice-box',
+		title: 'Ice Box (Potential)',
+		color: 'border-t-4 border-slate-400',
+		bg: 'bg-slate-50',
+		icon: Snowflake,
+		showSuggestionBtn: true,
+	},
+	{
+		id: 'idea',
+		title: 'Up Next (Ideas)',
+		color: 'border-t-4 border-blue-500',
+		bg: 'bg-blue-50/30',
+		icon: Lightbulb,
+		showSuggestionBtn: false,
+	},
+	{
+		id: 'in-progress',
+		title: 'In Progress',
+		color: 'border-t-4 border-amber-500',
+		bg: 'bg-amber-50/50',
+		icon: Construction,
+		showSuggestionBtn: false,
+	},
+	{
+		id: 'live',
+		title: `Live (${latestVersion})`,
+		color: 'border-t-4 border-green-500',
+		bg: 'bg-green-50/50',
+		icon: CheckCircle2,
+		showSuggestionBtn: false,
+	},
+];
+---
+
+<Layout title={pageTitle} description={description}>
+	<div class="bg-neutral-soft">
+		<div class="w-full p-6">
+			<header class="mb-10 text-center py-8">
+				<h1 class="text-4xl font-extrabold mb-4 text-slate-900">{pageTitle}</h1>
+				<p class="text-xl text-gray-600 mx-auto max-w-none">
+					We are building in public.
+					<p class="text-lg text-gray-600 mx-auto max-w-none">
+						Here is what we are working on to make debt advice more accessible
+						and safe.
+					</p>
+				</p>
+			</header>
+		</div>
+	</div>
+
+	{/* DYNAMIC GRID */}
+	<div
+		class="px-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-start mb-10"
+	>
+		{
+			columnConfig.map((col) => {
+				// Filter items that belong to this column
+				const cards = roadmapItems.filter((item) => item.status === col.id);
+
+				return (
+					<div
+						class={`rounded-xl ${col.bg} p-4 shadow-sm border border-gray-200 flex flex-col gap-4`}
+					>
+						{/* Column Header */}
+						<div
+							class={`flex items-center gap-2 pb-2 ${col.color} pt-2 bg-white rounded-t-lg px-4 -mt-4 -mx-4 border-b border-gray-100`}
+						>
+							<col.icon class="w-5 h-5 text-slate-700" />
+							<h2 class="font-bold text-slate-800 text-sm uppercase tracking-wide">
+								{col.title}
+							</h2>
+							<span class="ml-auto text-xs font-bold bg-slate-100 text-slate-600 px-2 py-1 rounded-full">
+								{cards.length}
+							</span>
+						</div>
+
+						{/* Cards Loop */}
+						<div class="flex flex-col gap-3">
+							{cards.map((card) => (
+								<div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow group cursor-default">
+									{/* Tags */}
+									<div class="flex justify-between items-start mb-2">
+										<span
+											class={`text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded ${card.tagColor}`}
+										>
+											{card.tag}
+										</span>
+										{card.icon && (
+											<card.icon class="w-4 h-4 text-gray-400 group-hover:text-blue-500 transition-colors" />
+										)}
+									</div>
+
+									{/* Content */}
+									<h3 class="font-bold text-slate-800 text-base leading-tight mb-2">
+										{card.title}
+									</h3>
+									<p class="text-sm text-gray-600 leading-relaxed">
+										{card.desc}
+									</p>
+								</div>
+							))}
+						</div>
+
+						{/* Suggestion Button Logic */}
+						{col.showSuggestionBtn && (
+							<a
+								href="/contact"
+								class="flex items-center gap-2 text-slate-500 hover:text-blue-700 hover:bg-white/80 p-2 rounded-lg transition-colors text-sm font-medium border border-transparent hover:border-blue-100 hover:shadow-sm"
+							>
+								<span class="text-lg leading-none font-bold">+</span> Have a
+								suggestion?
+							</a>
+						)}
+					</div>
+				);
+			})
+		}
+	</div>
+</Layout>
