@@ -1,189 +1,523 @@
 [
 	{
+		"name": "1st Locate",
+		"trading_names": ["LCS", "Leeds Consultancy Services"],
+		"phone": "0344 543 9000",
+		"website": "https://www.1stlocate.com",
+		"notes": "Debt Collection Agency. Often collects for utility companies (gas/electricity) and councils (non-enforcement).",
+		"verification": {
+			"last_checked": "2025-12-17T13:00:52.801182",
+			"status": "VERIFIED",
+			"verified_url": "https://www.1stlocate.com",
+			"message": "",
+			"phone_status": "MATCH",
+			"verified_phone": "0344 543 9000"
+		}
+	},
+	{
 		"name": "Advantis Credit",
 		"trading_names": [],
 		"phone": "01782 401 100",
 		"website": "https://www.advantiscredit.co.uk",
-		"notes": "Collects for HMRC, DVLA, water companies, and energy suppliers."
+		"notes": "Debt Collection Agency. Frequently collects for HMRC (Tax), DVLA, and Water companies.",
+		"verification": {
+			"last_checked": "2025-12-17T13:00:52.801437",
+			"status": "VERIFIED",
+			"verified_url": "https://www.advantiscredit.co.uk",
+			"message": " | Phone updated: 01782 971346",
+			"phone_status": "MISMATCH",
+			"verified_phone": "01782 971346"
+		}
 	},
 	{
 		"name": "Akinika Debt Recovery",
 		"trading_names": ["Capita"],
 		"phone": "01772 557 600",
 		"website": "https://www.akinika.co.uk",
-		"notes": "Owned by Capita. Collects for major retailers and government bodies."
+		"notes": "Debt Collection Agency. Owned by Capita. Collects for major retailers like Very/Littlewoods and government bodies.",
+		"verification": {
+			"last_checked": "2025-12-17T13:00:52.801615",
+			"status": "BROKEN",
+			"verified_url": "https://www.akinika.co.uk",
+			"message": "Http No response",
+			"phone_status": "UNCHECKED",
+			"verified_phone": "01772 557 600"
+		}
+	},
+	{
+		"name": "Andrew James Enforcement",
+		"trading_names": [],
+		"phone": "01792 645 544",
+		"website": "https://www.ajenforce.co.uk",
+		"notes": "Enforcement Agents (Bailiffs). Specialises in collecting Council Tax and commercial rent in Wales and England.",
+		"verification": {
+			"last_checked": "2025-12-17T13:00:54.697507",
+			"status": "VERIFIED",
+			"verified_url": "https://www.ajenforce.co.uk",
+			"message": " | Phone updated: 01792 645533",
+			"phone_status": "MISMATCH",
+			"verified_phone": "01792 645533"
+		}
 	},
 	{
 		"name": "ARC Europe",
 		"trading_names": [],
 		"phone": "01932 251 000",
 		"website": "https://www.arceuropeltd.co.uk",
-		"notes": "Often collects for parking fines, health clubs (gyms), and finance companies."
+		"notes": "Debt Collection Agency. Specialises in parking tickets (PCNs), gym memberships (David Lloyd, etc), and finance.",
+		"verification": {
+			"last_checked": "2025-12-17T13:00:55.265614",
+			"status": "VERIFIED",
+			"verified_url": "https://www.arceuropeltd.co.uk/site/index.html",
+			"message": " (Redirected)",
+			"phone_status": "MATCH",
+			"verified_phone": "01932 251 000"
+		}
 	},
 	{
 		"name": "Arrow Global",
 		"trading_names": ["Capquest", "Drydensfairfax"],
 		"phone": "0800 130 0169",
 		"website": "https://www.arrowglobal.net",
-		"notes": "Major debt purchaser. Owns Capquest and Drydensfairfax Solicitors."
+		"notes": "Debt Purchaser. They buy debts from banks/lenders and use their other companies (Capquest, Drydensfairfax) to collect them.",
+		"verification": {
+			"last_checked": "2025-12-17T13:00:57.332625",
+			"status": "SUSPICIOUS",
+			"verified_url": "https://www.arrowglobal.net",
+			"message": "Name not found",
+			"phone_status": "NOT_FOUND",
+			"verified_phone": "0800 130 0169"
+		}
 	},
 	{
 		"name": "BPO Collections",
 		"trading_names": [],
 		"phone": "0141 375 0900",
 		"website": "https://www.bpocollections.co.uk",
-		"notes": "Scottish agency collecting across the UK for Virgin Media, mobile networks, and energy firms."
+		"notes": "Debt Collection Agency. Based in Scotland but operates UK-wide. Collects for Virgin Media, TalkTalk, and energy firms.",
+		"verification": {
+			"last_checked": "2025-12-17T13:00:57.476452",
+			"status": "BROKEN",
+			"verified_url": "https://www.bpocollections.co.uk",
+			"message": "Http No response",
+			"phone_status": "UNCHECKED",
+			"verified_phone": "0141 375 0900"
+		}
 	},
 	{
 		"name": "Bristow & Sutor",
 		"trading_names": ["Credit Security Limited", "DRS"],
 		"phone": "0330 390 2010",
 		"website": "https://www.bristowsutor.co.uk",
-		"notes": "Enforcement agents (bailiffs). Primarily collects Council Tax and PCNs for local authorities."
+		"notes": "Enforcement Agents (Bailiffs). They collect unpaid Council Tax and Penalty Charge Notices (parking) for local councils.",
+		"verification": {
+			"last_checked": "2025-12-17T13:00:57.579692",
+			"status": "VERIFIED",
+			"verified_url": "https://www.bristowsutor.co.uk",
+			"message": "",
+			"phone_status": "NOT_FOUND",
+			"verified_phone": "0330 390 2010"
+		}
 	},
 	{
 		"name": "BW Legal",
-		"trading_names": [],
+		"trading_names": ["PRAC Financial"],
 		"phone": "0113 487 0430",
 		"website": "https://www.bwlegal.co.uk",
-		"notes": "Legal firm specialising in debt recovery. Often deals with parking fines and energy debts."
+		"notes": "Law Firm. Specialises in bulk debt litigation (CCJs) for parking companies (parking fines) and energy debts.",
+		"verification": {
+			"last_checked": "2025-12-17T13:00:57.719835",
+			"status": "BROKEN",
+			"verified_url": "https://www.bwlegal.co.uk",
+			"message": "Http 307",
+			"phone_status": "UNCHECKED",
+			"verified_phone": "0113 487 0430"
+		}
 	},
 	{
 		"name": "Cabot Financial",
 		"trading_names": [
 			"Cabot Credit Management",
 			"Orbit",
-			"Apex Credit Management"
+			"Apex Credit Management",
+			"Wescot"
 		],
 		"phone": "0344 556 0263",
 		"website": "https://www.cabotfinancial.co.uk",
-		"notes": "One of the UK's largest debt buyers. Purchases debts from banks, credit cards, and lenders."
+		"notes": "Debt Purchaser. One of the UK's largest. They buy debts from credit cards, loans, and banks. They own Mortimer Clarke Solicitors.",
+		"verification": {
+			"last_checked": "2025-12-17T13:00:57.842528",
+			"status": "BROKEN",
+			"verified_url": "https://www.cabotfinancial.co.uk",
+			"message": "Http No response",
+			"phone_status": "UNCHECKED",
+			"verified_phone": "0344 556 0263"
+		}
 	},
 	{
 		"name": "Capquest",
 		"trading_names": ["Arrow Global"],
 		"phone": "0333 999 7200",
 		"website": "https://www.capquest.co.uk",
-		"notes": "Part of Arrow Global. Manages accounts for high street banks and credit card providers."
+		"notes": "Debt Collection Agency. Part of Arrow Global. Manages accounts for high street banks and credit card providers.",
+		"manual_override": true,
+		"verification": {
+			"last_checked": "2025-12-17T13:00:58.230407",
+			"status": "VERIFIED",
+			"verified_url": "https://www.capquest.co.uk",
+			"message": "",
+			"phone_status": "MATCH",
+			"verified_phone": "0333 999 7200"
+		}
 	},
 	{
 		"name": "CCS Collect",
 		"trading_names": ["Commercial Collection Services"],
 		"phone": "020 8665 4929",
 		"website": "https://www.ccscollect.co.uk",
-		"notes": "Collects for DWP, HMRC, water authorities, and eBay."
+		"notes": "Debt Collection Agency. Collects for DWP (Benefit overpayments), HMRC, Water companies, and eBay fees.",
+		"verification": {
+			"last_checked": "2025-12-17T13:00:58.498790",
+			"status": "VERIFIED",
+			"verified_url": "https://www.ccscollect.co.uk",
+			"message": "",
+			"phone_status": "MATCH",
+			"verified_phone": "020 8665 4929"
+		}
 	},
 	{
 		"name": "CDER Group",
-		"trading_names": ["JBW", "Phoenix Commercial"],
+		"trading_names": ["JBW", "Phoenix Commercial", "Runding"],
 		"phone": "0330 107 0023",
 		"website": "https://www.cdergroup.co.uk",
-		"notes": "Enforcement (bailiff) firm. Collects road traffic debts, council tax, and court fines."
+		"notes": "Enforcement Agents (Bailiffs). Large group collecting road traffic fines (Dart Charge, Congestion Charge) and Council Tax.",
+		"verification": {
+			"last_checked": "2025-12-17T13:00:59.820277",
+			"status": "SUSPICIOUS",
+			"verified_url": "https://www.cdergroup.co.uk",
+			"message": "Name not found",
+			"phone_status": "NOT_FOUND",
+			"verified_phone": "0330 107 0023"
+		}
+	},
+	{
+		"name": "Civil Enforcement Agents Ltd (CEA)",
+		"trading_names": ["CEA"],
+		"phone": "0113 532 8350",
+		"website": "https://www.cealimited.co.uk",
+		"notes": "Enforcement Agents (Bailiffs). Specialises in traveller eviction, commercial rent arrears, and forfeiture.",
+		"verification": {
+			"last_checked": "2025-12-17T13:00:59.958011",
+			"status": "VERIFIED",
+			"verified_url": "https://www.cealimited.co.uk",
+			"message": "",
+			"phone_status": "MATCH",
+			"verified_phone": "0113 532 8350"
+		}
+	},
+	{
+		"name": "Collectica",
+		"trading_names": ["Marston Holdings"],
+		"phone": "0333 320 1822",
+		"website": "https://www.collectica.co.uk",
+		"notes": "Enforcement Agents (Bailiffs). Part of Marston Holdings. Collects criminal fines (HMCTS) and Council Tax.",
+		"verification": {
+			"last_checked": "2025-12-17T13:00:59.987400",
+			"status": "SUSPICIOUS",
+			"verified_url": "https://www.collectica.co.uk",
+			"message": "Name not found",
+			"phone_status": "NOT_FOUND",
+			"verified_phone": "0333 320 1822"
+		}
+	},
+	{
+		"name": "Constant & Co",
+		"trading_names": [],
+		"phone": "01234 340 091",
+		"website": "https://constantandco.com",
+		"notes": "Enforcement Agents (Bailiffs). Specialises in traveller evictions and removal of unauthorized encampments.",
+		"verification": {
+			"last_checked": "2025-12-17T13:01:00.440955",
+			"status": "SUSPICIOUS",
+			"verified_url": "https://constantandco.com",
+			"message": "Name not found",
+			"phone_status": "NOT_FOUND",
+			"verified_phone": "01234 340 091"
+		}
+	},
+	{
+		"name": "Court Enforcement Services",
+		"trading_names": ["CES"],
+		"phone": "0343 504 1607",
+		"website": "https://www.courtenforcementservices.co.uk",
+		"notes": "High Court Enforcement. Executes High Court Writs for unpaid CCJs, commercial rent, and utility debt.",
+		"verification": {
+			"last_checked": "2025-12-17T13:01:00.756237",
+			"status": "SUSPICIOUS",
+			"verified_url": "https://www.courtenforcementservices.co.uk",
+			"message": "Name not found",
+			"phone_status": "NOT_FOUND",
+			"verified_phone": "0343 504 1607"
+		}
 	},
 	{
 		"name": "CST Law",
 		"trading_names": ["Credit Style", "CST Law"],
 		"phone": "0114 231 6080",
 		"website": "https://cstlaw.co.uk",
-		"notes": "Solicitors often used for collecting debts for Sheffield City Council and other commercial clients."
+		"notes": "Solicitors. Often used for pre-legal collection for Sheffield City Council and commercial finance.",
+		"verification": {
+			"last_checked": "2025-12-17T13:01:00.897346",
+			"status": "BROKEN",
+			"verified_url": "https://cstlaw.co.uk",
+			"message": "Http No response",
+			"phone_status": "UNCHECKED",
+			"verified_phone": "0114 231 6080"
+		}
 	},
 	{
 		"name": "DCBL",
 		"trading_names": ["Direct Collection Bailiffs Ltd"],
 		"phone": "0203 298 0201",
 		"website": "https://dcbltd.com",
-		"notes": "High Court Enforcement. Famous for 'Can't Pay? We'll Take It Away'. Collects parking fines and CCJs."
+		"notes": "High Court Enforcement. Famous for TV show 'Can't Pay? We'll Take It Away'. Collects parking fines and High Court Writs.",
+		"verification": {
+			"last_checked": "2025-12-17T13:01:01.140215",
+			"status": "VERIFIED",
+			"verified_url": "https://dcbltd.com",
+			"message": "",
+			"phone_status": "MATCH",
+			"verified_phone": "0203 298 0201"
+		}
 	},
 	{
 		"name": "Debt Managers (Services) Ltd",
 		"trading_names": [],
 		"phone": "01709 758 400",
 		"website": "https://www.debt-managers.co.uk",
-		"notes": "Rotherham-based agency collecting for utilities and telecom companies."
+		"notes": "Debt Collection Agency. Rotherham-based. Collects for utilities, telecoms, and financial services.",
+		"verification": {
+			"last_checked": "2025-12-17T13:01:02.566521",
+			"status": "VERIFIED",
+			"verified_url": "https://www.securetrustbank.com/debt-managers?utm_source=debt-managers-com&utm_medium=redirect&utm_campaign=closed_domains",
+			"message": " (Redirected) | Phone updated: 03451 117092",
+			"phone_status": "MISMATCH",
+			"verified_phone": "03451 117092"
+		}
 	},
 	{
 		"name": "Drydensfairfax",
 		"trading_names": ["Drydens", "Fairfax Solicitors"],
 		"phone": "0113 823 3443",
 		"website": "https://www.drydensfairfax.com",
-		"notes": "Law firm specialising in debt litigation. Often acts for Arrow Global and major banks."
+		"notes": "Solicitors. The legal arm for Arrow Global. They issue CCJs and Charging Orders for unpaid debts.",
+		"verification": {
+			"last_checked": "2025-12-17T13:01:03.760932",
+			"status": "VERIFIED",
+			"verified_url": "https://www.drydensfairfax.com",
+			"message": "",
+			"phone_status": "MATCH",
+			"verified_phone": "0113 823 3443"
+		}
 	},
 	{
 		"name": "Dukes Bailiffs",
 		"trading_names": [],
 		"phone": "01785 825 500",
 		"website": "https://www.dukeslimited.co.uk",
-		"notes": "Enforcement agents. Collects Council Tax, business rates, and commercial rent."
+		"notes": "Enforcement Agents (Bailiffs). Collects Council Tax, business rates, and commercial rent for local authorities.",
+		"verification": {
+			"last_checked": "2025-12-17T13:01:04.256103",
+			"status": "SUSPICIOUS",
+			"verified_url": "https://www.dukeslimited.co.uk",
+			"message": "Name not found",
+			"phone_status": "NOT_FOUND",
+			"verified_phone": "01785 825 500"
+		}
 	},
 	{
 		"name": "Equita",
 		"trading_names": ["Capita"],
 		"phone": "01604 628 360",
 		"website": "https://www.equita.co.uk",
-		"notes": "Enforcement agents owned by Capita. Handles Council Tax and parking fines."
+		"notes": "Enforcement Agents (Bailiffs). Owned by Capita. Major collector of Council Tax and parking fines (PCNs).",
+		"verification": {
+			"last_checked": "2025-12-17T13:01:04.479563",
+			"status": "SUSPICIOUS",
+			"verified_url": "https://www.equita.co.uk",
+			"message": "Name not found",
+			"phone_status": "NOT_FOUND",
+			"verified_phone": "01604 628 360"
+		}
 	},
 	{
-		"name": "Eversheds Sutherland",
+		"name": "Excel Civil Enforcement",
 		"trading_names": [],
-		"phone": "020 7497 9797",
-		"website": "https://www.eversheds-sutherland.com",
-		"notes": "International law firm. Their debt team often pursues debts for major banks and HM Revenue & Customs."
+		"phone": "0330 363 9988",
+		"website": "https://www.excelenforcement.co.uk",
+		"notes": "Enforcement Agents (Bailiffs) & High Court Officers. Collects Council Tax, arrest warrants, and High Court Writs.",
+		"verification": {
+			"last_checked": "2025-12-17T13:01:04.585031",
+			"status": "VERIFIED",
+			"verified_url": "https://www.excelenforcement.co.uk",
+			"message": "",
+			"phone_status": "MATCH",
+			"verified_phone": "0330 363 9988"
+		}
+	},
+	{
+		"name": "Hambury Tilmond",
+		"trading_names": [],
+		"phone": "01702 436 032",
+		"website": "https://www.hamburytilmond.co.uk",
+		"notes": "Enforcement Agents (Bailiffs). South-east based. Collects Council Tax, NNDR, and parking fines.",
+		"verification": {
+			"last_checked": "2025-12-17T13:01:05.860700",
+			"status": "VERIFIED",
+			"verified_url": "https://www.hamburytilmond.co.uk",
+			"message": "",
+			"phone_status": "MATCH",
+			"verified_phone": "01702 436 032"
+		}
 	},
 	{
 		"name": "High Court Enforcement Group",
-		"trading_names": ["HCE Group"],
+		"trading_names": ["HCE Group", "HCEG"],
 		"phone": "0845 099 9666",
 		"website": "https://hcegroup.co.uk",
-		"notes": "Largest independent High Court enforcement company. Executes High Court Writs."
+		"notes": "High Court Enforcement. Largest independent HCEO firm. Authorised to remove goods to satisfy High Court Writs.",
+		"verification": {
+			"last_checked": "2025-12-17T13:01:06.242356",
+			"status": "VERIFIED",
+			"verified_url": "https://hcegroup.co.uk",
+			"message": "",
+			"phone_status": "MATCH",
+			"verified_phone": "0845 099 9666"
+		}
 	},
 	{
 		"name": "Hoist Finance",
 		"trading_names": ["Robinson Way"],
 		"phone": "0800 121 6902",
 		"website": "https://www.hoistfinance.co.uk",
-		"notes": "Swedish debt purchaser. Operates in the UK primarily as 'Robinson Way'."
+		"notes": "Debt Purchaser. Swedish company. In the UK, they primarily trade as 'Robinson Way'. Buys bank and retail debt.",
+		"verification": {
+			"last_checked": "2025-12-17T13:01:06.302714",
+			"status": "VERIFIED",
+			"verified_url": "https://www.hoistfinance.co.uk",
+			"message": "",
+			"phone_status": "NOT_FOUND",
+			"verified_phone": "0800 121 6902"
+		}
 	},
 	{
 		"name": "Intrum",
 		"trading_names": ["1st Credit"],
 		"phone": "01737 220 800",
 		"website": "https://www.intrum.co.uk",
-		"notes": "Europe's largest credit management firm. Previously known as 1st Credit in the UK."
+		"notes": "Debt Collection & Purchase. Europe's largest. Formerly known as 1st Credit. Collects for banks and utilities.",
+		"verification": {
+			"last_checked": "2025-12-17T13:01:06.560080",
+			"status": "VERIFIED",
+			"verified_url": "https://www.intrum.co.uk/customer/",
+			"message": " (Redirected) | Phone updated: 01737 237370",
+			"phone_status": "MISMATCH",
+			"verified_phone": "01737 237370"
+		}
 	},
 	{
 		"name": "Jacobs Enforcement",
 		"trading_names": [],
 		"phone": "0151 650 4800",
 		"website": "https://www.jacobsenforcement.com",
-		"notes": "Family-owned enforcement firm. Specialises in Council Tax and Business Rates recovery."
+		"notes": "Enforcement Agents (Bailiffs). Family-owned. Specialises in Council Tax and Business Rates (NNDR) recovery.",
+		"verification": {
+			"last_checked": "2025-12-17T13:01:08.486269",
+			"status": "SUSPICIOUS",
+			"verified_url": "https://www.jacobsenforcement.com",
+			"message": "Name not found",
+			"phone_status": "NOT_FOUND",
+			"verified_phone": "0151 650 4800"
+		}
+	},
+	{
+		"name": "JTR Collections",
+		"trading_names": [],
+		"phone": "01933 623 380",
+		"website": "https://www.jtrcollections.co.uk",
+		"notes": "Enforcement Agents (Bailiffs). Collects Council Tax and parking fines for local authorities.",
+		"verification": {
+			"last_checked": "2025-12-17T13:01:08.610586",
+			"status": "SUSPICIOUS",
+			"verified_url": "https://www.jtrcollections.co.uk",
+			"message": "Name not found",
+			"phone_status": "NOT_FOUND",
+			"verified_phone": "01933 623 380"
+		}
 	},
 	{
 		"name": "Just",
 		"trading_names": [],
 		"phone": "020 3848 9060",
 		"website": "https://www.justdebt.co.uk",
-		"notes": "Enforcement and debt recovery. Often collects High Court Writs and commercial debt."
+		"notes": "Enforcement & High Court. Collects High Court Writs, commercial rent, and provides eviction services.",
+		"verification": {
+			"last_checked": "2025-12-17T13:01:08.739988",
+			"status": "VERIFIED",
+			"verified_url": "https://www.justdebt.co.uk",
+			"message": " | Phone updated: 02038 489064",
+			"phone_status": "MISMATCH",
+			"verified_phone": "02038 489064"
+		}
 	},
 	{
 		"name": "Lantern",
-		"trading_names": ["Lantern Debt Recovery Services"],
+		"trading_names": [
+			"Lantern Debt Recovery Services",
+			"Motor Mile Finance",
+			"MMF"
+		],
 		"phone": "0113 887 6876",
 		"website": "https://lanternuk.com",
-		"notes": "Specialises in purchasing and collecting payday loans and short-term credit debts."
+		"notes": "Debt Purchaser. Specialises in buying 'short-term' credit debts (payday loans). Formerly Motor Mile Finance.",
+		"verification": {
+			"last_checked": "2025-12-17T13:01:08.818263",
+			"status": "SUSPICIOUS",
+			"verified_url": "https://lanternuk.com",
+			"message": "Name not found",
+			"phone_status": "NOT_FOUND",
+			"verified_phone": "0113 887 6876"
+		}
 	},
 	{
 		"name": "LCF Law",
 		"trading_names": [],
 		"phone": "01274 848 800",
 		"website": "https://lcf.co.uk",
-		"notes": "Law firm often instructed for utility debts and commercial disputes."
+		"notes": "Solicitors. Often instructed for commercial disputes and utility debt litigation.",
+		"verification": {
+			"last_checked": "2025-12-17T13:01:09.222132",
+			"status": "BROKEN",
+			"verified_url": "https://lcf.co.uk",
+			"message": "Http No response",
+			"phone_status": "UNCHECKED",
+			"verified_phone": "01274 848 800"
+		}
 	},
 	{
 		"name": "Link Financial",
 		"trading_names": ["Asset Link", "Kearns Solicitors"],
 		"phone": "0330 024 4130",
 		"website": "https://www.linkfinancial.co.uk",
-		"notes": "Major purchaser of auto finance, credit card, and student loan debts."
+		"notes": "Debt Purchaser. Buys auto finance, credit card, and student loan debts. Owns Kearns Solicitors.",
+		"verification": {
+			"last_checked": "2025-12-17T13:01:09.223501",
+			"status": "SUSPICIOUS",
+			"verified_url": "https://www.linkfinancial.co.uk",
+			"message": "Name not found",
+			"phone_status": "NOT_FOUND",
+			"verified_phone": "0330 024 4130"
+		}
 	},
 	{
 		"name": "Lowell",
@@ -191,122 +525,334 @@
 			"Lowell Financial",
 			"Lowell Solicitors",
 			"Fredrickson",
-			"Overdales"
+			"Overdales",
+			"Lucas Credit Services"
 		],
 		"phone": "0333 556 5550",
 		"website": "https://www.lowell.co.uk",
-		"notes": "One of the largest UK debt buyers. Owns Overdales (legal arm). Buys debts from Shop Direct, O2, and banks."
+		"notes": "Debt Purchaser. Huge UK firm. Buys debts from Shop Direct (Very), O2, mobile networks, and banks.",
+		"verification": {
+			"last_checked": "2025-12-17T13:01:09.316349",
+			"status": "VERIFIED",
+			"verified_url": "https://www.lowell.co.uk",
+			"message": "",
+			"phone_status": "NOT_FOUND",
+			"verified_phone": "0333 556 5550"
+		}
 	},
 	{
 		"name": "Marston Holdings",
-		"trading_names": ["Marston Group", "Engage"],
+		"trading_names": ["Marston Group", "Engage", "Rossendales", "Scott & Co"],
 		"phone": "0333 320 1822",
 		"website": "https://www.marstonholdings.co.uk",
-		"notes": "The UK's largest judicial services group. Heavy focus on High Court enforcement and Council fines."
+		"notes": "Enforcement Agents (Bailiffs). UK's largest judicial services group. Collects Court Fines, Council Tax, and High Court Writs.",
+		"verification": {
+			"last_checked": "2025-12-17T13:01:09.478577",
+			"status": "SUSPICIOUS",
+			"verified_url": "https://www.marstonholdings.co.uk",
+			"message": "Name not found",
+			"phone_status": "NOT_FOUND",
+			"verified_phone": "0333 320 1822"
+		}
 	},
 	{
 		"name": "Moorcroft",
 		"trading_names": ["Moorcroft Debt Recovery", "MDR"],
 		"phone": "0161 475 2970",
 		"website": "https://www.mdrl.co.uk",
-		"notes": "Very common agency based in Stockport. Collects for HMRC, DWP, energy firms, and high street retailers."
+		"notes": "Debt Collection Agency. Stockport based. Collects for HMRC, DWP, Energy firms, and retailers.",
+		"verification": {
+			"last_checked": "2025-12-17T13:01:11.079696",
+			"status": "SUSPICIOUS",
+			"verified_url": "https://www.mdrl.co.uk",
+			"message": "Name not found",
+			"phone_status": "NOT_FOUND",
+			"verified_phone": "0161 475 2970"
+		}
 	},
 	{
 		"name": "Mortimer Clarke Solicitors",
 		"trading_names": ["Cabot"],
 		"phone": "0333 121 4454",
 		"website": "https://www.mortimerclarke.co.uk",
-		"notes": "The legal arm of Cabot Financial. They issue CCJs for debts owned by Cabot."
+		"notes": "Solicitors. The legal arm of Cabot Financial. They issue Court Claims (CCJs) for debts owned by Cabot.",
+		"verification": {
+			"last_checked": "2025-12-17T13:01:11.232718",
+			"status": "VERIFIED",
+			"verified_url": "https://www.mortimerclarke.co.uk",
+			"message": " | Phone updated: 03300 450779",
+			"phone_status": "MISMATCH",
+			"verified_phone": "03300 450779"
+		}
 	},
 	{
 		"name": "Newlyn",
 		"trading_names": ["Newlyn PLC"],
 		"phone": "01604 633 001",
 		"website": "https://www.newlynplc.co.uk",
-		"notes": "Enforcement agents. Specialises in collecting Council Tax, parking fines, and business rates."
+		"notes": "Enforcement Agents (Bailiffs). Specialises in collecting Council Tax, parking fines, and business rates.",
+		"verification": {
+			"last_checked": "2025-12-17T13:01:11.732938",
+			"status": "VERIFIED",
+			"verified_url": "https://www.newlynplc.co.uk",
+			"message": "",
+			"phone_status": "MATCH",
+			"verified_phone": "01604 633 001"
+		}
 	},
 	{
 		"name": "Opos",
 		"trading_names": ["Kapama", "Gothia"],
 		"phone": "0141 428 3990",
 		"website": "https://www.oposlimited.com",
-		"notes": "Scottish agency collecting commercial and consumer debts across the UK."
+		"notes": "Debt Collection Agency. Scottish firm collecting commercial and consumer debts UK-wide.",
+		"verification": {
+			"last_checked": "2025-12-17T13:01:13.451056",
+			"status": "SUSPICIOUS",
+			"verified_url": "https://www.oposlimited.com",
+			"message": "Name not found",
+			"phone_status": "NOT_FOUND",
+			"verified_phone": "0141 428 3990"
+		}
 	},
 	{
 		"name": "Overdales Solicitors",
 		"trading_names": ["Lucas Credit Services", "Lowell Solicitors"],
 		"phone": "0333 130 4060",
 		"website": "https://www.overdales.com",
-		"notes": "The legal firm for the Lowell Group. Formerly known as Lowell Solicitors."
+		"notes": "Solicitors. The legal firm for the Lowell Group. They manage CCJs for debts owned by Lowell.",
+		"verification": {
+			"last_checked": "2025-12-17T13:01:13.473092",
+			"status": "VERIFIED",
+			"verified_url": "https://www.overdales.com",
+			"message": " | Phone updated: 01134 900825",
+			"phone_status": "MISMATCH",
+			"verified_phone": "01134 900825"
+		}
 	},
 	{
 		"name": "Pastdue Credit Solutions",
 		"trading_names": ["PDC"],
 		"phone": "0141 951 4077",
 		"website": "https://www.pastduecredit.co.uk",
-		"notes": "Collects heavily for energy companies (British Gas, SSE) and HMRC tax credits."
+		"notes": "Debt Collection Agency. Collects heavily for energy companies (British Gas, SSE) and HMRC tax credits.",
+		"verification": {
+			"last_checked": "2025-12-17T13:01:13.997259",
+			"status": "SUSPICIOUS",
+			"verified_url": "https://www.pastduecredit.co.uk",
+			"message": "Name not found",
+			"phone_status": "NOT_FOUND",
+			"verified_phone": "0141 951 4077"
+		}
+	},
+	{
+		"name": "Penham Excel",
+		"trading_names": [],
+		"phone": "0330 002 0705",
+		"website": "https://www.penhamexcel.co.uk",
+		"notes": "Enforcement Agents (Bailiffs) & High Court. Collects Council Tax and High Court Writs.",
+		"verification": {
+			"last_checked": "2025-12-17T13:01:14.069991",
+			"status": "BROKEN",
+			"verified_url": "https://www.penhamexcel.co.uk",
+			"message": "Http No response",
+			"phone_status": "UNCHECKED",
+			"verified_phone": "0330 002 0705"
+		}
+	},
+	{
+		"name": "Perch Capital",
+		"trading_names": ["ACI", "Assured Credit", "TM Legal"],
+		"phone": "01253 531 528",
+		"website": "https://www.perchcapital.co.uk",
+		"notes": "Debt Purchaser. Uses 'ACI' (Assured Credit) for collections and 'TM Legal' for litigation.",
+		"verification": {
+			"last_checked": "2025-12-17T13:01:14.110210",
+			"status": "VERIFIED",
+			"verified_url": "https://www.perchcapital.co.uk",
+			"message": "",
+			"phone_status": "NOT_FOUND",
+			"verified_phone": "01253 531 528"
+		}
 	},
 	{
 		"name": "PRA Group",
 		"trading_names": ["Portfolio Recovery Associates"],
 		"phone": "0800 877 2772",
 		"website": "https://pragroup.co.uk",
-		"notes": "Large US-owned debt purchaser. Buys credit card debts from banks like Barclaycard and MBNA."
+		"notes": "Debt Purchaser. Large US-owned firm. Buys credit card debts from banks like Barclaycard, MBNA, and Lloyds.",
+		"verification": {
+			"last_checked": "2025-12-17T13:01:14.210860",
+			"status": "SUSPICIOUS",
+			"verified_url": "https://pragroup.co.uk",
+			"message": "Name not found",
+			"phone_status": "NOT_FOUND",
+			"verified_phone": "0800 877 2772"
+		}
 	},
 	{
 		"name": "Resolvecall",
 		"trading_names": ["Scotcall"],
 		"phone": "0141 212 8500",
 		"website": "https://resolvecall.co.uk",
-		"notes": "Specialises in home visits (doorstep collection) to re-establish contact with debtors."
+		"notes": "Debt Collection Agency. Specialises in 'Home Visits' to re-establish contact. They are NOT bailiffs and cannot force entry.",
+		"verification": {
+			"last_checked": "2025-12-17T13:01:14.969470",
+			"status": "VERIFIED",
+			"verified_url": "https://resolvecall.co.uk",
+			"message": "",
+			"phone_status": "MATCH",
+			"verified_phone": "0141 212 8500"
+		}
+	},
+	{
+		"name": "Reventus",
+		"trading_names": [],
+		"phone": "0330 122 1221",
+		"website": "https://www.reventus.co.uk",
+		"notes": "Enforcement Agents (Bailiffs). Specialists in commercial rent arrears and forfeiture of lease.",
+		"verification": {
+			"last_checked": "2025-12-17T13:01:16.033761",
+			"status": "SUSPICIOUS",
+			"verified_url": "https://www.reventus.co.uk",
+			"message": "Name not found",
+			"phone_status": "NOT_FOUND",
+			"verified_phone": "0330 122 1221"
+		}
 	},
 	{
 		"name": "Robinson Way",
 		"trading_names": ["Hoist Finance"],
 		"phone": "0800 121 6902",
 		"website": "https://www.robinson-way.com",
-		"notes": "Trading style of Hoist Finance. Very common collector for retail banks and catalogues."
+		"notes": "Debt Collection Agency. Trading style of Hoist Finance. Very common collector for retail banks and catalogues.",
+		"verification": {
+			"last_checked": "2025-12-17T13:01:16.146341",
+			"status": "BROKEN",
+			"verified_url": "https://www.robinson-way.com",
+			"message": "Http No response",
+			"phone_status": "UNCHECKED",
+			"verified_phone": "0800 121 6902"
+		}
 	},
 	{
 		"name": "Ross & Roberts",
-		"trading_names": [],
+		"trading_names": ["Capita"],
 		"phone": "01458 550 480",
 		"website": "https://www.rossandroberts.co.uk",
-		"notes": "Enforcement agents owned by Capita. Focuses on local authority collections."
+		"notes": "Enforcement Agents (Bailiffs). Owned by Capita. Focuses on local authority collections (Council Tax).",
+		"verification": {
+			"last_checked": "2025-12-17T13:01:16.532329",
+			"status": "SUSPICIOUS",
+			"verified_url": "https://www.rossandroberts.co.uk",
+			"message": "Name not found",
+			"phone_status": "NOT_FOUND",
+			"verified_phone": "01458 550 480"
+		}
 	},
 	{
 		"name": "Rundles",
 		"trading_names": ["Rundle & Co"],
 		"phone": "0800 081 6000",
 		"website": "https://www.rundles.org.uk",
-		"notes": "Enforcement agents providing services to local councils for tax and traffic debt."
+		"notes": "Enforcement Agents (Bailiffs). Providing services to local councils for tax and traffic debt.",
+		"verification": {
+			"last_checked": "2025-12-17T13:01:16.664516",
+			"status": "VERIFIED",
+			"verified_url": "https://www.rundles.org.uk",
+			"message": "",
+			"phone_status": "MATCH",
+			"verified_phone": "0800 081 6000"
+		}
+	},
+	{
+		"name": "Stanford & Green",
+		"trading_names": [],
+		"phone": "01622 683 308",
+		"website": "https://stanfordandgreen.co.uk",
+		"notes": "Enforcement Agents (Bailiffs). Civil enforcement for local authorities in the South East.",
+		"verification": {
+			"last_checked": "2025-12-17T13:01:17.533545",
+			"status": "SUSPICIOUS",
+			"verified_url": "https://stanfordandgreen.co.uk",
+			"message": "Name not found",
+			"phone_status": "NOT_FOUND",
+			"verified_phone": "01622 683 308"
+		}
+	},
+	{
+		"name": "Target Enforcement",
+		"trading_names": [],
+		"phone": "0151 545 1588",
+		"website": "https://targetenforcement.co.uk",
+		"notes": "Enforcement Agents (Bailiffs). Specialises in commercial rent arrears and repossession.",
+		"verification": {
+			"last_checked": "2025-12-17T13:01:17.557465",
+			"status": "BROKEN",
+			"verified_url": "https://targetenforcement.co.uk",
+			"message": "Http No response",
+			"phone_status": "UNCHECKED",
+			"verified_phone": "0151 545 1588"
+		}
 	},
 	{
 		"name": "The Sheriffs Office",
 		"trading_names": ["SHCE Ltd"],
 		"phone": "0333 001 5100",
 		"website": "https://thesheriffsoffice.com",
-		"notes": "High Court Enforcement Officers. Authorised to enforce High Court Writs and recover property."
+		"notes": "High Court Enforcement. Authorised to enforce High Court Writs and recover property/money.",
+		"verification": {
+			"last_checked": "2025-12-17T13:01:17.911998",
+			"status": "VERIFIED",
+			"verified_url": "https://thesheriffsoffice.com",
+			"message": "",
+			"phone_status": "MATCH",
+			"verified_phone": "0333 001 5100"
+		}
 	},
 	{
 		"name": "TM Legal Services",
-		"trading_names": [],
+		"trading_names": ["Perch Capital"],
 		"phone": "01253 531 528",
 		"website": "https://www.tm-legalservices.co.uk",
-		"notes": "Law firm often associated with lending companies like Perch Capital and ACI."
+		"notes": "Solicitors. The legal arm often used by Perch Capital/ACI to issue CCJs.",
+		"verification": {
+			"last_checked": "2025-12-17T13:01:20.086791",
+			"status": "VERIFIED",
+			"verified_url": "https://www.tm-legalservices.co.uk",
+			"message": " | Phone updated: 03005 005000",
+			"phone_status": "MISMATCH",
+			"verified_phone": "03005 005000"
+		}
 	},
 	{
 		"name": "Wescot",
-		"trading_names": ["Wescot Credit Services"],
+		"trading_names": ["Wescot Credit Services", "Cabot"],
 		"phone": "01482 484 673",
 		"website": "https://www.wescot.co.uk",
-		"notes": "One of the UK's largest agencies. Collects for banking, utility, and telecoms sectors."
+		"notes": "Debt Collection Agency. Huge agency. Collects for banking (NatWest, RBS), utility, and telecoms sectors.",
+		"verification": {
+			"last_checked": "2025-12-17T13:01:20.577923",
+			"status": "VERIFIED",
+			"verified_url": "https://www.wescot.co.uk",
+			"message": "",
+			"phone_status": "MATCH",
+			"verified_phone": "01482 484 673"
+		}
 	},
 	{
 		"name": "Whyte & Co",
 		"trading_names": [],
 		"phone": "01322 662 428",
 		"website": "https://www.whyte.co.uk",
-		"notes": "Enforcement agents specialising in London and South East council tax and parking recovery."
+		"notes": "Enforcement Agents (Bailiffs). Specialises in London and South East council tax and parking recovery.",
+		"verification": {
+			"last_checked": "2025-12-17T13:01:22.560792",
+			"status": "VERIFIED",
+			"verified_url": "https://www.whyte.co.uk",
+			"message": "",
+			"phone_status": "NOT_FOUND",
+			"verified_phone": "01322 662 428"
+		}
 	}
 ]

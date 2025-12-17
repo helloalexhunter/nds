@@ -34,7 +34,7 @@ export default function CharityCard({ charity }) {
 
 	return (
 		<div className="p-4 border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition bg-white">
-			<h3 className="text-xl font-bold text-indigo-700">
+			<h3 className="text-xl font-bold text-slate-900">
 				{charity.charity_name}
 			</h3>
 

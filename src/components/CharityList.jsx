@@ -3,6 +3,18 @@ import { useState, useMemo, useEffect } from 'preact/hooks';
 import CharityCard from './CharityCard.jsx';
 import useDebounce from '../hooks/useDebounce.js';
 
+// Import Lucide Icons (using lucide-preact since this is a Preact component)
+// Note: 'CirclePoundSterling' is not a standard Lucide icon name (CircleDollarSign exists).
+// If this import fails, you may need to use 'PoundSterling' or check your specific icon set.
+import {
+	CirclePoundSterling, // Ensure this exists in your version, or switch to 'PoundSterling'
+	Apple,
+	House,
+	Brain,
+	CircleAlert,
+	CircleCheck,
+} from 'lucide-preact';
+
 // --- Haversine Distance Calculation (IN MILES - WITH SWAP FIX) ---
 const distanceInMiles = (coord1, coord2) => {
 	// Helper function to safely parse and swap coordinates if needed
@@ -73,14 +85,19 @@ const CATEGORY_MAP = {
 	'Debt Help': 'Debt Advice & Financial',
 	'Food Banks': 'Food Banks & Relief',
 	'Shelter / Housing': 'Shelter & Housing',
-	'Mental Health': 'Mental Health Support', // Assumed category from the new plan
+	'Mental Health': 'Mental Health Support',
 };
 
+// Updated to use Lucide components instead of emojis
 const CATEGORY_BUTTONS = [
-	{ name: 'Debt Help', icon: '💰', category: 'Debt Advice & Financial' },
-	{ name: 'Food Banks', icon: '🍎', category: 'Food Banks & Relief' },
-	{ name: 'Shelter / Housing', icon: '🏠', category: 'Shelter & Housing' },
-	{ name: 'Mental Health', icon: '🧠', category: 'Mental Health Support' },
+	{
+		name: 'Debt Help',
+		icon: CirclePoundSterling,
+		category: 'Debt Advice & Financial',
+	},
+	{ name: 'Food Banks', icon: Apple, category: 'Food Banks & Relief' },
+	{ name: 'Shelter / Housing', icon: House, category: 'Shelter & Housing' },
+	{ name: 'Mental Health', icon: Brain, category: 'Mental Health Support' },
 ];
 
 // We set a fixed, sensible local radius for button filtering
@@ -184,9 +201,10 @@ export default function CharityList({ initialData }) {
 	const selectedButton = CATEGORY_BUTTONS.find(
 		(b) => b.category === selectedCategory
 	);
-	const currentTitle = selectedButton
-		? `${selectedButton.icon} ${selectedButton.name}`
-		: 'Charity Search';
+
+	// Use the component for the title icon if available
+	const CurrentIcon = selectedButton ? selectedButton.icon : null;
+	const currentTitle = selectedButton ? selectedButton.name : 'Charity Search';
 
 	const handleCategoryClick = (categoryName) => {
 		setSelectedCategory(categoryName);
@@ -199,7 +217,7 @@ export default function CharityList({ initialData }) {
 		<div className="space-y-6">
 			{/* 1. LOCATION INPUT & STATUS */}
 			<div className="bg-white p-6 rounded-xl shadow-lg border border-indigo-200">
-				<h2 className="text-2xl font-bold mb-4 text-indigo-700">
+				<h2 className="text-2xl font-bold mb-4 text-slate-900">
 					Step 1: Where are you looking for help?
 				</h2>
 
@@ -216,21 +234,23 @@ export default function CharityList({ initialData }) {
 						placeholder="Enter your UK Postcode"
 					/>
 
-					{/* Status Feedback */}
-					<div className="text-sm">
+					{/* Status Feedback with Lucide Icons */}
+					<div className="text-sm flex items-center">
 						{isLoading && (
-							<span className="text-indigo-600 font-semibold">
+							<span className="text-slate-900 font-semibold">
 								Checking postcode...
 							</span>
 						)}
 						{isPostcodeValid && (
-							<span className="text-green-600 font-semibold">
-								✅ Location set to {postcode}.
+							<span className="text-green-600 font-semibold flex items-center">
+								<CircleCheck className="w-5 h-5 mr-1" />
+								Location set to {postcode}.
 							</span>
 						)}
 						{isPostcodeInvalid && (
-							<span className="text-red-600 font-semibold">
-								❌ Invalid UK Postcode.
+							<span className="text-red-600 font-semibold flex items-center">
+								<CircleAlert className="w-5 h-5 mr-1" />
+								Invalid UK Postcode.
 							</span>
 						)}
 						{!postcode && !isLoading && (
@@ -242,7 +262,8 @@ export default function CharityList({ initialData }) {
 				</div>
 
 				{!isPostcodeValid && postcode.length > 0 && isPostcodeInvalid && (
-					<p className="mt-2 text-sm text-red-600">
+					<p className="mt-2 text-sm text-red-600 flex items-center">
+						<CircleAlert className="w-4 h-4 mr-1" />
 						Please re-enter your postcode to enable the local search filter.
 					</p>
 				)}
@@ -258,13 +279,14 @@ export default function CharityList({ initialData }) {
 						<button
 							key={button.category}
 							onClick={() => handleCategoryClick(button.category)}
-							className={`p-4 rounded-lg text-center font-bold transition duration-200 shadow-md ${
+							className={`p-4 rounded-lg text-center font-bold transition duration-200 shadow-md flex flex-col items-center justify-center ${
 								selectedCategory === button.category
 									? 'bg-indigo-600 text-white ring-4 ring-indigo-300'
 									: 'bg-white text-gray-700 hover:bg-indigo-50 hover:shadow-xl'
 							}`}
 						>
-							<span className="text-3xl block mb-1">{button.icon}</span>
+							{/* Render the Lucide Icon Component */}
+							<button.icon className="w-8 h-8 mb-2" />
 							{button.name}
 						</button>
 					))}
@@ -273,9 +295,12 @@ export default function CharityList({ initialData }) {
 
 			{/* 3. RESULTS DISPLAY */}
 			<div className="pt-4 border-t border-gray-300">
-				<div className="text-xl font-semibold mb-4">
+				<div className="text-xl font-semibold mb-4 flex items-center">
 					Showing results for:{' '}
-					<span className="text-indigo-700">{currentTitle}</span>
+					<span className="text-slate-900 ml-2 flex items-center">
+						{CurrentIcon && <CurrentIcon className="w-6 h-6 mr-2" />}
+						{currentTitle}
+					</span>
 					<span className="ml-3 text-base font-normal text-gray-600">
 						({filteredCharities.length} results)
 					</span>
@@ -310,7 +335,7 @@ export default function CharityList({ initialData }) {
 				</div>
 			</div>
 
-			{/* 4. ADVANCED SEARCH & PAGINATION (Optional, hidden by default, or you can remove this section) */}
+			{/* 4. ADVANCED SEARCH & PAGINATION */}
 			<details className="mt-8 p-4 border rounded-lg bg-gray-50">
 				<summary className="font-semibold text-gray-700 cursor-pointer">
 					⚙️ Advanced Search (Keyword Filter)
@@ -341,8 +366,7 @@ export default function CharityList({ initialData }) {
 				</div>
 			</details>
 
-			{/* Pagination Controls (unchanged) */}
-			{/* ... (pagination code remains the same) ... */}
+			{/* Pagination Controls */}
 			{totalPages > 1 && (
 				<div className="flex justify-center items-center space-x-2 mt-4">
 					<button

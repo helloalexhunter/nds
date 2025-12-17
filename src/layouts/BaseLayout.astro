@@ -3,6 +3,7 @@
 import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import { LogOut } from 'lucide-astro';
 
 const {
   title = 'National Debt Service',
@@ -31,14 +32,13 @@ const socialImageURL = new URL(image, siteUrl).href;
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
-    <meta name="theme-color" content="#023047" />
+    <meta name="theme-color" content="#b91c1c" />
     <meta name="color-scheme" content="light" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <meta name="robots" content="index,follow" />
 
     {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
 
-    {/* --- OPEN GRAPH --- */}
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={siteName} />
     <meta property="og:title" content={title} />
@@ -47,7 +47,6 @@ const socialImageURL = new URL(image, siteUrl).href;
     <meta property="og:locale" content="en_GB" />
     <meta property="og:image" content={socialImageURL} />
 
-    {/* --- TWITTER --- */}
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
@@ -57,41 +56,31 @@ const socialImageURL = new URL(image, siteUrl).href;
   <body
     class="min-h-screen bg-neutral-soft text-dark-text antialiased flex flex-col"
   >
+    <div
+      class="sticky top-0 z-[100] bg-red-700 text-white shadow-md flex items-center justify-center h-12 relative px-4"
+    >
+      <button
+        id="quick-exit-btn"
+        class="bg-white text-red-700 hover:bg-red-50 font-bold text-xs uppercase tracking-wider py-1.5 px-6 rounded-full transition-colors flex items-center gap-2 shadow-sm border border-transparent focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-red-700 focus:ring-white"
+        aria-label="Quickly escape this website"
+      >
+        <span>Exit Site</span>
+        <LogOut class="w-4 h-4" aria-hidden="true" />
+      </button>
+    </div>
+
     <Header />
 
     <main class="flex-grow">
       <slot />
     </main>
 
-    {/* FIXED 'ESCAPE' BUTTON - Top Right, Floating Pill */}
-    <button
-      id="quick-exit-button"
-      class="fixed top-4 right-4 z-[9999] bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full shadow-2xl transition-transform hover:scale-105 border-2 border-white flex items-center gap-2 group"
-      aria-label="Quickly leave this site"
-    >
-      <span class="text-sm uppercase tracking-wider">Exit Site</span>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="h-4 w-4"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
-        ></path>
-      </svg>
-    </button>
-
     <Footer />
 
     <script is:inline>
       if (typeof window !== 'undefined') {
         const safeUrl = 'https://www.google.co.uk/';
-        const exitButton = document.getElementById('quick-exit-button');
+        const exitButton = document.getElementById('quick-exit-btn');
 
         if (exitButton) {
           const quickExit = (event) => {

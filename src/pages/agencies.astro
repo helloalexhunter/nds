@@ -2,77 +2,170 @@
 // src/pages/agencies.astro
 import Layout from '../layouts/BaseLayout.astro';
 import agencies from '../data/agencies.json';
+import {
+	ShieldCheck,
+	AlertTriangle,
+	XCircle,
+	Search,
+	ExternalLink,
+	Copy,
+	Info,
+	Globe,
+	Phone,
+} from 'lucide-astro';
 
 const pageTitle = 'Debt Collection Agency Directory';
 const description =
 	'Contact details and information for major UK debt collection agencies and enforcement firms.';
+
+// Helper for dynamic labels (High Court vs Bailiff vs Collector)
+const getAgencyType = (agency) => {
+	const notes = (agency.notes || '').toLowerCase();
+	const name = agency.name.toLowerCase();
+
+	if (
+		notes.includes('high court') ||
+		name.includes('high court') ||
+		notes.includes('writ')
+	) {
+		return {
+			label: 'High Court Enforcement',
+			class: 'bg-red-100 text-red-800 border-red-200',
+		};
+	}
+	if (
+		notes.includes('enforcement') ||
+		notes.includes('bailiff') ||
+		name.includes('enforcement')
+	) {
+		return {
+			label: 'Enforcement Agent (Bailiff)',
+			class: 'bg-orange-100 text-orange-800 border-orange-200',
+		};
+	}
+	return {
+		label: 'Debt Collector',
+		class: 'bg-blue-100 text-blue-800 border-blue-200',
+	};
+};
+
+// Helper to format the "Last Checked" date
+const formatDate = (isoString) => {
+	if (!isoString) return 'Never checked';
+	const date = new Date(isoString);
+	return new Intl.DateTimeFormat('en-GB', {
+		day: 'numeric',
+		month: 'short',
+		year: 'numeric',
+	}).format(date);
+};
 ---
 
 <Layout title={pageTitle} description={description}>
 	<div class="container mx-auto p-4 max-w-5xl">
-		<header class="mb-10 text-center">
+		<header class="mb-8 text-center">
 			<h1 class="text-4xl font-extrabold mb-4 text-slate-900">{pageTitle}</h1>
 			<p class="text-xl text-gray-600 max-w-2xl mx-auto">
-				Received a letter? Find out who is contacting you.
+				Received a letter? Find out who is contacting you and check if their
+				details are verified.
 			</p>
 		</header>
 
 		{/* SEARCH BAR */}
-		<div class="max-w-md mx-auto mb-12 relative">
-			{/* ACCESSIBILITY FIX: Screen Reader Live Region for Search Feedback */}
+		<div class="max-w-md mx-auto mb-8 relative">
 			<div id="search-status" role="status" aria-live="polite" class="sr-only">
 			</div>
 
-			{/* Search Icon (Decorative) */}
 			<div
 				class="absolute top-1/2 left-3 -translate-y-1/2 pointer-events-none text-gray-400"
 				aria-hidden="true"
 			>
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					class="h-5 w-5"
-					fill="none"
-					viewBox="0 0 24 24"
-					stroke="currentColor"
-				>
-					<path
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						stroke-width="2"
-						d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-				</svg>
+				<Search class="h-5 w-5" />
 			</div>
 
-			{/* ACCESSIBILITY FIX: Explicit Label */}
-			<label for="agency-search" class="sr-only">
-				Search for an agency by name or trading name
-			</label>
+			<label for="agency-search" class="sr-only"
+				>Search for an agency by name or trading name</label
+			>
 			<input
 				type="text"
 				id="agency-search"
-				placeholder="Search for an agency (e.g. Lowell, Moorcroft)..."
+				placeholder="Search (e.g. Lowell, Marston, Bristow)..."
 				class="block w-full pl-10 pr-10 py-3 border border-gray-300 rounded-lg leading-5 bg-white placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 shadow-sm"
 			/>
 
-			{/* Clear Button */}
 			<button
 				id="clear-search"
 				class="hidden absolute top-1/2 right-3 -translate-y-1/2 text-gray-400 hover:text-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-full p-1"
 				aria-label="Clear search terms"
 			>
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					class="h-5 w-5"
-					viewBox="0 0 20 20"
-					fill="currentColor"
-					aria-hidden="true"
-				>
-					<path
-						fill-rule="evenodd"
-						d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
-						clip-rule="evenodd"></path>
-				</svg>
+				<XCircle class="h-5 w-5" />
 			</button>
+		</div>
+
+		{/* VERIFICATION LEGEND (KEY) */}
+		<div
+			class="bg-slate-50 border border-slate-200 rounded-xl p-5 mb-10 shadow-sm"
+		>
+			<h3
+				class="text-sm font-bold text-slate-900 uppercase tracking-wide mb-4 flex items-center gap-2"
+			>
+				<Info class="w-4 h-4 text-blue-600" />
+				How to read our verification checks
+			</h3>
+
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-8">
+				{/* Website Legend */}
+				<div>
+					<span class="text-xs font-semibold text-gray-500 block mb-2"
+						>WEBSITE CHECKS</span
+					>
+					<ul class="space-y-2 text-sm">
+						<li class="flex items-start gap-2">
+							<ShieldCheck class="w-4 h-4 text-green-600 mt-0.5 shrink-0" />
+							<span class="text-gray-700"
+								><strong>Live & Verified:</strong> The website is active and explicitly
+								mentions this agency's name.</span
+							>
+						</li>
+						<li class="flex items-start gap-2">
+							<AlertTriangle class="w-4 h-4 text-amber-600 mt-0.5 shrink-0" />
+							<span class="text-gray-700"
+								><strong>Unverified:</strong> The site is live, but we couldn't automatically
+								confirm the agency name (use caution).</span
+							>
+						</li>
+						<li class="flex items-start gap-2">
+							<XCircle class="w-4 h-4 text-red-600 mt-0.5 shrink-0" />
+							<span class="text-gray-700"
+								><strong>Offline:</strong> The website appears to be down or broken.</span
+							>
+						</li>
+					</ul>
+				</div>
+
+				{/* Phone Legend */}
+				<div>
+					<span class="text-xs font-semibold text-gray-500 block mb-2"
+						>PHONE NUMBER CHECKS</span
+					>
+					<ul class="space-y-2 text-sm">
+						<li class="flex items-start gap-2">
+							<ShieldCheck class="w-4 h-4 text-green-600 mt-0.5 shrink-0" />
+							<span class="text-gray-700"
+								><strong>Verified Match:</strong> The number listed here matches the
+								one found on their website.</span
+							>
+						</li>
+						<li class="flex items-start gap-2">
+							<AlertTriangle class="w-4 h-4 text-amber-600 mt-0.5 shrink-0" />
+							<span class="text-gray-700"
+								><strong>Updated Number:</strong> We found a <em>different</em> number
+								on their site than the one usually listed. We display the new one.</span
+							>
+						</li>
+					</ul>
+				</div>
+			</div>
 		</div>
 
 		{/* AGENCY GRID */}
@@ -84,23 +177,40 @@ const description =
 		>
 			{
 				agencies.map((agency) => {
-					// Safe variables for logic
-					const phoneNumber = agency.phone || '';
-					const phoneLink = `tel:${phoneNumber.replace(/\s/g, '')}`;
+					// Verification Data
+					const v = agency.verification || {};
+					const isVerified = v.status === 'VERIFIED';
+					const isBroken =
+						v.status === 'BROKEN' ||
+						v.status === 'ERROR' ||
+						v.status === 'DOWN';
+					const isSuspicious = v.status === 'SUSPICIOUS';
+
+					// URL Logic
+					const targetUrl = v.verified_url || agency.website;
+
+					// Phone Logic
+					const rawPhone = v.verified_phone || agency.phone || '';
+					const phoneLink = `tel:${rawPhone.replace(/\s/g, '')}`;
+					const phoneStatus = v.phone_status || 'UNCHECKED';
+
 					const hasTradingNames =
 						agency.trading_names && agency.trading_names.length > 0;
+					const type = getAgencyType(agency);
 
 					return (
 						<div
-							class="agency-card bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-all flex flex-col h-full"
+							class="agency-card bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-all flex flex-col h-full relative"
 							role="listitem"
 						>
-							<div class="flex justify-between items-start mb-4">
-								<h2 class="text-2xl font-bold text-slate-900 agency-name">
+							<div class="flex justify-between items-start mb-4 gap-4">
+								<h2 class="text-2xl font-bold text-slate-900 agency-name leading-tight">
 									{agency.name}
 								</h2>
-								<span class="bg-slate-100 text-slate-600 text-xs font-bold px-2 py-1 rounded uppercase tracking-wide">
-									Agency
+								<span
+									class={`text-[10px] font-bold px-2 py-1 rounded border uppercase tracking-wide text-center min-w-[100px] ${type.class}`}
+								>
+									{type.label}
 								</span>
 							</div>
 
@@ -111,7 +221,7 @@ const description =
 									</p>
 									<div class="flex flex-wrap gap-2">
 										{agency.trading_names.map((name) => (
-											<span class="trading-name text-sm bg-blue-50 text-blue-800 px-2 py-0.5 rounded border border-blue-100">
+											<span class="trading-name text-sm bg-slate-50 text-slate-700 px-2 py-0.5 rounded border border-slate-200">
 												{name}
 											</span>
 										))}
@@ -125,30 +235,131 @@ const description =
 								</p>
 							</div>
 
+							{/* --- STATUS & LAST CHECKED SECTION --- */}
+							<div class="mb-4 bg-slate-50 rounded-lg p-3 border border-slate-100 text-xs">
+								<div class="flex items-center justify-between mb-2 pb-2 border-b border-slate-200">
+									<span class="text-slate-500 font-semibold">
+										Verification Status
+									</span>
+									<span class="text-slate-400">
+										Checked:{' '}
+										<span class="text-slate-700 font-medium">
+											{formatDate(v.last_checked)}
+										</span>
+									</span>
+								</div>
+
+								<div class="grid grid-cols-2 gap-4">
+									{/* Web Status */}
+									<div class="flex items-center gap-2">
+										<Globe class="w-3.5 h-3.5 text-slate-400" />
+										{isVerified && (
+											<span
+												class="flex items-center gap-1.5 text-green-700 font-bold"
+												title="Website content matches agency name"
+											>
+												<ShieldCheck class="w-3.5 h-3.5" /> Live & Verified
+											</span>
+										)}
+										{isBroken && (
+											<span
+												class="flex items-center gap-1.5 text-red-700 font-bold"
+												title={`Error: ${v.message}`}
+											>
+												<XCircle class="w-3.5 h-3.5" /> Offline
+											</span>
+										)}
+										{isSuspicious && (
+											<span
+												class="flex items-center gap-1.5 text-amber-700 font-bold"
+												title={`Warning: ${v.message}`}
+											>
+												<AlertTriangle class="w-3.5 h-3.5" /> Unverified
+											</span>
+										)}
+									</div>
+
+									{/* Phone Status */}
+									<div class="flex items-center gap-2">
+										<Phone class="w-3.5 h-3.5 text-slate-400" />
+										{phoneStatus === 'MATCH' && (
+											<span
+												class="flex items-center gap-1.5 text-green-700 font-bold"
+												title="Number matches website"
+											>
+												<ShieldCheck class="w-3.5 h-3.5" /> Verified Match
+											</span>
+										)}
+										{phoneStatus === 'MISMATCH' && (
+											<span
+												class="flex items-center gap-1.5 text-amber-700 font-bold"
+												title="Number differs from our records"
+											>
+												<AlertTriangle class="w-3.5 h-3.5" /> Updated Number
+											</span>
+										)}
+										{phoneStatus === 'UNCHECKED' && (
+											<span class="text-slate-500">Not verified</span>
+										)}
+										{phoneStatus === 'NOT_FOUND' && (
+											<span class="text-slate-400">Not found on site</span>
+										)}
+									</div>
+								</div>
+							</div>
+
 							<div class="pt-4 border-t border-gray-100 flex flex-col sm:flex-row gap-3">
-								<a
-									href={agency.website}
-									target="_blank"
-									rel="noopener noreferrer"
-									class="flex-1 inline-flex justify-center items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-									aria-label={`Visit ${agency.name} website (opens in new tab)`}
-								>
-									Visit Website
-								</a>
+								<div class="flex-1">
+									{isBroken ? (
+										<button
+											disabled
+											class="w-full inline-flex justify-center items-center px-4 py-2 border border-gray-200 shadow-sm text-sm font-medium rounded-md text-gray-400 bg-gray-50 cursor-not-allowed"
+										>
+											Website Offline
+										</button>
+									) : (
+										<a
+											href={targetUrl}
+											target="_blank"
+											rel="noopener noreferrer"
+											class="w-full inline-flex justify-center items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 gap-2"
+										>
+											Visit Website
+											<ExternalLink class="h-4 w-4 text-gray-400" />
+										</a>
+									)}
+								</div>
 
 								<a
 									href={phoneLink}
-									data-phone={phoneNumber}
-									class="phone-btn flex-1 inline-flex justify-center items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 cursor-pointer relative group"
-									aria-label={`Call ${agency.name} on ${phoneNumber}`}
+									data-phone={rawPhone}
+									class={`phone-btn flex-1 inline-flex justify-center items-center px-4 py-2 border shadow-sm text-sm font-bold rounded-md text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 cursor-pointer relative group gap-2
+                                        ${phoneStatus === 'MISMATCH' ? 'bg-amber-600 hover:bg-amber-700 border-transparent' : 'bg-blue-600 hover:bg-blue-700 border-transparent'}
+                                    `}
+									title={
+										phoneStatus === 'MISMATCH'
+											? 'This number was found on their site but differs from our records.'
+											: 'Click to copy number'
+									}
 								>
-									<span class="btn-text">Call: {phoneNumber}</span>
-									{/* ACCESSIBILITY FIX: Role status for screen reader announcement */}
+									<span class="btn-text tracking-wide">{rawPhone}</span>
+									{/* Icon Indicator for Phone Status */}
+									{phoneStatus === 'MATCH' && (
+										<ShieldCheck class="h-4 w-4 text-white/70" />
+									)}
+									{phoneStatus === 'MISMATCH' && (
+										<AlertTriangle class="h-4 w-4 text-white" />
+									)}
+									{phoneStatus === 'UNCHECKED' && (
+										<Copy class="h-4 w-4 opacity-70 group-hover:opacity-100" />
+									)}
+
 									<span
 										role="status"
-										class="tooltip hidden absolute -top-8 left-1/2 -translate-x-1/2 bg-gray-800 text-white text-xs py-1 px-2 rounded opacity-0 transition-opacity duration-200"
+										class="tooltip hidden absolute -top-10 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-xs py-1.5 px-3 rounded shadow-lg opacity-0 transition-opacity duration-200 whitespace-nowrap z-20"
 									>
-										Copied to clipboard
+										Number Copied!
+										<div class="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-900" />
 									</span>
 								</a>
 							</div>
@@ -163,16 +374,21 @@ const description =
 			<p class="text-xl text-gray-500">
 				No agencies found matching your search.
 			</p>
+			<p class="mt-2 text-gray-400">
+				Try searching for the name on the top of your letter.
+			</p>
 		</div>
 	</div>
 
-	{/* CLIENT-SIDE SCRIPTS */}
+	{
+		/* Client Side Logic for Search & Copy (unchanged but included for completeness) */
+	}
 	<script>
 		const searchInput = document.getElementById('agency-search');
 		const clearBtn = document.getElementById('clear-search');
 		const agencyCards = document.querySelectorAll('.agency-card');
 		const noResults = document.getElementById('no-results');
-		const statusRegion = document.getElementById('search-status'); // Live Region
+		const statusRegion = document.getElementById('search-status');
 
 		if (searchInput && agencyCards.length > 0) {
 			const searchableItems = Array.from(agencyCards).map((card) => {
@@ -182,18 +398,13 @@ const description =
 				const tradingText = Array.from(tradingNameSpans)
 					.map((span) => span.textContent.toLowerCase() || '')
 					.join(' ');
-
-				return {
-					element: card,
-					text: `${nameText} ${tradingText}`,
-				};
+				return { element: card, text: `${nameText} ${tradingText}` };
 			});
 
 			searchInput.addEventListener('input', (e) => {
-				const target = e.target;
+				const target = e.target as HTMLInputElement;
 				const searchTerm = target.value.toLowerCase().trim();
 				let visibleCount = 0;
-
 				if (clearBtn) clearBtn.classList.toggle('hidden', searchTerm === '');
 
 				searchableItems.forEach((item) => {
@@ -202,60 +413,47 @@ const description =
 					if (isVisible) visibleCount++;
 				});
 
-				// Handle No Results visibility
 				if (noResults) noResults.classList.toggle('hidden', visibleCount > 0);
-
-				// ACCESSIBILITY UPDATE: Announce results to screen reader
-				if (statusRegion) {
-					if (visibleCount === 0) {
-						statusRegion.textContent =
-							'No agencies found matching your search.';
-					} else {
-						// Using a small delay or debouncing in a real app is better,
-						// but this is sufficient for basic compliance
-						statusRegion.textContent = `Showing ${visibleCount} agencies.`;
-					}
-				}
+				if (statusRegion)
+					statusRegion.textContent =
+						visibleCount === 0
+							? 'No agencies found.'
+							: `Showing ${visibleCount} agencies.`;
 			});
 
 			if (clearBtn) {
 				clearBtn.addEventListener('click', () => {
-					searchInput.value = '';
+					searchInput.value = ''; // @ts-ignore
 					searchInput.focus();
 					searchInput.dispatchEvent(new Event('input'));
 				});
 			}
 		}
 
-		// Phone functionality
+		// Phone Copy Logic
 		const phoneButtons = document.querySelectorAll('.phone-btn');
 		const isTouchDevice =
 			'ontouchstart' in window || navigator.maxTouchPoints > 0;
 
 		if (!isTouchDevice) {
 			phoneButtons.forEach((btn) => {
-				const button = btn;
+				const button = btn as HTMLElement;
 				const phoneNum = button.getAttribute('data-phone');
 				const tooltip = button.querySelector('.tooltip');
 
 				button.addEventListener('click', (e) => {
 					e.preventDefault();
 					if (phoneNum) {
-						navigator.clipboard
-							.writeText(phoneNum)
-							.then(() => {
-								if (tooltip) {
-									tooltip.classList.remove('hidden');
-									setTimeout(() => tooltip.classList.remove('opacity-0'), 10);
-									// Screen readers will announce content of 'role=status' element when it changes
-
-									setTimeout(() => {
-										tooltip.classList.add('opacity-0');
-										setTimeout(() => tooltip.classList.add('hidden'), 200);
-									}, 2000);
-								}
-							})
-							.catch((err) => console.error('Failed to copy: ', err));
+						navigator.clipboard.writeText(phoneNum).then(() => {
+							if (tooltip) {
+								tooltip.classList.remove('hidden');
+								setTimeout(() => tooltip.classList.remove('opacity-0'), 10);
+								setTimeout(() => {
+									tooltip.classList.add('opacity-0');
+									setTimeout(() => tooltip.classList.add('hidden'), 200);
+								}, 2000);
+							}
+						});
 					}
 				});
 				button.title = 'Click to copy number';
